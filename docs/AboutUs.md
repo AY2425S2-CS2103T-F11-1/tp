@@ -42,7 +42,7 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ### Cheng Anqi, Angel
 
-<img src="images/aerollingoverdeepblueseas.png.jpg" width="200px">
+<img src="images/aerollingoverdeepblueseas.png" width="200px">
 
 [[github](http://github.com/AerollingOverDeepBlueSeas)]
 [[portfolio](team/aerollingoverdeepblueseas.md)]
