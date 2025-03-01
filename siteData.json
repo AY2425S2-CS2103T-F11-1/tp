@@ -8,7 +8,7 @@
         "about-us": "About Us",
         "project-team": "Project team",
         "john-doe": "John Doe",
-        "jane-doe": "Jane Doe",
+        "lucas-lim": "Lucas Lim",
         "reanee-chua": "Reanee Chua",
         "cheng-anqi-angel": "Cheng Anqi, Angel",
         "james-doe": "James Doe"
@@ -139,6 +139,14 @@
       "src": "team/aerollingoverdeepblueseas.md",
       "headings": {
         "it-s-me": "It's me"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/codekrodile.md",
+      "title": "Codekrodile's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
       },
       "headingKeywords": {}
     },
