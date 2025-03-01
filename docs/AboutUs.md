@@ -40,12 +40,12 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Code Quality
 * Responsibilities:  Looks after code quality, ensures adherence to coding standards, etc.
 
-### Jean Doe
+### Cheng Anqi, Angel
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/aerollingoverdeepblueseas.png.jpg" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](http://github.com/AerollingOverDeepBlueSeas)]
+[[portfolio](team/aerollingoverdeepblueseas.md)]
 
 * Role: Developer
 * Responsibilities: Dev Ops + Threading
