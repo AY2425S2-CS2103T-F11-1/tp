@@ -21,14 +21,14 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 * Role: Project Advisor
 
-### Jane Doe
+### Lucas Lim
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/codekrodile.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](http://github.com/Codekrodile)]
+[[portfolio](team/codekrodile.md)]
 
-* Role: Team Lead
+* Role: Documentation
 * Responsibilities: UI
 
 ### Reanee Chua
