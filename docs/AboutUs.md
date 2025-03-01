@@ -11,15 +11,43 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ## Project team
 
-### John Doe
+### Hugo Chia
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/hugo-chia.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
-[[github](https://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](https://github.com/hugo-chia)]
+[[portfolio](team/hugochia.md)]
 
-* Role: Project Advisor
+* Role: Team lead, Scheduling and tracking
+
+### Lucas Lim
+
+<img src="images/codekrodile.png" width="200px">
+
+[[github](http://github.com/Codekrodile)]
+[[portfolio](team/codekrodile.md)]
+
+* Role: Documentation
+* Responsibilities: UI
+
+### Reanee Chua
+
+<img src="images/reaneechua.png" width="200px">
+
+[[github](https://github.com/reaneechua)] [[portfolio](team/reaneechua.md)]
+
+* Role: Code Quality
+* Responsibilities:  Looks after code quality, ensures adherence to coding standards, etc.
+
+### Cheng Anqi, Angel
+
+<img src="images/aerollingoverdeepblueseas.png" width="200px">
+
+[[github](http://github.com/AerollingOverDeepBlueSeas)]
+[[portfolio](team/aerollingoverdeepblueseas.md)]
+
+* Role: Developer
+* Responsibilities: Dev Ops + Threading
 
 ### Cao Yitian
 
@@ -30,32 +58,3 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 * Role: Testing
 * Responsibilities: Testing for project
-
-### Johnny Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)] [[portfolio](team/johndoe.md)]
-
-* Role: Developer
-* Responsibilities: Data
-
-### Jean Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
-
-* Role: Developer
-* Responsibilities: Dev Ops + Threading
-
-### James Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
-
-* Role: Developer
-* Responsibilities: UI
