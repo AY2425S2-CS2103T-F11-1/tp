@@ -273,30 +273,39 @@ _{Explain here how the data archiving feature will be implemented}_
 ### Product scope
 
 **Target user profile**:
+Clinic receptionist that needs to track patients contact and appointments using CLI.
 
-* has a need to manage a significant number of contacts
+* has a need to manage a significant number of patients' contacts
 * prefer desktop apps over other types
 * can type fast
 * prefers typing to mouse interactions
 * is reasonably comfortable using CLI apps
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+**Value proposition**: Provide fast access to patients contact details, and manage upcoming appointments, optimized for users who prefer a CLI.
 
 
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                 | So that I can…​                                                        |
-|----------|--------------------------------------------|------------------------------|------------------------------------------------------------------------|
-| `* * *`  | new user                                   | see usage instructions       | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person             |                                                                        |
-| `* * *`  | user                                       | delete a person              | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name        | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name         | locate a person easily                                                 |
-
-*{More to be added}*
+| Priority | As a …​                   | I want to …​                                                      | So that I can…​                                                                            |
+|----------|---------------------------|-------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `* * *`  | daily user                | be able to find contacts I should contact                         | I will not miss out on any patients to call                                                |
+| `* * *`  | daily user                | add new patients’ contacts                                        | I can track all patients contacts                                                          |
+| `* * *`  | temporary user            | pick up the commands fast                                         | I can perform my role soon after getting my job                                            |
+| `* * *`  | long-time user            | update any change in contact information quickly                  | I can respond to requests even during peak hours                                           |
+| `* *`    | potential user            | the app populated with sample data                                | I can see how the app looks like when it is in use                                         |
+| `* *`    | user ready to use the app | be able to clear the sample data                                  | I can start using the app                                                                  |
+| `* *`    | daily user                | tag groups of patients in the database                            | I can find them more easily in the future                                                  |
+| `* *`    | long-time user            | update patients appointments                                      | I will be able to contact patients to remind them when their next appointment is coming up |
+| `* *`    | new user                  | be able to find my way around the app                             | I can pick it up eventually for my use                                                     |
+| `* *`    | new user                  | be reminded of the correct command formats                        | I can use the correct commands without having to refer to the documentation                |
+| `* *`    | user                      | undo changes I made                                               | I can undo any mistakes I made when entering the data                                      |
+| `* *`    | user                      | know if I entered some invalid data                               | I can catch some typos I made relatively quickly                                           |
+| `* *`    | user                      | know patient’s past medication                                    | I can support the doctors needs                                                            |
+| `*`      | long-time user            | delete patients who no longer come to the clinic/have passed away | I can pay attention to the patients the clinic has/ PDPA                                   |
+| `*`      | long-time user            | sift through the data quickly                                     | I can continue to perform my role                                                          |
+| `*`      | user                      | track patient’s CHAS colour                                       | I can know if they qualify for subsidies                                                   |
 
 ### Use cases
 
