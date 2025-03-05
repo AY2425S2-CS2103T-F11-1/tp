@@ -1,6 +1,7 @@
-[![CI Status](https://github.com/se-edu/addressbook-level3/workflows/Java%20CI/badge.svg)](https://github.com/se-edu/addressbook-level3/actions)
+[![CI Status](https://github.com/AY2425S2-CS2103T-F11-1/tp/actions/workflows/gradle.yml/badge.svg)](https://github.com/AY2425S2-CS2103T-F11-1/tp/actions/workflows/gradle.yml)
 
-![Ui](docs/images/Ui.png)
+<img src="docs/images/Ui.png" height=75% width=75%>
+<img src="docs/images/Ui2.png" height=75% width=75%>
 
 * This is **a sample project for Software Engineering (SE) students**.<br>
   Example usages:
