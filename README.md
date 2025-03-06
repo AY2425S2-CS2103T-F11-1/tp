@@ -2,6 +2,7 @@
 
 # HubHealth!
 
+
 ## UI Mockup
 <div>
   <img src="docs/images/Ui.png" height=75% width=75% alt="UI to display patient search results.">
@@ -17,12 +18,28 @@ _Above: UI to display patient search results._
 _Above: UI to display particulars of a specific patient._
 
 ## Introduction 
-**HubHealth** is a Command Line Interface (CLI) application that helps clinic receptionists keep track of patient contacts and appointments. You do not need a remote server to run this application. 
+Welcome to **HubHealth**! If you are a clinic receptionist, we can help make your work easier by helping your keep track of patient contacts and appointments.
+You do not need a remote server to run this application. 
 
 ## Features
 
+HubHealth has all the features you will need to keep track of patient information and appointments:
+* **Managing patient information**
+  * **Adding** new patient information
+  * **Deleting** existing patient information
+* **Searching for patient information**
+  * **Listing** all patients
+  * **Display** information of *specific* patient
+* **Managing appointments**
+  * **Adding** appointment for patient
+  * **Deleting** appointment for patient
 
-## Documentation
+For a more in-depth explanation about each feature, visit the full documentation and user guide at **[Documentation](#documentation)**.
+
+## System Requirements (To be updated)
+This application requires Java 17 to run. 
+
+## Documentation (To be updated)
 * For the detailed documentation of this project, see the **[HubHealth Product Website](https://ay2425s2-cs2103t-f11-1.github.io/tp/)**.
 * User Guide can be found here: (Coming soon!)
 
@@ -30,8 +47,5 @@ _Above: UI to display particulars of a specific patient._
 1. **What are the requirements to run this program?**
 * Java, probably.
 
-## Credits:
-This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
-
-## Disclaimer
-This project is not affiliated with [HealthHub](https://www.healthhub.sg/) in any way beyond a reference. 
+## Credits
+This project is based on the AddressBook-Level3 project created by the **[SE-EDU initiative](https://se-education.org)**.
