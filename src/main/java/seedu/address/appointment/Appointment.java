@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-/** Represents an appointment */
 public class Appointment {
     private LocalDateTime apptDateTime;
 
@@ -12,10 +11,6 @@ public class Appointment {
         this.apptDateTime = parsedDateTime;
     }
 
-    /**
-     * Creates a new appointment.
-     * Throws {@code DateTimeParseException} if the date and time is invalid.
-     */
     public static Appointment createAppointment(String date) throws DateTimeParseException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         LocalDateTime parsedDateTime = LocalDateTime.parse(date, formatter);
