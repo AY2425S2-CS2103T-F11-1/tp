@@ -51,7 +51,7 @@ public class Person {
         return email;
     }
 
-    public Nric getIC() {
+    public Nric getNric() {
         return nricNumber;
     }
 
