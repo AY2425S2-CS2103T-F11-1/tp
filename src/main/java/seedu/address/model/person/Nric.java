@@ -9,6 +9,11 @@ import static java.util.Objects.requireNonNull;
 public class Nric {
     public final String value;
 
+    /**
+     * Constructs a {@code Nric}.
+     *
+     * @param icNumber A valid nric.
+     */
     public Nric(String icNumber) {
         requireNonNull(icNumber);
         value = icNumber;
