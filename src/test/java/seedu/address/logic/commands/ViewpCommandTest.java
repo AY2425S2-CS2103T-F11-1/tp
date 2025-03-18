@@ -40,20 +40,7 @@ public class ViewpCommandTest {
         expectedModel.updateFilteredPersonList(new NricPredicate("S1234567A"));
 
         assertCommandSuccess(viewpCommand, model,
-            String.format(ViewpCommand.MESSAGE_PATIENT_FOUND, personWithNric), expectedModel);
-    }
-
-    @Test
-    public void debugModelContents() {
-        System.out.println("Model contains the following persons:");
-        for (Person p : model.getFilteredPersonList()) {
-            System.out.println("Person: " + p.getName() + ", NRIC: " + p.getNric());
-        }
-
-        // Test the specific NRIC value that's failing
-        model.updateFilteredPersonList(new NricPredicate("S9999999Z"));
-        System.out.println("After filtering by S9999999Z, found "
-                        + model.getFilteredPersonList().size() + " persons");
+            String.format(ViewpCommand.MESSAGE_PATIENT_FOUND, personWithNric.getName()), expectedModel);
     }
 
     @Test

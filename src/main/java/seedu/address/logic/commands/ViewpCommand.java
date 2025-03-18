@@ -1,7 +1,6 @@
 package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_NRIC;
 
 import java.util.List;
 
@@ -19,11 +18,11 @@ public class ViewpCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Displays details of a specific patient by NRIC.\n"
-            + "Parameters: " + PREFIX_NRIC + "NRIC\n"
-            + "Example: " + COMMAND_WORD + " " + PREFIX_NRIC + "S1234567A";
+            + "Parameters: NRIC\n"
+            + "Example: " + COMMAND_WORD + " S1234567A";
 
-    public static final String MESSAGE_PATIENT_FOUND = "Patient found: %1$s";
-    public static final String MESSAGE_PATIENT_NOT_FOUND = "Patient with NRIC %1$s not found";
+    public static final String MESSAGE_PATIENT_FOUND = "Patient found: %s";
+    public static final String MESSAGE_PATIENT_NOT_FOUND = "Patient with NRIC %s not found";
 
     private final String nric;
 
@@ -48,7 +47,7 @@ public class ViewpCommand extends Command {
 
         // We expect only one person to match by NRIC since NRIC is unique
         Person patientFound = filteredPersons.get(0);
-        return new CommandResult(String.format(MESSAGE_PATIENT_FOUND, patientFound));
+        return new CommandResult(String.format(MESSAGE_PATIENT_FOUND, patientFound.getName()));
     }
 
     @Override
