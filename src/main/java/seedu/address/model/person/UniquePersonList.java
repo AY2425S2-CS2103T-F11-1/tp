@@ -37,6 +37,19 @@ public class UniquePersonList implements Iterable<Person> {
     }
 
     /**
+     * Returns the person with the input NRIC, or null if no such person exists.
+     */
+    public Person containsNric(Nric nric) {
+        requireNonNull(nric);
+        for (Person person : internalList) {
+            if (person.getNric().equals(nric)) {
+                return person;
+            }
+        }
+        return null;
+    }
+
+    /**
      * Adds a person to the list.
      * The person must not already exist in the list.
      */
