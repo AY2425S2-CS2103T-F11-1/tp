@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.assertFilteredCommandFailure;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
 import org.junit.jupiter.api.Test;
@@ -29,12 +28,7 @@ public class ViewpCommandTest {
         assertThrows(NullPointerException.class, () -> new ViewpCommand(null));
     }
 
-    @Test
-    public void execute_noNric_listAllPersons() {
-        ViewpCommand viewpCommand = new ViewpCommand();
-        expectedModel.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-        assertCommandSuccess(viewpCommand, model, ViewpCommand.MESSAGE_SUCCESS, expectedModel);
-    }
+    // No longer testing listing all patients since that functionality was removed
 
     @Test
     public void execute_validNric_personFound() throws Exception {
@@ -76,15 +70,12 @@ public class ViewpCommandTest {
         ViewpCommand viewpFirstCommand = new ViewpCommand("S1234567A");
         ViewpCommand viewpSecondCommand = new ViewpCommand("S7654321B");
         ViewpCommand viewpThirdCommand = new ViewpCommand("S1234567A");
-        ViewpCommand listCommand = new ViewpCommand();
-        ViewpCommand anotherListCommand = new ViewpCommand();
 
         // same object -> returns true
         assertTrue(viewpFirstCommand.equals(viewpFirstCommand));
 
         // same values -> returns true
         assertTrue(viewpFirstCommand.equals(viewpThirdCommand));
-        assertTrue(listCommand.equals(anotherListCommand));
 
         // different types -> returns false
         assertFalse(viewpFirstCommand.equals(1));
@@ -94,8 +85,5 @@ public class ViewpCommandTest {
 
         // different NRIC -> returns false
         assertFalse(viewpFirstCommand.equals(viewpSecondCommand));
-
-        // one with NRIC, one without -> returns false
-        assertFalse(viewpFirstCommand.equals(listCommand));
     }
 }

@@ -19,11 +19,7 @@ public class ViewpCommandParser implements Parser<ViewpCommand> {
     public ViewpCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_NRIC);
 
-        if (args.trim().isEmpty()) {
-            return new ViewpCommand(); // No arguments, list all patients
-        }
-
-        if (!argMultimap.getValue(PREFIX_NRIC).isPresent()) {
+        if (args.trim().isEmpty() || !argMultimap.getValue(PREFIX_NRIC).isPresent()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ViewpCommand.MESSAGE_USAGE));
         }
 
