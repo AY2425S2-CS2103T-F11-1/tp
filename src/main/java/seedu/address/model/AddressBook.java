@@ -70,6 +70,7 @@ public class AddressBook implements ReadOnlyAddressBook {
 
     /**
      * Returns the person if their NRIC exists in the address book
+     * @return a Person whose NRIC matches {@code nric}, or null if no such person exists.
      */
     public Person findPerson(Nric nric) {
         requireNonNull(nric);
