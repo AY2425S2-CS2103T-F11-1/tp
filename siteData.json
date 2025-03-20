@@ -62,7 +62,11 @@
         "glossary": "Glossary",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
-        "deleting-a-person": "Deleting a person",
+        "adding-a-patient": "Adding a patient",
+        "remove-a-patient": "Remove a patient",
+        "view-a-patient-s-details": "View a patient's details",
+        "add-an-appointment-to-a-patient": "Add an appointment to a patient",
+        "remove-an-appointment-from-a-patient": "Remove an appointment from a patient",
         "saving-data": "Saving data"
       },
       "headingKeywords": {}
