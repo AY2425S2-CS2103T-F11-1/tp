@@ -15,14 +15,23 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 
 ## Quick start
 
-1. Ensure you have Java `17` or above installed in your Computer.<br>
-   **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
+1. Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
+   - **Checking whether you have Java installed/ the right Java version:**<br>
+     - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no results that lead to an application. You do not have Java installed. Otherwise, click on `About Java`, and it show you the version of Java currently downloaded on your computer.<br>
+     - **Mac users:** Open a new Terminal window, and enter `java -version`. Hit enter and you should see the Java version downloaded on your computer.<br>
+   - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
+     - **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-1. Download the latest `.jar` file from [here](https://github.com/se-edu/addressbook-level3/releases).
+1. Download the latest `.jar` file from [here](https://github.com/se-edu/addressbook-level3/releases). This is the HubHealth application.
 
-1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
+1. Copy the file to the folder you want to use as the _home folder_ for HubHealth.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar addressbook.jar` command to run the application.<br>
+1. Open a command terminal, and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in. <br>
+  For instance, if the application is in the Downloads folder, the command you enter should look something like `cd 
+ C:\Users\user\Downloads`<br>
+   (You can find the location of the application by right-clicking on it, and selecting `Properties` or `Get info` for Windows and Mac users.)
+
+2. Next, enter the command `java -jar addressbook.jar` and press Enter to start the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
@@ -31,11 +40,10 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 
    * `list` : Lists all contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
+   * `add -N John Doe -P 98765432 -IC S1234567A` : Adds a contact named `John Doe` to HubHealth.
 
-   * `delete 3` : Deletes the 3rd contact shown in the current list.
-
-   * `clear` : Deletes all contacts.
+   * `remove -IC S1234567A` : Removes the patient with NRIC `S1234567A` from HubHealth, if such a patient exists in 
+     the records.
 
    * `exit` : Exits the app.
 
