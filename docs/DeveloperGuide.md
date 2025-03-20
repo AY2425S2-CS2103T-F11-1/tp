@@ -309,7 +309,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `User`, unless specified otherwise)
+(For all use cases below, the **System** is the `HubHealth` and the **Actor** is the `User`, unless specified otherwise)
 
 #### **Use case: UC01 List all patients**
 
