@@ -6,6 +6,7 @@ import java.util.List;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.person.Nric;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.UniquePersonList;
 
@@ -65,6 +66,15 @@ public class AddressBook implements ReadOnlyAddressBook {
     public boolean hasPerson(Person person) {
         requireNonNull(person);
         return persons.contains(person);
+    }
+
+    /**
+     * Returns the person if their NRIC exists in the address book
+     * @return a Person whose NRIC matches {@code nric}, or null if no such person exists.
+     */
+    public Person findPerson(Nric nric) {
+        requireNonNull(nric);
+        return persons.containsNric(nric);
     }
 
     /**

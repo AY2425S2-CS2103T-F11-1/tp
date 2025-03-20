@@ -56,8 +56,9 @@ public class Person {
     }
 
     /**
-     * Returns true if both persons have the same name.
+     * Returns true if both persons have the same NRIC.
      * This defines a weaker notion of equality between two persons.
+     * Though 'weaker', this is functionally strong enough.
      */
     public boolean isSamePerson(Person otherPerson) {
         if (otherPerson == this) {
