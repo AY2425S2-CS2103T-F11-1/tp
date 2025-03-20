@@ -48,7 +48,7 @@ public class ViewpCommand extends Command {
 
         // We expect only one person to match by NRIC since NRIC is unique
         Person patientFound = filteredPersons.get(0);
-        return new CommandResult(String.format(MESSAGE_PATIENT_FOUND, patientFound));
+        return new CommandResult(String.format(MESSAGE_PATIENT_FOUND, patientFound.getName()));
     }
 
     @Override
