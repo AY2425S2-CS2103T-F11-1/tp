@@ -309,154 +309,106 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `HubHealth` and the **Actor** is the `User`, unless specified otherwise)
 
-#### **Use case: List all patients**
+#### **Use case: UC01 List all patients**
 
 **MSS**
 
-1. User requests to list patients
-2. HubHealth shows a list of patients
+1. User requests to see a list all of the patients.
+2. HubHealth shows a list of patients.
+    
+    Use case ends.
+    
+#### **Use case: UC02 Add a patient**
+
+**MSS**
+
+1. User requests to add a new patient into the list.
+2. Hubhealth adds the new patient into the list.
     
     Use case ends.
     
 **Extensions**
 
-- 2a. The list is empty.
-    
-    Use case ends.
-
-#### **Use case: Add new patient**
+- 1a. HubHealth detects an error in the entered details.
+    - 1a1. HubHealth shows an error message.
+        
+        Use case ends.
+        
+- 1b. HubHealth detects that the patient exists in the list.
+    - 1b1. HubHealth shows an error message.
+        
+        Use case ends.
+        
+#### **Use case: UC03 Remove a patient**
 
 **MSS**
 
-1. User requests to list patients
-2. HubHealth shows a list of patients
-3. User requests to add a new patient’s into the list
-    1. User inputs the patient’s NRIC, name, phone number and date of birth
-4. Hubhealth adds the new patient
-    
-    Use case ends.
-    
-**Extensions**
-
-- 3a. The patient already exists.
-    - 3a1. HubHealth shows an error message.
-    
-    Use case ends.
-    
-- 3b. One or more of the given detail(s) is invalid.
-    - 3b1. HubHealth shows an error message.
-        
-        Use case resumes at step 2.
-        
-#### **Use case: Remove existing patient**
-
-**MSS**
-
-1. User requests to list patients
-2. HubHealth shows a list of patients
-3. User requests to delete a specific patient’s details
-    1. User inputs the patient’s NRIC
-4. HubHealth deletes the patient
+1. User requests to remove a patient from the list.
+2. HubHealth removes the patient from the list.
     
     Use case ends.
 
 **Extensions**
 
-- 2a. The list is empty.
-    
-    Use case ends.
-    
-- 3a. The given patient’s NRIC does not exist.
-    - 3a1. HubHealth shows an error message.
+- 1a. HubHealth detects that the patient does not exist.
+    - 1a1. HubHealth shows an error message.
         
-        Use case resumes at step 2.
+        Use case ends.
         
-#### **Use case: View patient details**
+#### **Use case: UC04 View a patient's details**
 
 **MSS**
 
-1. User requests to list patients
-2. Hubhealth shows a list of patients
-3. User requests to view a specific patient’s detail
-    1. User inputs the patient’s NRIC
-4. HubHealth shows the patient’s details
+1. User requests to view a patient’s details.
+2. HubHealth shows the patient’s details.
     
     Use case ends.
     
 **Extensions**
 
-- 2a. The list is empty.
-    
-    Use case ends.
-    
-- 3a. The given NRIC does not exist.
-    - 3a1. HubHealth shows an error message.
+- 1a. HubHealth detects that the patient does not exist.
+    - 1a1. HubHealth shows an error message.
         
-        Use case resumes at step 2.
+        Use case ends.
         
-#### **Use case: Add appointment to specific patient**
+#### **Use case: UC05 Add an appointment to a patient**
 
 **MSS**
 
-1. User requests to list patients
-2. Hubhealth shows a list of patients
-3. User requests to view a specific patient’s detail
-    1. User inputs the patient’s NRIC
-4. HubHealth shows the patient’s details
-5. User adds an appointment to the patient’s detail
-    1. User inputs the patient’s NRIC, appointment’s date and time
-6. HubHealth shows updated patient’s details
+1. User requests to add an appointment to a patient.
+2. HubHealth updates and shows the patient’s details.
     
     Use case ends.
     
 **Extensions**
 
-- 2a. The list is empty.
-    
-    Use case ends.
-    
-- 3a. The given NRIC does not exist or is invalid.
-    - 3a1. AddressBook shows an error message.
+- 1a. HubHealth detects an error in the entered details.
+    - 1a1. HubHealth shows an error message.
         
-        Use case resumes at step 2.
+        Use case ends.
         
-- 5a. One or more of the given input(s) is wrong.
-    - 5a1. HubHealth shows an error message.
+- 1b. HubHealth detects that the patient does not exist.
+    - 1b1. HubHealth shows an error message.
         
-        Use case resumes at step 4.
+        Use case ends.
         
-#### **Use case: Delete existing appointment of specific patient**
+#### **Use case: UC06 Delete an appointment from a patient**
 
 **MSS**
 
-1. User requests to list patients
-2. Hubhealth shows a list of patients
-3. User requests to view a specific patient’s detail
-    1. User inputs the patient’s NRIC
-4. HubHealth shows the patient’s details
-5. User removes an existing appointment from the patient
-    1. User inputs the patient’s NRIC, appointment index
-6. HubHealth shows updated patient’s details
+1. User requests to remove an appointment from a patient.
+2. HubHealth updates and shows the patient’s details.
     
     Use case ends.
 
 **Extensions**
 
-- 2a. The list is empty.
-    
-    Use case ends.
-    
-- 3a. The given NRIC does not exist or is invalid.
-    - 3a1. AddressBook shows an error message.
+- 1a. HubHealth detects that the patient or the appointment does not exist.
+    - 1a1. HubHealth shows an error message.
         
-        Use case resumes at step 2.
-        
-- 5a. The NRIC does not exist or appointment index is invalid.
-    - 5a1. HubHealth shows an error message.
-        
-        Use case resumes at step 4.
+        Use case ends.
 
 *{More to be added}*
 
@@ -492,7 +444,7 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   1. Double-click the jar file Expected: Shows the GUI with a set of sample patients. The window size may not be optimum.
 
 1. Saving window preferences
 
@@ -503,19 +455,87 @@ testers are expected to do more *exploratory* testing.
 
 1. _{ more test cases …​ }_
 
-### Deleting a person
+### Adding a patient
 
-1. Deleting a person while all persons are being shown
+1. Adding a patient while all patients are being shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+   1. Prerequisites: List all patients using the `list` or `ls` command.
 
-   1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+   1. Test case: `add -IC T0288759A -N John Tan -P 89897777 -DOB 2002-02-02`<br>
+      Expected: New patient is added into the list. Details of the new patient shown in the status message. Timestamp in the status bar is updated.
 
-   1. Test case: `delete 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+   1. Test case: `add -IC T -N John Tan -P 89897777 -DOB 2002-02-02`<br>
+      Expected: No patient is added. Error details shown in the status message. Status bar remains the same.
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+   1. Other incorrect add commands to try: `add`, `add -IC a -N John Tan -P c -DOB d`, `...` (where a, b, c, d are invalid NRIC, phone number and date respectively)<br>
+      Expected: Similar to previous.
+
+1. _{ more test cases …​ }_
+
+### Remove a patient
+
+1. Remove a patient while all patients are being shown
+
+   1. Prerequisites: List all patients using the `list` or `ls` command. Multiple patients in the list. Patient with NRIC T0288759A in the list.
+
+   1. Test case: `remove -IC T0288759A`<br>
+      Expected: Patient with NRIC T0288759A is removed from the list. Details of the removed patient shown in the status message. Timestamp in the status bar is updated.
+
+   1. Test case: `remove -IC 1`<br>
+      Expected: No patient is removed. Error details shown in the status message. Status bar remains the same.
+
+   1. Other incorrect remove commands to try: `remove`, `remove x`, `...` (where x is a NRIC that is not in the list)<br>
+      Expected: Similar to previous.
+
+1. _{ more test cases …​ }_
+
+### View a patient's details
+
+1. View a patient's details
+
+   1. Prerequisites: Patient with NRIC T0288759A in the list.
+
+   1. Test case: `viewp -IC T0288759A`<br>
+      Expected: Details of the patient shown in the status message. Timestamp in the status bar is updated.
+
+   1. Test case: `viewp -IC 1`<br>
+      Expected: Error details shown in the status message. Status bar remains the same.
+
+   1. Other incorrect add commands to try: `viewp`, `viewp -a`, `...` (where a is an invalid flag)<br>
+      Expected: Similar to previous.
+
+1. _{ more test cases …​ }_
+
+### Add an appointment to a patient
+
+1. Add an appointment to a patient while the patient's details are being shown
+
+   1. Prerequisites: Patient with NRIC T0288759A in the list. View patient's details using `viewp` command.
+
+   1. Test case: `appt -IC T0288759A -D 2025-06-28 -T 17:00`<br>
+      Expected: New appointment is added to the patient. Details of the new appointment shown in the status message. Timestamp in the status bar is updated.
+
+   1. Test case: `appt -IC 1 -D 2025-06-28 -T 17:00`<br>
+      Expected: Error details shown in the status message. Status bar remains the same.
+
+   1. Other incorrect add commands to try: `appt -IC a -D b -T c`, `appt`, `...` (where a, b, c are invalid NRIC, date and time respectively)<br>
+      Expected: Similar to previous.
+
+1. _{ more test cases …​ }_
+
+### Remove an appointment from a patient
+
+1. Add an appointment to a patient while the patient's details are being shown
+
+   1. Prerequisites: Patient with NRIC T0288759A in the list. Patient have multiple appointments. View patient's details using `viewp` command.
+
+   1. Test case: `rmappt -IC T0288759A -I 1`<br>
+      Expected: Appointment with index 1 is removed from the patient's details. Details of the removed appointment shown in the status message. Timestamp in the status bar is updated.
+
+   1. Test case: `rmappt -IC T0288759A -I 0`<br>
+      Expected: Error details shown in the status message. Status bar remains the same.
+
+   1. Other incorrect add commands to try: `rmappt -IC T0288759A -I x`, `rmappt`, `...` (where x is larger than the number of appointments the patient has)<br>
       Expected: Similar to previous.
 
 1. _{ more test cases …​ }_
