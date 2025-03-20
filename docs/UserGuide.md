@@ -22,7 +22,7 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
    - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
      - **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-1. Download the latest `.jar` file from [here](https://github.com/se-edu/addressbook-level3/releases). This is the HubHealth application.
+1. Download the latest `.jar` file from [here](https://github.com/AY2425S2-CS2103T-F11-1/tp/releases). This is the HubHealth application.
 
 1. Copy the file to the folder you want to use as the _home folder_ for HubHealth.
 
