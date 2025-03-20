@@ -309,154 +309,106 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `User`, unless specified otherwise)
 
-#### **Use case: List all patients**
+#### **Use case: UC01 List all patients**
 
 **MSS**
 
-1. User requests to list patients
-2. HubHealth shows a list of patients
+1. User requests to see a list all of the patients.
+2. HubHealth shows a list of patients.
+    
+    Use case ends.
+    
+#### **Use case: UC02 Add a patient**
+
+**MSS**
+
+1. User requests to add a new patient into the list.
+2. Hubhealth adds the new patient into the list.
     
     Use case ends.
     
 **Extensions**
 
-- 2a. The list is empty.
-    
-    Use case ends.
-
-#### **Use case: Add new patient**
+- 1a. HubHealth detects an error in the entered details.
+    - 1a1. HubHealth shows an error message.
+        
+        Use case ends.
+        
+- 1b. HubHealth detects that the patient exists in the list.
+    - 1b1. HubHealth shows an error message.
+        
+        Use case ends.
+        
+#### **Use case: UC03 Remove a patient**
 
 **MSS**
 
-1. User requests to list patients
-2. HubHealth shows a list of patients
-3. User requests to add a new patient’s into the list
-    1. User inputs the patient’s NRIC, name, phone number and date of birth
-4. Hubhealth adds the new patient
-    
-    Use case ends.
-    
-**Extensions**
-
-- 3a. The patient already exists.
-    - 3a1. HubHealth shows an error message.
-    
-    Use case ends.
-    
-- 3b. One or more of the given detail(s) is invalid.
-    - 3b1. HubHealth shows an error message.
-        
-        Use case resumes at step 2.
-        
-#### **Use case: Remove existing patient**
-
-**MSS**
-
-1. User requests to list patients
-2. HubHealth shows a list of patients
-3. User requests to delete a specific patient’s details
-    1. User inputs the patient’s NRIC
-4. HubHealth deletes the patient
+1. User requests to remove a patient from the list.
+2. HubHealth removes the patient from the list.
     
     Use case ends.
 
 **Extensions**
 
-- 2a. The list is empty.
-    
-    Use case ends.
-    
-- 3a. The given patient’s NRIC does not exist.
-    - 3a1. HubHealth shows an error message.
+- 1a. HubHealth detects that the patient does not exist.
+    - 1a1. HubHealth shows an error message.
         
-        Use case resumes at step 2.
+        Use case ends.
         
-#### **Use case: View patient details**
+#### **Use case: UC04 View a patient's details**
 
 **MSS**
 
-1. User requests to list patients
-2. Hubhealth shows a list of patients
-3. User requests to view a specific patient’s detail
-    1. User inputs the patient’s NRIC
-4. HubHealth shows the patient’s details
+1. User requests to view a patient’s details.
+2. HubHealth shows the patient’s details.
     
     Use case ends.
     
 **Extensions**
 
-- 2a. The list is empty.
-    
-    Use case ends.
-    
-- 3a. The given NRIC does not exist.
-    - 3a1. HubHealth shows an error message.
+- 1a. HubHealth detects that the patient does not exist.
+    - 1a1. HubHealth shows an error message.
         
-        Use case resumes at step 2.
+        Use case ends.
         
-#### **Use case: Add appointment to specific patient**
+#### **Use case: UC05 Add an appointment to a patient**
 
 **MSS**
 
-1. User requests to list patients
-2. Hubhealth shows a list of patients
-3. User requests to view a specific patient’s detail
-    1. User inputs the patient’s NRIC
-4. HubHealth shows the patient’s details
-5. User adds an appointment to the patient’s detail
-    1. User inputs the patient’s NRIC, appointment’s date and time
-6. HubHealth shows updated patient’s details
+1. User requests to add an appointment to a patient.
+2. HubHealth updates and shows the patient’s details.
     
     Use case ends.
     
 **Extensions**
 
-- 2a. The list is empty.
-    
-    Use case ends.
-    
-- 3a. The given NRIC does not exist or is invalid.
-    - 3a1. AddressBook shows an error message.
+- 1a. HubHealth detects an error in the entered details.
+    - 1a1. HubHealth shows an error message.
         
-        Use case resumes at step 2.
+        Use case ends.
         
-- 5a. One or more of the given input(s) is wrong.
-    - 5a1. HubHealth shows an error message.
+- 1b. HubHealth detects that the patient does not exist.
+    - 1b1. HubHealth shows an error message.
         
-        Use case resumes at step 4.
+        Use case ends.
         
-#### **Use case: Delete existing appointment of specific patient**
+#### **Use case: UC06 Delete an appointment from a patient**
 
 **MSS**
 
-1. User requests to list patients
-2. Hubhealth shows a list of patients
-3. User requests to view a specific patient’s detail
-    1. User inputs the patient’s NRIC
-4. HubHealth shows the patient’s details
-5. User removes an existing appointment from the patient
-    1. User inputs the patient’s NRIC, appointment index
-6. HubHealth shows updated patient’s details
+1. User requests to remove an appointment from a patient.
+2. HubHealth updates and shows the patient’s details.
     
     Use case ends.
 
 **Extensions**
 
-- 2a. The list is empty.
-    
-    Use case ends.
-    
-- 3a. The given NRIC does not exist or is invalid.
-    - 3a1. AddressBook shows an error message.
+- 1a. HubHealth detects that the patient or the appointment does not exist.
+    - 1a1. HubHealth shows an error message.
         
-        Use case resumes at step 2.
-        
-- 5a. The NRIC does not exist or appointment index is invalid.
-    - 5a1. HubHealth shows an error message.
-        
-        Use case resumes at step 4.
+        Use case ends.
 
 *{More to be added}*
 
