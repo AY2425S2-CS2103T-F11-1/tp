@@ -2,11 +2,15 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+import seedu.address.appointment.Appointment;
+import seedu.address.appointment.AppointmentList;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.tag.Tag;
 
@@ -23,6 +27,7 @@ public class Person {
 
     // Data fields
     private final Set<Tag> tags = new HashSet<>();
+    private final AppointmentList appointmentList;
 
     /**
      * Every field must be present and not null.
@@ -32,6 +37,9 @@ public class Person {
         this.name = name;
         this.phone = phone;
         this.nricNumber = nricNumber;
+        this.appointmentList = new AppointmentList();
+        appointmentList.addAppointment("01/01/2025 15:00");
+        appointmentList.addAppointment("02/02/2025 12:00");
         this.tags.addAll(tags);
     }
 
@@ -53,6 +61,14 @@ public class Person {
      */
     public Set<Tag> getTags() {
         return Collections.unmodifiableSet(tags);
+    }
+
+    /**
+     * Returns an immutable appointment list, which throws {@code UnsupportedOperationException}
+     * if modification is attempted.
+     */
+    public List<Appointment> getAppointmentList() {
+        return Collections.unmodifiableList(appointmentList.getAppointments());
     }
 
     /**

@@ -35,6 +35,10 @@ public class AppointmentList {
         sortAppointments();
     }
 
+    public ArrayList<Appointment> getAppointments() {
+        return this.appointments;
+    }
+
     private void sortAppointments() {
         appointments.sort(Comparator.comparing(Appointment::getApptDateTime));
     }
