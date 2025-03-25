@@ -89,9 +89,9 @@ class JsonAdaptedPerson {
         if (nric == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Nric.class.getSimpleName()));
         }
-        //if (!Nric(nric)) {
-        //    throw new IllegalValueException(Address.MESSAGE_CONSTRAINTS);
-        //}
+        if (!Nric.isValidNric(nric)) {
+            throw new IllegalValueException(Nric.MESSAGE_CONSTRAINTS);
+        }
         final Nric modelNric = new Nric(nric);
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
