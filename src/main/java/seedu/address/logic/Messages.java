@@ -42,6 +42,8 @@ public class Messages {
                 .append(person.getPhone())
                 .append("; NRIC: ")
                 .append(person.getNric())
+                .append("; Date-of-birth: ")
+                .append(person.getDateOfBirth())
                 .append("; Tags: ");
         person.getTags().forEach(builder::append);
         return builder.toString();
