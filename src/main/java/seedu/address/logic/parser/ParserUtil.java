@@ -116,9 +116,9 @@ public class ParserUtil {
     public static DateOfBirth parseDateOfBirth(String dateOfBirth) throws ParseException {
         requireNonNull(dateOfBirth);
         String trimmedDateOfBirth = dateOfBirth.trim();
-        //if (!Name.isValidName(trimmedNric)) {
-        //    throw new ParseException(Name.MESSAGE_CONSTRAINTS);
-        //}
+        if (!DateOfBirth.isValidDate(trimmedDateOfBirth)) {
+            throw new ParseException(DateOfBirth.MESSAGE_CONSTRAINTS);
+        }
         return new DateOfBirth(trimmedDateOfBirth);
     }
 }
