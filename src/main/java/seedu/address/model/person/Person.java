@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-import seedu.address.appointment.Appointment;
-import seedu.address.appointment.AppointmentList;
+import seedu.address.model.appointment.Appointment;
+import seedu.address.model.appointment.AppointmentList;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.tag.Tag;
 

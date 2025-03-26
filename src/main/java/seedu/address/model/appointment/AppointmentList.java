@@ -1,4 +1,4 @@
-package seedu.address.appointment;
+package seedu.address.model.appointment;
 
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
