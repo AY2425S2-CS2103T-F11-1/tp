@@ -6,7 +6,7 @@
 
 # HubHealth User Guide
 
-HubHealth is built for you, clinic receptionists. HubHealth allows you to manage your patient’s contact and appointments with keyboard commands.
+HubHealth is built for you, clinic receptionists. HubHealth allows you to manage your patient’s contact and appointments with simple keyboard commands.
 
 <!-- * Table of Contents -->
 <page-nav-print />
@@ -38,14 +38,14 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all contacts.
+   * `list` : Lists all patients recorded in HubHealth.
 
-   * `add -N John Doe -P 98765432 -IC S1234567A` : Adds a contact named `John Doe` to HubHealth.
+   * `add -N John Doe -P 98765432 -IC S1234567A` : Adds a patient named `John Doe` to HubHealth.
 
    * `delete -IC <NRIC>` : Deletes the patient with the given NRIC.
 
-   * `clear` : Deletes all contacts.
-
+   * `clear` : Deletes all patients recorded in HubHealth. 
+   
    * `exit` : Exits the app.
 
 1. Refer to the [Features](#features) below for details of each command.
@@ -62,7 +62,7 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
   e.g. in `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`, `<Name>` is a parameter which can be used as `add -N John Doe`.
 
 * Parameters can be in any order.<br>
-  e.g. if the command specifies `-N <Name> and -P <Phone_Number>`, `-P <Phone_Number> -N <Name>` is also acceptable.
+  e.g. if the command specifies `-N <Name> -P <Phone_Number>` in the command format, `-P <Phone_Number> -N <Name>` is also acceptable.
 
 * Items in square brackets are optional.<br>
   e.g `find <Name> [MORE_NAMES]` can be used as `find Alex` or as `find Alex David`.
@@ -97,10 +97,8 @@ Shows you a list of all patients in the address book.
 
 Format: `list`
 
-<box type="tip" seamless>
-
-**Tip:** You can also use `ls` to list all patients in the address book.
-</box>
+> [!TIP]
+> You can also use `ls` to list all patients in the address book.
 
 ### Locating patients by name: `find`
 
@@ -141,6 +139,12 @@ Format: `remove -IC <NRIC>`
 Clears all entries from the address book.
 
 Format: `clear`
+
+> [!TIP]
+> This is a useful first step to creating your own patient record: Deleting the existing sample data.
+
+> [!WARNING]
+> We do not support undoing commands yet. Clearing of patient records is thus permanent. Use this command wisely.
 
 ### Exiting the program : `exit`
 
