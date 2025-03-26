@@ -111,7 +111,7 @@ Format: `find <Name> [MORE_NAMES]`
 * Only the name is searched.
 * Only full words will be matched e.g. `Han` will not match `Hans`
 * Patients whose name is matching with at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+  e.g. Finding `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
 * `find John` returns `john` and `John Doe`
@@ -128,7 +128,7 @@ Examples:
 
 ### Removing a patient : `remove`
 
-Allows you to remove the specified patient from the address book.
+Allows you to remove the specified patient from HubHealth.
 
 Format: `remove -IC <NRIC>`
 
@@ -136,12 +136,12 @@ Format: `remove -IC <NRIC>`
 
 ### Clearing all entries : `clear`
 
-Clears all entries from the address book.
+Clears all entries from HubHealth.
 
 Format: `clear`
 
 > [!TIP]
-> This is a useful first step to creating your own patient record: Deleting the existing sample data.
+> A useful first step to creating your own patient record: Deleting the existing sample data.
 
 > [!WARNING]
 > We do not support undoing commands yet. Clearing of patient records is thus permanent. Use this command wisely.
@@ -162,10 +162,11 @@ AddressBook data are saved automatically as a JSON file `[JAR file location]/dat
 
 <box type="warning" seamless>
 
-**Caution:**
-If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
+
+> [!CAUTION]
+> If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
-</box>
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -187,7 +188,7 @@ Furthermore, certain edits can cause the AddressBook to behave in unexpected way
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `add add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_of_Birth> <br>` e.g., `add -IC T0000000A -N John Doe -P 81234567 -DOB 2005-02-02`
+**Add**    | `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_of_Birth> <br>` e.g., `add -IC T0000000A -N John Doe -P 81234567 -DOB 2005-02-02`
 **Remove** | `remove -IC <NRIC>`
 **View Patient** | `viewp -IC <NRIC>`
 **Find**   | `find <Name> [MORE_NAMES]`<br> e.g., `find James Jake`
