@@ -29,8 +29,8 @@ public class AddApptCommandParser implements Parser<AddApptCommand> {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddApptCommand.MESSAGE_USAGE));
         }
 
-        String ic = argMultimap.getValue(PREFIX_NRIC).get();
-        String date = argMultimap.getValue(PREFIX_DATE).get();
+        String ic = ParserUtil.parseNric(argMultimap.getValue(PREFIX_NRIC).get()).toString();
+        String date = ParserUtil.parseAppointmentDateTime(argMultimap.getValue(PREFIX_DATE).get()).toString();
 
         return new AddApptCommand(ic, date);
     }
