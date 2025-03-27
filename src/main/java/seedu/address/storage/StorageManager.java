@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.exceptions.DataLoadingException;
+import seedu.address.commons.util.FileUtil;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
 import seedu.address.model.UserPrefs;
@@ -26,6 +27,29 @@ public class StorageManager implements Storage {
     public StorageManager(AddressBookStorage addressBookStorage, UserPrefsStorage userPrefsStorage) {
         this.addressBookStorage = addressBookStorage;
         this.userPrefsStorage = userPrefsStorage;
+        
+        // Create necessary directories
+        try {
+            createDirectories();
+        } catch (IOException e) {
+            logger.warning("Failed to create necessary directories: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Create all necessary directories for storage.
+     * This ensures the application can save data even if folders don't exist.
+     */
+    private void createDirectories() throws IOException {
+        Path addressBookParentPath = addressBookStorage.getAddressBookFilePath().getParent();
+        if (addressBookParentPath != null) {
+            FileUtil.createDirectories(addressBookParentPath);
+        }
+        
+        Path userPrefsParentPath = userPrefsStorage.getUserPrefsFilePath().getParent();
+        if (userPrefsParentPath != null) {
+            FileUtil.createDirectories(userPrefsParentPath);
+        }
     }
 
     // ================ UserPrefs methods ==============================
@@ -44,7 +68,6 @@ public class StorageManager implements Storage {
     public void saveUserPrefs(ReadOnlyUserPrefs userPrefs) throws IOException {
         userPrefsStorage.saveUserPrefs(userPrefs);
     }
-
 
     // ================ AddressBook methods ==============================
 
@@ -74,5 +97,4 @@ public class StorageManager implements Storage {
         logger.fine("Attempting to write to data file: " + filePath);
         addressBookStorage.saveAddressBook(addressBook, filePath);
     }
-
 }

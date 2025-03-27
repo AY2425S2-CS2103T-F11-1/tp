@@ -40,8 +40,6 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
 
         this.appointmentList = new AppointmentList();
-        appointmentList.addAppointment("01/01/2025 15:00");
-        appointmentList.addAppointment("02/02/2025 12:00");
         this.tags.addAll(tags);
     }
 
@@ -75,6 +73,23 @@ public class Person {
      */
     public List<Appointment> getAppointmentList() {
         return Collections.unmodifiableList(appointmentList.getAppointments());
+    }
+
+    /**
+     * Adds an appointment to this person.
+     * This method is used by storage to reconstruct a person with their appointments.
+     */
+    public void addAppointment(Appointment appointment) {
+        requireAllNonNull(appointment);
+        this.appointmentList.addAppointment(appointment);
+    }
+
+    /**
+     * Adds an appointment to this person using a string representation.
+     */
+    public void addAppointment(String appointmentString) {
+        requireAllNonNull(appointmentString);
+        this.appointmentList.addAppointment(appointmentString);
     }
 
     /**
