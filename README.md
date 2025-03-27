@@ -19,7 +19,7 @@ _Above: UI to display particulars of a specific patient._
 
 ## Introduction 
 Welcome to **HubHealth**! If you are a clinic receptionist, we can help make your work easier by helping your keep track of patient contacts and appointments.
-You do not need a remote server to run this application. 
+You do not need a remote server to run this application.
 
 ## Features
 

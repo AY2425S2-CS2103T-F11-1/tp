@@ -40,12 +40,12 @@ public class FileUtil {
         if (Files.exists(file)) {
             return false;
         }
-        
+
         createDirectories(file.getParent());
         Files.createFile(file);
         return true;
     }
-    
+
     /**
      * Creates a directory if it does not exist along with its missing parent directories.
      */

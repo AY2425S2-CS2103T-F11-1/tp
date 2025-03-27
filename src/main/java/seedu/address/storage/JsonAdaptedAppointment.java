@@ -12,7 +12,7 @@ import seedu.address.model.appointment.Appointment;
  * Jackson-friendly version of {@link Appointment}.
  */
 class JsonAdaptedAppointment {
-    
+
     private final String appointmentDateTime;
 
     /**
@@ -39,7 +39,7 @@ class JsonAdaptedAppointment {
         if (appointmentDateTime == null) {
             throw new IllegalValueException("Appointment date time is missing!");
         }
-        
+
         try {
             return Appointment.createAppointment(appointmentDateTime);
         } catch (DateTimeParseException e) {
