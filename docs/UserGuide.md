@@ -6,7 +6,7 @@
 
 # HubHealth User Guide
 
-HubHealth is built for you, clinic receptionists. HubHealth allows you to manage your patient’s contact and appointments with keyboard commands.
+HubHealth is built for you, clinic receptionists. HubHealth allows you to manage your patient’s contact and appointments with simple keyboard commands.
 
 <!-- * Table of Contents -->
 <page-nav-print />
@@ -38,14 +38,14 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all contacts.
+   * `list` : Lists all patients recorded in HubHealth.
 
-   * `add -N John Doe -P 98765432 -IC S1234567A` : Adds a contact named `John Doe` to HubHealth.
+   * `add -N John Doe -P 98765432 -IC S1234567A` : Adds a patient named `John Doe` to HubHealth.
 
    * `delete -IC <NRIC>` : Deletes the patient with the given NRIC.
 
-   * `clear` : Deletes all contacts.
-
+   * `clear` : Deletes all patients recorded in HubHealth. 
+   
    * `exit` : Exits the app.
 
 1. Refer to the [Features](#features) below for details of each command.
@@ -62,7 +62,7 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
   e.g. in `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`, `<Name>` is a parameter which can be used as `add -N John Doe`.
 
 * Parameters can be in any order.<br>
-  e.g. if the command specifies `-N <Name> and -P <Phone_Number>`, `-P <Phone_Number> -N <Name>` is also acceptable.
+  e.g. if the command specifies `-N <Name> -P <Phone_Number>` in the command format, `-P <Phone_Number> -N <Name>` is also acceptable.
 
 * Items in square brackets are optional.<br>
   e.g `find <Name> [MORE_NAMES]` can be used as `find Alex` or as `find Alex David`.
@@ -97,10 +97,8 @@ Shows you a list of all patients in the address book.
 
 Format: `list`
 
-<box type="tip" seamless>
-
-**Tip:** You can also use `ls` to list all patients in the address book.
-</box>
+> [!TIP]
+> You can also use `ls` to list all patients in the address book.
 
 ### Locating patients by name: `find`
 
@@ -113,7 +111,7 @@ Format: `find <Name> [MORE_NAMES]`
 * Only the name is searched.
 * Only full words will be matched e.g. `Han` will not match `Hans`
 * Patients whose name is matching with at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+  e.g. Finding `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
 * `find John` returns `john` and `John Doe`
@@ -130,7 +128,7 @@ Examples:
 
 ### Removing a patient : `remove`
 
-Allows you to remove the specified patient from the address book.
+Allows you to remove the specified patient from HubHealth.
 
 Format: `remove -IC <NRIC>`
 
@@ -138,9 +136,15 @@ Format: `remove -IC <NRIC>`
 
 ### Clearing all entries : `clear`
 
-Clears all entries from the address book.
+Clears all entries from HubHealth.
 
 Format: `clear`
+
+> [!TIP]
+> A useful first step to creating your own patient record: Deleting the existing sample data.
+
+> [!WARNING]
+> We do not support undoing commands yet. Clearing of patient records is thus permanent. Use this command wisely.
 
 ### Exiting the program : `exit`
 
@@ -158,10 +162,11 @@ AddressBook data are saved automatically as a JSON file `[JAR file location]/dat
 
 <box type="warning" seamless>
 
-**Caution:**
-If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
+
+> [!CAUTION]
+> If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
-</box>
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -183,7 +188,7 @@ Furthermore, certain edits can cause the AddressBook to behave in unexpected way
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `add add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_of_Birth> <br>` e.g., `add -IC T0000000A -N John Doe -P 81234567 -DOB 2005-02-02`
+**Add**    | `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_of_Birth> <br>` e.g., `add -IC T0000000A -N John Doe -P 81234567 -DOB 2005-02-02`
 **Remove** | `remove -IC <NRIC>`
 **View Patient** | `viewp -IC <NRIC>`
 **Find**   | `find <Name> [MORE_NAMES]`<br> e.g., `find James Jake`

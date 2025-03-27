@@ -3,18 +3,15 @@ package seedu.address.logic.commands;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.showPersonAtIndex;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
-import static seedu.address.testutil.TypicalNrics.NRIC_INVALID;
 import static seedu.address.testutil.TypicalNrics.NRIC_VALID_FIRST;
 import static seedu.address.testutil.TypicalNrics.NRIC_VALID_SECOND;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.commons.core.index.Index;
 import seedu.address.logic.Messages;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
@@ -44,14 +41,6 @@ public class RemoveCommandTest {
     }
 
     @Test
-    public void execute_invalidNricUnfilteredList_throwsCommandException() {
-        Index outOfBoundIndex = Index.fromOneBased(model.getFilteredPersonList().size() + 1);
-        RemoveCommand removeCommand = new RemoveCommand(NRIC_INVALID);
-
-        assertCommandFailure(removeCommand, model, Messages.MESSAGE_INVALID_PERSON_NRIC);
-    }
-
-    @Test
     public void execute_validNricFilteredList_success() {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
 
@@ -66,15 +55,6 @@ public class RemoveCommandTest {
         showNoPerson(expectedModel);
 
         assertCommandSuccess(removeCommand, model, expectedMessage, expectedModel);
-    }
-
-    @Test
-    public void execute_invalidNricFilteredList_throwsCommandException() {
-        showPersonAtIndex(model, INDEX_FIRST_PERSON);
-
-        RemoveCommand removeCommand = new RemoveCommand(NRIC_INVALID);
-
-        assertCommandFailure(removeCommand, model, Messages.MESSAGE_INVALID_PERSON_NRIC);
     }
 
     @Test

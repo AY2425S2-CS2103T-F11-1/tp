@@ -38,6 +38,8 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label nric;
     @FXML
+    private Label dateOfBirth;
+    @FXML
     private FlowPane appointments;
     @FXML
     private FlowPane tags;
@@ -52,6 +54,7 @@ public class PersonCard extends UiPart<Region> {
         name.setText(person.getName().fullName);
         nric.setText(person.getNric().value);
         phone.setText(person.getPhone().value);
+        dateOfBirth.setText(person.getDateOfBirth().value.toString());
         person.getTags().stream()
                  .sorted(Comparator.comparing(tag -> tag.tagName))
                  .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));

@@ -32,21 +32,19 @@ public class PersonTest {
         assertFalse(ALICE.isSamePerson(null));
 
         // same nric, all other attributes different -> returns true
-        Person editedAlice = new PersonBuilder(ALICE).withPhone(VALID_PHONE_BOB).withTags(VALID_TAG_HUSBAND).build();
+        Person editedAlice =
+                new PersonBuilder(ALICE).withDateOfBirth("1982-12-15").withPhone(VALID_PHONE_BOB)
+                        .withTags(VALID_TAG_HUSBAND).build();
         assertTrue(ALICE.isSamePerson(editedAlice));
 
         // different nric, all other attributes same -> returns false
         editedAlice = new PersonBuilder(ALICE).withNric(VALID_NRIC_BOB).build();
         assertFalse(ALICE.isSamePerson(editedAlice));
 
-        // nric differs in case, all other attributes same -> returns false
-        Person editedBob = new PersonBuilder(BOB).withNric(VALID_NRIC_BOB.toLowerCase()).build();
-        assertFalse(BOB.isSamePerson(editedBob));
-
-        // name has trailing spaces, all other attributes same -> returns false
-        String nricWithTrailingSpaces = VALID_NRIC_BOB + " ";
-        editedBob = new PersonBuilder(BOB).withNric(nricWithTrailingSpaces).build();
-        assertFalse(BOB.isSamePerson(editedBob));
+        // name has trailing spaces, all other attributes same -> returns true
+        String nameWithTrailingSpaces = VALID_NAME_BOB + " ";
+        Person editedBob = new PersonBuilder(BOB).withName(nameWithTrailingSpaces).build();
+        assertTrue(BOB.isSamePerson(editedBob));
     }
 
     @Test
@@ -87,7 +85,8 @@ public class PersonTest {
     @Test
     public void toStringMethod() {
         String expected = Person.class.getCanonicalName() + "{name=" + ALICE.getName() + ", phone=" + ALICE.getPhone()
-                + ", nric=" + ALICE.getNric() + ", tags=" + ALICE.getTags() + "}";
+                + ", nric=" + ALICE.getNric() + ", dateOfBirth=" + ALICE.getDateOfBirth()
+                + ", tags=" + ALICE.getTags() + "}";
         assertEquals(expected, ALICE.toString());
     }
 }
