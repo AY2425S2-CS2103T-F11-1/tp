@@ -22,7 +22,7 @@ public class ViewpCommand extends Command {
             + "Parameters: " + PREFIX_NRIC + "NRIC\n"
             + "Example: " + COMMAND_WORD + " " + PREFIX_NRIC + "S1234567A";
 
-    public static final String MESSAGE_PATIENT_FOUND = "Patient found: %1$s";
+    public static final String MESSAGE_PATIENT_FOUND = "Patient found: %1$s \nNRIC: %2$s\nPhone: %3$s\nDOB: %4$s\n";
     public static final String MESSAGE_PATIENT_NOT_FOUND = "Patient with NRIC %1$s not found";
 
     private final String nric;
@@ -39,8 +39,8 @@ public class ViewpCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
 
-        model.updateFilteredPersonList(new NricPredicate(nric));
-        List<Person> filteredPersons = model.getFilteredPersonList();
+        model.updateFilteredPersonList(new NricPredicate(nric)); // filters person list
+        List<Person> filteredPersons = model.getFilteredPersonList(); // get filtered person list
 
         if (filteredPersons.isEmpty()) {
             throw new CommandException(String.format(MESSAGE_PATIENT_NOT_FOUND, nric));
@@ -48,7 +48,9 @@ public class ViewpCommand extends Command {
 
         // We expect only one person to match by NRIC since NRIC is unique
         Person patientFound = filteredPersons.get(0);
-        return new CommandResult(String.format(MESSAGE_PATIENT_FOUND, patientFound.getName()));
+        return new CommandResult(String.format(MESSAGE_PATIENT_FOUND,
+                    patientFound.getName(), patientFound.getNric(),
+                    patientFound.getPhone(), patientFound.getDateOfBirth()));
     }
 
     @Override

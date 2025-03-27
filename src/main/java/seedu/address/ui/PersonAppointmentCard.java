@@ -1,12 +1,14 @@
 package seedu.address.ui;
 
-import java.util.Comparator;
+import java.util.List;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
+import seedu.address.appointment.Appointment;
 import seedu.address.model.person.Person;
 
 /**
@@ -29,33 +31,38 @@ public class PersonAppointmentCard extends UiPart<Region> {
     @FXML
     private HBox cardPane;
     @FXML
-    private Label name;
-    @FXML
     private Label id;
     @FXML
-    private Label phone;
-    @FXML
-    private Label nric;
-    @FXML
     private FlowPane appointments;
-    @FXML
-    private FlowPane tags;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
      */
-    public PersonAppointmentCard(Person person, int displayedIndex) {
+    public PersonAppointmentCard(Person person, int appointmentIndex) {
         super(FXML);
         this.person = person;
-        id.setText(displayedIndex + ". ");
-        name.setText(person.getName().fullName);
-        nric.setText(person.getNric().value);
-        phone.setText(person.getPhone().value);
-        person.getAppointmentList().stream()
-                .sorted(Comparator.comparing(appointment -> appointment.toString()))
-                .forEach(appointment -> appointments.getChildren().add(new Label(appointment.toString())));
-        person.getTags().stream()
-                 .sorted(Comparator.comparing(tag -> tag.tagName))
-                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+
+        VBox appointmentsContainer = new VBox();
+        appointmentsContainer.setSpacing(5);
+        List<Appointment> appointmentList = person.getAppointmentList();
+
+        for (int i = 0; i < appointmentList.size(); i++) {
+            VBox appointmentCard = new VBox();
+            appointmentCard.setStyle("-fx-border-color: #ffffff; "
+                    + "-fx-border-radius: 5; -fx-padding: 5; -fx-background-color: #f9f9f9;");
+
+            Label title = new Label("Appointment " + (i + 1));
+            title.setStyle("-fx-font-weight: bold;");
+
+            Label time = new Label("Time: " + appointmentList.get(i));
+
+            System.out.println(title);
+            System.out.println(time);
+
+            appointmentCard.getChildren().addAll(title, time);
+            appointmentsContainer.getChildren().add(appointmentCard);
+        }
+
+        appointments.getChildren().add(appointmentsContainer);
     }
 }

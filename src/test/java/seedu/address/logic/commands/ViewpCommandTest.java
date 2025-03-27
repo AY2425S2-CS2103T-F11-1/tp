@@ -32,7 +32,8 @@ public class ViewpCommandTest {
 
     @Test
     public void execute_validNric_personFound() throws Exception {
-        Person personWithNric = new PersonBuilder().withName("John Doe").withNric("S1234567A").build();
+        Person personWithNric = new PersonBuilder().withName("John Doe").withNric("S1234567A")
+            .withPhone("98765432").withDateOfBirth("1991-01-01").build();
         model.addPerson(personWithNric);
         expectedModel.addPerson(personWithNric);
 
@@ -40,7 +41,9 @@ public class ViewpCommandTest {
         expectedModel.updateFilteredPersonList(new NricPredicate("S1234567A"));
 
         assertCommandSuccess(viewpCommand, model,
-            String.format(ViewpCommand.MESSAGE_PATIENT_FOUND, personWithNric.getName()), expectedModel);
+            String.format(ViewpCommand.MESSAGE_PATIENT_FOUND,
+                personWithNric.getName(), personWithNric.getNric(),
+                personWithNric.getPhone(), personWithNric.getDateOfBirth()), expectedModel);
     }
 
     @Test
