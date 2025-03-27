@@ -12,7 +12,7 @@ public class AppointmentListTest {
         AppointmentList appointmentList = new AppointmentList();
         String appointmentStr = "01/01/2025 15:00";
         appointmentList.addAppointment(appointmentStr);
-        
+
         assertEquals(1, appointmentList.getAppointments().size());
         assertTrue(appointmentList.getAppointments().get(0).toString().equals(appointmentStr));
     }
@@ -22,7 +22,7 @@ public class AppointmentListTest {
         AppointmentList appointmentList = new AppointmentList();
         Appointment appointment = Appointment.createAppointment("01/01/2025 15:00");
         appointmentList.addAppointment(appointment);
-        
+
         assertEquals(1, appointmentList.getAppointments().size());
         assertEquals(appointment, appointmentList.getAppointments().get(0));
     }
@@ -32,7 +32,7 @@ public class AppointmentListTest {
         AppointmentList appointmentList = new AppointmentList();
         appointmentList.addAppointment("01/01/2025 15:00");
         appointmentList.addAppointment("02/01/2025 16:00");
-        
+
         appointmentList.removeAppointment(1);
         assertEquals(1, appointmentList.getAppointments().size());
         assertTrue(appointmentList.getAppointments().get(0).toString().equals("02/01/2025 16:00"));

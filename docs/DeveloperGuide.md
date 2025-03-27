@@ -333,7 +333,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 - 1a. HubHealth detects an error in the entered details.
     - 1a1. HubHealth shows an error message.
-        
+
         Use case ends.
 
 - 1b. HubHealth detects that the patient exists in the list.

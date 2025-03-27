@@ -74,9 +74,9 @@ public class StorageManagerTest {
         Path deepPath = testFolder.resolve("a/b/c/test.json");
         JsonAddressBookStorage addressBookStorage = new JsonAddressBookStorage(deepPath);
         JsonUserPrefsStorage userPrefsStorage = new JsonUserPrefsStorage(testFolder.resolve("prefs"));
-        
+
         new StorageManager(addressBookStorage, userPrefsStorage); // This should create directories
-        
+
         // Verify parent directories were created
         assertTrue(Files.exists(deepPath.getParent()));
     }
