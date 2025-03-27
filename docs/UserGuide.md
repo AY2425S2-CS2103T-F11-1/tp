@@ -97,8 +97,11 @@ Shows you a list of all patients in the address book.
 
 Format: `list`
 
-> [!TIP]
-> You can also use `ls` to list all patients in the address book.
+
+<box type="tip" seamless>
+
+**Tip:** You can also use `ls` to list all patients in the address book.
+</box>
 
 ### Locating patients by name: `find`
 
@@ -140,11 +143,13 @@ Clears all entries from HubHealth.
 
 Format: `clear`
 
-> [!TIP]
-> A useful first step to creating your own patient record: Deleting the existing sample data.
+<box type="tip" seamless>
+A useful first step to creating your own patient record: Deleting the existing sample data.
+</box>
 
-> [!WARNING]
-> We do not support undoing commands yet. Clearing of patient records is thus permanent. Use this command wisely.
+<box type="warning" seamless>
+We do not support undoing commands yet. Clearing of patient records is thus permanent. Use this command wisely.
+</box>
 
 ### Exiting the program : `exit`
 
@@ -160,12 +165,11 @@ AddressBook data are saved in the hard disk automatically after any command that
 
 AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
 
+
 <box type="warning" seamless>
-
-
-> [!CAUTION]
-> If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
+If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+</box>
 
 
 --------------------------------------------------------------------------------------------------------------------
