@@ -40,9 +40,6 @@ public class AddApptCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
         try {
-            // This call assumes your Model class has a method:
-            // addAppointment(String ic, String date)
-            //AppointmentList.addAppointment(ic, date);
             return new CommandResult(String.format(MESSAGE_SUCCESS, ic, date));
         } catch (Exception e) {
             throw new CommandException(String.format(MESSAGE_FAILURE, e.getMessage()));
