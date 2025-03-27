@@ -6,6 +6,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.appointment.AppointmentList;
 import seedu.address.model.appointment.Appointment;
+import seedu.address.model.person.Nric;
 
 /**
  * Adds an appointment to a person's appointment list.
@@ -31,7 +32,7 @@ public class AddApptCommand extends Command {
      * @param ic   The IC number of the person.
      * @param date The appointment date in dd/MM/yyyy HH:mm format.
      */
-    public AddApptCommand(String ic, String date) {
+    public AddApptCommand(Nric ic, String date) {
         requireNonNull(ic);
         requireNonNull(date);
         this.ic = ic;
