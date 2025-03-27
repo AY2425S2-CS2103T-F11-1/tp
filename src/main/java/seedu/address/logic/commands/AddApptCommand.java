@@ -32,7 +32,7 @@ public class AddApptCommand extends Command {
      * @param ic   The IC number of the person.
      * @param date The appointment date in dd/MM/yyyy HH:mm format.
      */
-    public AddApptCommand(Nric ic, String date) {
+    public AddApptCommand(String ic, String date) {
         requireNonNull(ic);
         requireNonNull(date);
         this.ic = ic;
