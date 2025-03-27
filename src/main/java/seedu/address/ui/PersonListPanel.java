@@ -35,7 +35,7 @@ public class PersonListPanel extends UiPart<Region> {
         isShowAppointments = show;
     }
 
-    public static boolean isShowAppointments() {
+    private static boolean isShowAppointments() {
         return isShowAppointments;
     }
 
