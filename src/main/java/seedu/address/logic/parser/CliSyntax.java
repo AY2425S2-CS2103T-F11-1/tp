@@ -11,4 +11,5 @@ public class CliSyntax {
     public static final Prefix PREFIX_NRIC = new Prefix("-IC ");
     public static final Prefix PREFIX_DOB = new Prefix("-DOB ");
     public static final Prefix PREFIX_TAG = new Prefix("-T ");
+    public static final Prefix PREFIX_INDEX = new Prefix("-I ");
 }

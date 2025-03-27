@@ -4,8 +4,6 @@ import static java.util.Objects.requireNonNull;
 
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.appointment.AppointmentList;
-import seedu.address.model.appointment.Appointment;
 
 /**
  * Adds an appointment to a person's appointment list.
