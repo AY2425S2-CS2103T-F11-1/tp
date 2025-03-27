@@ -98,9 +98,9 @@ class JsonAdaptedPerson {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
                     DateOfBirth.class.getSimpleName()));
         }
-        //if (!Phone.isValidPhone(phone)) {
-        //      throw new IllegalValueException(Phone.MESSAGE_CONSTRAINTS);
-        //}
+        if (!DateOfBirth.isValidDate(dateOfBirth)) {
+              throw new IllegalValueException(DateOfBirth.MESSAGE_CONSTRAINTS);
+        }
         final DateOfBirth modelDateOfBirth = new DateOfBirth(dateOfBirth);
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
