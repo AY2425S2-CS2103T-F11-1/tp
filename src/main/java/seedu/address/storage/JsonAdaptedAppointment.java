@@ -43,7 +43,11 @@ class JsonAdaptedAppointment {
         try {
             return Appointment.createAppointment(appointmentDateTime);
         } catch (DateTimeParseException e) {
-            throw new DateTimeParseException("Invalid date format. Please use dd/MM/yyyy HH:mm.", appointmentDateTime, 0);
+            throw new DateTimeParseException(
+                "Invalid date format. Please use dd/MM/yyyy HH:mm.",
+                appointmentDateTime,
+                0
+                );
         }
     }
 }
