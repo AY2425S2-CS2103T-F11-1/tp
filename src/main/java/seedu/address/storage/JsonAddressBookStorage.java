@@ -76,7 +76,7 @@ public class JsonAddressBookStorage implements AddressBookStorage {
 
         // Ensure parent directory exists
         FileUtil.createIfMissing(filePath.getParent());
-        
+
         JsonUtil.saveJsonFile(new JsonSerializableAddressBook(addressBook), filePath);
     }
 }

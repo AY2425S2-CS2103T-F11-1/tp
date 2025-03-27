@@ -119,12 +119,12 @@ class JsonAdaptedPerson {
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
         Person person = new Person(modelName, modelPhone, modelNric, modelDateOfBirth, modelTags);
-        
+
         // Add all appointments to the person
         for (Appointment appointment : personAppointments) {
             person.addAppointment(appointment);
         }
-        
+
         return person;
     }
 }

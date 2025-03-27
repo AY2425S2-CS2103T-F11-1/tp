@@ -27,7 +27,7 @@ public class StorageManager implements Storage {
     public StorageManager(AddressBookStorage addressBookStorage, UserPrefsStorage userPrefsStorage) {
         this.addressBookStorage = addressBookStorage;
         this.userPrefsStorage = userPrefsStorage;
-        
+
         // Create necessary directories
         try {
             createDirectories();
@@ -45,7 +45,7 @@ public class StorageManager implements Storage {
         if (addressBookParentPath != null) {
             FileUtil.createDirectories(addressBookParentPath);
         }
-        
+
         Path userPrefsParentPath = userPrefsStorage.getUserPrefsFilePath().getParent();
         if (userPrefsParentPath != null) {
             FileUtil.createDirectories(userPrefsParentPath);

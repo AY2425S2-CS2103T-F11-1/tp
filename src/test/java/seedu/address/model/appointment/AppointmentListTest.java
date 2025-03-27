@@ -43,7 +43,7 @@ public class AppointmentListTest {
         AppointmentList appointmentList = new AppointmentList();
         appointmentList.addAppointment("02/01/2025 16:00"); // Add later appointment first
         appointmentList.addAppointment("01/01/2025 15:00"); // Add earlier appointment second
-        
+
         // Should be sorted chronologically
         assertEquals("01/01/2025 15:00", appointmentList.getAppointments().get(0).toString());
         assertEquals("02/01/2025 16:00", appointmentList.getAppointments().get(1).toString());
