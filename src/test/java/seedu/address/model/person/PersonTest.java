@@ -13,6 +13,7 @@ import static seedu.address.testutil.TypicalPersons.BOB;
 
 import org.junit.jupiter.api.Test;
 
+import seedu.address.model.appointment.Appointment;
 import seedu.address.testutil.PersonBuilder;
 
 public class PersonTest {
@@ -21,6 +22,29 @@ public class PersonTest {
     public void asObservableList_modifyList_throwsUnsupportedOperationException() {
         Person person = new PersonBuilder().build();
         assertThrows(UnsupportedOperationException.class, () -> person.getTags().remove(0));
+    }
+
+    @Test
+    public void getAppointmentList_modifyList_throwsUnsupportedOperationException() {
+        Person person = new PersonBuilder().build();
+        assertThrows(UnsupportedOperationException.class, () -> person.getAppointmentList().remove(0));
+    }
+
+    @Test
+    public void addAppointment_validAppointment_success() {
+        Person person = new PersonBuilder().build();
+        String appointmentDateTime = "01/01/2025 15:00";
+        person.addAppointment(appointmentDateTime);
+        assertTrue(person.getAppointmentList().stream()
+                .anyMatch(appointment -> appointment.toString().equals(appointmentDateTime)));
+    }
+
+    @Test
+    public void addAppointment_validAppointmentObject_success() {
+        Person person = new PersonBuilder().build();
+        Appointment appointment = Appointment.createAppointment("01/01/2025 15:00");
+        person.addAppointment(appointment);
+        assertTrue(person.getAppointmentList().contains(appointment));
     }
 
     @Test

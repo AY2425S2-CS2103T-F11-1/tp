@@ -27,7 +27,7 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 1. Copy the file to the folder you want to use as the _home folder_ for HubHealth.
 
 1. Open a command terminal, and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in. <br>
-  For instance, if the application is in the Downloads folder, the command you enter should look something like `cd 
+  For instance, if the application is in the Downloads folder, the command you enter should look something like `cd
  C:\Users\user\Downloads`<br>
    (You can find the location of the application by right-clicking on it, and selecting `Properties` or `Get info` for Windows and Mac users.)
 
@@ -44,8 +44,8 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 
    * `delete -IC <NRIC>` : Deletes the patient with the given NRIC.
 
-   * `clear` : Deletes all patients recorded in HubHealth. 
-   
+   * `clear` : Deletes all patients recorded in HubHealth.
+
    * `exit` : Exits the app.
 
 1. Refer to the [Features](#features) below for details of each command.

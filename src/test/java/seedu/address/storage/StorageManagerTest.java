@@ -2,8 +2,11 @@ package seedu.address.storage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -65,4 +68,16 @@ public class StorageManagerTest {
         assertNotNull(storageManager.getAddressBookFilePath());
     }
 
+    @Test
+    public void createDirectories_nonExistentParentFolders_directoriesCreated() throws IOException {
+        // Create a path with non-existent parent folders
+        Path deepPath = testFolder.resolve("a/b/c/test.json");
+        JsonAddressBookStorage addressBookStorage = new JsonAddressBookStorage(deepPath);
+        JsonUserPrefsStorage userPrefsStorage = new JsonUserPrefsStorage(testFolder.resolve("prefs"));
+
+        new StorageManager(addressBookStorage, userPrefsStorage); // This should create directories
+
+        // Verify parent directories were created
+        assertTrue(Files.exists(deepPath.getParent()));
+    }
 }

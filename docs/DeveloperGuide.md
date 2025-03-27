@@ -317,97 +317,97 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 1. User requests to see a list all of the patients.
 2. HubHealth shows a list of patients.
-    
+
     Use case ends.
-    
+
 #### **Use case: UC02 Add a patient**
 
 **MSS**
 
 1. User requests to add a new patient into the list.
 2. Hubhealth adds the new patient into the list.
-    
+
     Use case ends.
-    
+
 **Extensions**
 
 - 1a. HubHealth detects an error in the entered details.
     - 1a1. HubHealth shows an error message.
-        
+
         Use case ends.
-        
+
 - 1b. HubHealth detects that the patient exists in the list.
     - 1b1. HubHealth shows an error message.
-        
+
         Use case ends.
-        
+
 #### **Use case: UC03 Remove a patient**
 
 **MSS**
 
 1. User requests to remove a patient from the list.
 2. HubHealth removes the patient from the list.
-    
+
     Use case ends.
 
 **Extensions**
 
 - 1a. HubHealth detects that the patient does not exist.
     - 1a1. HubHealth shows an error message.
-        
+
         Use case ends.
-        
+
 #### **Use case: UC04 View a patient's details**
 
 **MSS**
 
 1. User requests to view a patient’s details.
 2. HubHealth shows the patient’s details.
-    
+
     Use case ends.
-    
+
 **Extensions**
 
 - 1a. HubHealth detects that the patient does not exist.
     - 1a1. HubHealth shows an error message.
-        
+
         Use case ends.
-        
+
 #### **Use case: UC05 Add an appointment to a patient**
 
 **MSS**
 
 1. User requests to add an appointment to a patient.
 2. HubHealth updates and shows the patient’s details.
-    
+
     Use case ends.
-    
+
 **Extensions**
 
 - 1a. HubHealth detects an error in the entered details.
     - 1a1. HubHealth shows an error message.
-        
+
         Use case ends.
-        
+
 - 1b. HubHealth detects that the patient does not exist.
     - 1b1. HubHealth shows an error message.
-        
+
         Use case ends.
-        
+
 #### **Use case: UC06 Delete an appointment from a patient**
 
 **MSS**
 
 1. User requests to remove an appointment from a patient.
 2. HubHealth updates and shows the patient’s details.
-    
+
     Use case ends.
 
 **Extensions**
 
 - 1a. HubHealth detects that the patient or the appointment does not exist.
     - 1a1. HubHealth shows an error message.
-        
+
         Use case ends.
 
 *{More to be added}*

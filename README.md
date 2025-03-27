@@ -17,9 +17,9 @@ _Above: UI to display patient search results._
 
 _Above: UI to display particulars of a specific patient._
 
-## Introduction 
+## Introduction
 Welcome to **HubHealth**! If you are a clinic receptionist, we can help make your work easier by helping your keep track of patient contacts and appointments.
-You do not need a remote server to run this application. 
+You do not need a remote server to run this application.
 
 ## Features
 
@@ -37,7 +37,7 @@ HubHealth has all the features you will need to keep track of patient informatio
 For a more in-depth explanation about each feature, visit the full documentation and user guide at **[Documentation](#documentation)**.
 
 ## System Requirements (To be updated)
-This application requires Java 17 to run. 
+This application requires Java 17 to run.
 
 ## Documentation (To be updated)
 * For the detailed documentation of this project, see the **[HubHealth Product Website](https://ay2425s2-cs2103t-f11-1.github.io/tp/)**.
