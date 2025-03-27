@@ -1,7 +1,6 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NRIC;
 
 import java.util.stream.Stream;
@@ -13,11 +12,10 @@ import seedu.address.model.person.Nric;
 
 /**
  * Parses input arguments and creates a new AddApptCommand object.
- * Expected format: "addappt -IC <IC number> -D <date in dd/MM/yyyy HH:mm format>"
+ * Expected format: "addappt -IC <IC number> -D date in dd/MM/yyyy HH:mm format"
  */
 public class AddApptCommandParser implements Parser<AddApptCommand> {
 
-    public static final Prefix PREFIX_IC = new Prefix("-IC");
     public static final Prefix PREFIX_DATE = new Prefix("-D");
 
     /**
@@ -28,15 +26,15 @@ public class AddApptCommandParser implements Parser<AddApptCommand> {
     public AddApptCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_NRIC, PREFIX_DATE);
 
-        if (!arePrefixesPresent(argMultimap, PREFIX_IC, PREFIX_DATE)
+        if (!arePrefixesPresent(argMultimap, PREFIX_NRIC, PREFIX_DATE)
                 || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddApptCommand.MESSAGE_USAGE));
         }
 
-        Nric nric = ParserUtil.parseNric(argMultimap.getValue(PREFIX_NAME).get());
+        String ic = argMultimap.getValue(PREFIX_NRIC).get();
         String date = argMultimap.getValue(PREFIX_DATE).get();
 
-        return new AddApptCommand(nric, date);
+        return new AddApptCommand(ic, date);
     }
 
     /**

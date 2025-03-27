@@ -3,6 +3,7 @@ package seedu.address.testutil;
 import java.util.HashSet;
 import java.util.Set;
 
+import seedu.address.model.person.DateOfBirth;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Nric;
 import seedu.address.model.person.Person;
@@ -17,13 +18,13 @@ public class PersonBuilder {
 
     public static final String DEFAULT_NAME = "Amy Bee";
     public static final String DEFAULT_PHONE = "85355255";
-    public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_NRIC = "S8798863E";
-    public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
+    public static final String DEFAULT_DOB = "1991-01-01";
 
     private Name name;
     private Phone phone;
     private Nric nric;
+    private DateOfBirth dateOfBirth;
     private Set<Tag> tags;
 
     /**
@@ -33,6 +34,7 @@ public class PersonBuilder {
         name = new Name(DEFAULT_NAME);
         phone = new Phone(DEFAULT_PHONE);
         nric = new Nric(DEFAULT_NRIC);
+        dateOfBirth = new DateOfBirth(DEFAULT_DOB);
         tags = new HashSet<>();
     }
 
@@ -43,6 +45,7 @@ public class PersonBuilder {
         name = personToCopy.getName();
         phone = personToCopy.getPhone();
         nric = personToCopy.getNric();
+        dateOfBirth = personToCopy.getDateOfBirth();
         tags = new HashSet<>(personToCopy.getTags());
     }
 
@@ -78,8 +81,16 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code DOB} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = new DateOfBirth(dateOfBirth);
+        return this;
+    }
+
     public Person build() {
-        return new Person(name, phone, nric, tags);
+        return new Person(name, phone, nric, dateOfBirth, tags);
     }
 
 }

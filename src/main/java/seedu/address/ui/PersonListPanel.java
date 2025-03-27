@@ -15,6 +15,8 @@ import seedu.address.model.person.Person;
  */
 public class PersonListPanel extends UiPart<Region> {
     private static final String FXML = "PersonListPanel.fxml";
+    //Assisted with GPT
+    private static boolean isShowAppointments = false;
     private final Logger logger = LogsCenter.getLogger(PersonListPanel.class);
 
     @FXML
@@ -29,6 +31,14 @@ public class PersonListPanel extends UiPart<Region> {
         personListView.setCellFactory(listView -> new PersonListViewCell());
     }
 
+    public static void setShowAppointments(boolean show) {
+        isShowAppointments = show;
+    }
+
+    public static boolean isShowAppointments() {
+        return isShowAppointments;
+    }
+
     /**
      * Custom {@code ListCell} that displays the graphics of a {@code Person} using a {@code PersonCard}.
      */
@@ -40,6 +50,8 @@ public class PersonListPanel extends UiPart<Region> {
             if (empty || person == null) {
                 setGraphic(null);
                 setText(null);
+            } else if (PersonListPanel.isShowAppointments()) {
+                setGraphic(new PersonAppointmentCard(person, getIndex() + 1).getRoot());
             } else {
                 setGraphic(new PersonCard(person, getIndex() + 1).getRoot());
             }
