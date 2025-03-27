@@ -4,6 +4,10 @@ import static java.util.Objects.requireNonNull;
 
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
+import seedu.address.model.person.NricPredicate;
+import seedu.address.model.person.Person;
+
+import java.util.List;
 
 /**
  * Adds an appointment to a person's appointment list.
@@ -16,6 +20,9 @@ public class AddApptCommand extends Command {
             + ": Adds an appointment for a person identified by their IC number.\n"
             + "Parameters: -IC <IC number> -D <date in dd/MM/yyyy HH:mm format>\n"
             + "Example: " + COMMAND_WORD + " -IC S1234567A -D 12/03/2025 14:30";
+
+    public static final String MESSAGE_PATIENT_FOUND = "Patient found: %1$s";
+    public static final String MESSAGE_PATIENT_NOT_FOUND = "Patient with NRIC %1$s not found";
 
     public static final String MESSAGE_SUCCESS = "New appointment added for person with IC %1$s on %2$s";
     public static final String MESSAGE_FAILURE = "Failed to add appointment: %1$s";
@@ -39,11 +46,19 @@ public class AddApptCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        try {
-            return new CommandResult(String.format(MESSAGE_SUCCESS, ic, date));
-        } catch (Exception e) {
-            throw new CommandException(String.format(MESSAGE_FAILURE, e.getMessage()));
+
+        model.updateFilteredPersonList(new NricPredicate(ic));
+        List<Person> filteredPersons = model.getFilteredPersonList();
+
+        if (filteredPersons.isEmpty()) {
+            throw new CommandException(String.format(MESSAGE_PATIENT_NOT_FOUND, ic));
         }
+
+        // We expect only one person to match by NRIC since NRIC is unique
+        Person patientFound = filteredPersons.get(0);
+        patientFound.addAppointment(date);
+
+        return new CommandResult(String.format(MESSAGE_SUCCESS, ic, date));
     }
 
     @Override
