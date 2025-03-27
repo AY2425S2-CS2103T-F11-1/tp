@@ -9,7 +9,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
  * Parses input arguments and creates a new RmApptCommand object.
- * Expected format: "rmappt -IC <NRIC> -I <Appointment Index>"
+ * Expected format: "rmappt -IC NRIC -I Appointment Index"
  */
 public class RmApptCommandParser implements Parser<RmApptCommand> {
 

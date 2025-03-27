@@ -9,7 +9,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 
 /**
  * Parses input arguments and creates a new AddApptCommand object.
- * Expected format: "addappt -IC <IC number> -D <date in dd/MM/yyyy HH:mm format>"
+ * Expected format: "addappt -IC ICnumber -D date in dd/MM/yyyy HH:mm format"
  */
 public class AddApptCommandParser implements Parser<AddApptCommand> {
 
