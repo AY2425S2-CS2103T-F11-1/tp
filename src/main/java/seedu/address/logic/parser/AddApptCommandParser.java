@@ -8,11 +8,9 @@ import java.util.stream.Stream;
 import seedu.address.logic.commands.AddApptCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
-import seedu.address.model.person.Nric;
-
 /**
  * Parses input arguments and creates a new AddApptCommand object.
- * Expected format: "addappt -IC <IC number> -D date in dd/MM/yyyy HH:mm format"
+ * Expected format: "addappt -IC ICnumber -D date in dd/MM/yyyy HH:mm format"
  */
 public class AddApptCommandParser implements Parser<AddApptCommand> {
 
