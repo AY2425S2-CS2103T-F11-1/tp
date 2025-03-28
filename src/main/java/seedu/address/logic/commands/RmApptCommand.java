@@ -4,6 +4,10 @@ import static java.util.Objects.requireNonNull;
 
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
+import seedu.address.model.person.NricPredicate;
+import seedu.address.model.person.Person;
+
+import java.util.List;
 
 /**
  * Removes an appointment for a person identified by their NRIC.
@@ -19,6 +23,8 @@ public class RmApptCommand extends Command {
 
     public static final String MESSAGE_SUCCESS = "Appointment at index %1$d removed for person with NRIC %2$s.";
     public static final String MESSAGE_FAILURE = "Failed to remove appointment: %1$s";
+
+    public static final String MESSAGE_PATIENT_NOT_FOUND = "Patient with NRIC %1$s not found";
 
     private final String nric;
     private final int index;
@@ -38,12 +44,20 @@ public class RmApptCommand extends Command {
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        try {
-            //model.removeAppointment(nric, index);
-            return new CommandResult(String.format(MESSAGE_SUCCESS, index, nric));
-        } catch (Exception e) {
-            throw new CommandException(String.format(MESSAGE_FAILURE, e.getMessage()));
+
+        List<Person> filteredPersons = model.getFilteredPersonList();
+
+        if (filteredPersons.isEmpty()) {
+            throw new CommandException(String.format(MESSAGE_PATIENT_NOT_FOUND, nric));
         }
+
+        // We expect only one person to match by NRIC since NRIC is unique
+        Person patientFound = filteredPersons.get(0);
+        patientFound.removeAppointment(index);
+
+        model.updateFilteredPersonList(new NricPredicate(nric));
+
+        return new CommandResult(String.format(MESSAGE_SUCCESS, index, nric));
     }
 
     @Override

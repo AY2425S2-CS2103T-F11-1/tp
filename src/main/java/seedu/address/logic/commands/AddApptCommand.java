@@ -47,7 +47,6 @@ public class AddApptCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
 
-        model.updateFilteredPersonList(new NricPredicate(ic));
         List<Person> filteredPersons = model.getFilteredPersonList();
 
         if (filteredPersons.isEmpty()) {
@@ -57,6 +56,8 @@ public class AddApptCommand extends Command {
         // We expect only one person to match by NRIC since NRIC is unique
         Person patientFound = filteredPersons.get(0);
         patientFound.addAppointment(date);
+
+        model.updateFilteredPersonList(new NricPredicate(ic));
 
         return new CommandResult(String.format(MESSAGE_SUCCESS, ic, date));
     }
