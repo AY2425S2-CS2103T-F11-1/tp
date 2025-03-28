@@ -2,6 +2,9 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -120,5 +123,23 @@ public class ParserUtil {
             throw new ParseException(DateOfBirth.MESSAGE_CONSTRAINTS);
         }
         return new DateOfBirth(trimmedDateOfBirth);
+    }
+
+    /**
+     * Parses a {@code String dateTime} into a {@code LocalDateTime}.
+     * The expected format is dd/MM/yyyy HH:mm.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given dateTime string is invalid.
+     */
+    public static LocalDateTime parseAppointmentDateTime(String dateTime) throws ParseException {
+        requireNonNull(dateTime);
+        String trimmedDateTime = dateTime.trim();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        try {
+            return LocalDateTime.parse(trimmedDateTime, formatter);
+        } catch (DateTimeParseException e) {
+            throw new ParseException("Invalid date time format. Please use dd/MM/yyyy HH:mm");
+        }
     }
 }
