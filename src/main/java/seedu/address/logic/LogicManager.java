@@ -8,8 +8,10 @@ import java.util.logging.Logger;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.logic.commands.AddApptCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CommandResult;
+import seedu.address.logic.commands.RmApptCommand;
 import seedu.address.logic.commands.ViewpCommand;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.AddressBookParser;
@@ -51,7 +53,7 @@ public class LogicManager implements Logic {
         CommandResult commandResult;
         Command command = addressBookParser.parseCommand(commandText);
 
-        if (command instanceof ViewpCommand) {
+        if (command instanceof ViewpCommand || command instanceof AddApptCommand || command instanceof RmApptCommand) {
             PersonListPanel.setShowAppointments(true);
         } else {
             PersonListPanel.setShowAppointments(false);
