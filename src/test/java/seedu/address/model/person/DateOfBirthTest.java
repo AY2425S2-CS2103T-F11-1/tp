@@ -26,20 +26,20 @@ public class DateOfBirthTest {
         // invalid date of birth
         assertFalse(DateOfBirth.isValidDate("")); // empty string
         assertFalse(DateOfBirth.isValidDate(" ")); // spaces only
-        assertFalse(DateOfBirth.isValidDate("1991-13-01")); // month is over 12
+        assertFalse(DateOfBirth.isValidDate("01/13/1991")); // month is over 12
 
         // valid date of birth
-        assertTrue(DateOfBirth.isValidDate("2001-01-15"));
-        assertTrue(DateOfBirth.isValidDate("1980-05-22"));
-        assertTrue(DateOfBirth.isValidDate("1993-07-08"));
+        assertTrue(DateOfBirth.isValidDate("15/01/2001"));
+        assertTrue(DateOfBirth.isValidDate("22/05/1980"));
+        assertTrue(DateOfBirth.isValidDate("08/07/1993"));
     }
 
     @Test
     public void equals() {
-        DateOfBirth dateOfBirth = new DateOfBirth("1980-05-22");
+        DateOfBirth dateOfBirth = new DateOfBirth("22/05/1980");
 
         // same values -> returns true
-        assertTrue(dateOfBirth.equals(new DateOfBirth("1980-05-22")));
+        assertTrue(dateOfBirth.equals(new DateOfBirth("22/05/1980")));
 
         // same object -> returns true
         assertTrue(dateOfBirth.equals(dateOfBirth));
@@ -48,6 +48,6 @@ public class DateOfBirthTest {
         assertFalse(dateOfBirth.equals(null));
 
         // different values -> returns false
-        assertFalse(dateOfBirth.equals(new DateOfBirth("1993-07-08")));
+        assertFalse(dateOfBirth.equals(new DateOfBirth("08/07/1993")));
     }
 }

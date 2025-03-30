@@ -57,7 +57,7 @@ public class PersonTest {
 
         // same nric, all other attributes different -> returns true
         Person editedAlice =
-                new PersonBuilder(ALICE).withDateOfBirth("1982-12-15").withPhone(VALID_PHONE_BOB)
+                new PersonBuilder(ALICE).withDateOfBirth("15/12/1982").withPhone(VALID_PHONE_BOB)
                         .withTags(VALID_TAG_HUSBAND).build();
         assertTrue(ALICE.isSamePerson(editedAlice));
 

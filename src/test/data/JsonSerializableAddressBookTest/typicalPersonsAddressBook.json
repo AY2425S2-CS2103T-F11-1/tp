@@ -7,7 +7,7 @@
     "nric": "S3286024I",
     "address" : "123, Jurong West Ave 6, #08-111",
     "tags" : [ "friends" ],
-    "dateOfBirth" : "1991-01-01"
+    "dateOfBirth" : "01/01/1991"
   }, {
     "name" : "Benson Meier",
     "phone" : "98765432",
@@ -15,7 +15,7 @@
     "nric": "S7257684E",
     "address" : "311, Clementi Ave 2, #02-25",
     "tags" : [ "owesMoney", "friends" ],
-    "dateOfBirth" : "1970-06-12"
+    "dateOfBirth" : "12/06/1970"
   }, {
     "name" : "Carl Kurz",
     "phone" : "95352563",
@@ -23,7 +23,7 @@
     "nric": "S4107105B",
     "address" : "wall street",
     "tags" : [ ],
-    "dateOfBirth" : "1945-03-03"
+    "dateOfBirth" : "03/03/1945"
   }, {
     "name" : "Daniel Meier",
     "phone" : "87652533",
@@ -31,7 +31,7 @@
     "nric": "S0270556G",
     "address" : "10th street",
     "tags" : [ "friends" ],
-    "dateOfBirth" : "1940-05-09"
+    "dateOfBirth" : "09/05/1940"
   }, {
     "name" : "Elle Meyer",
     "phone" : "9482224",
@@ -39,7 +39,7 @@
     "nric": "S9510799J",
     "address" : "michegan ave",
     "tags" : [ ],
-    "dateOfBirth" : "1960-02-03"
+    "dateOfBirth" : "03/02/1960"
   }, {
     "name" : "Fiona Kunz",
     "phone" : "9482427",
@@ -47,7 +47,7 @@
     "nric": "S1457256B",
     "address" : "little tokyo",
     "tags" : [ ],
-    "dateOfBirth" : "1950-07-03"
+    "dateOfBirth" : "03/07/1950"
   }, {
     "name" : "George Best",
     "phone" : "9482442",
@@ -55,6 +55,6 @@
     "nric": "S6314945D",
     "address" : "4th street",
     "tags" : [ ],
-    "dateOfBirth" : "1963-06-15"
+    "dateOfBirth" : "15/06/1963"
   } ]
 }
