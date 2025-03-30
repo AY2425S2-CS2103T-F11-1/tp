@@ -26,6 +26,7 @@ public class RmApptCommand extends Command {
     public static final String MESSAGE_FAILURE = "Failed to remove appointment: %1$s";
 
     public static final String MESSAGE_PATIENT_NOT_FOUND = "Patient with NRIC %1$s not found";
+    public static final String MESSAGE_OUT_OF_BOUNDS = "Invalid appointment index";
 
     private final String nric;
     private final int index;
@@ -54,8 +55,12 @@ public class RmApptCommand extends Command {
 
         // We expect only one person to match by NRIC since NRIC is unique
         Person patientFound = filteredPersons.get(0);
-        patientFound.removeAppointment(index);
 
+        if (patientFound.getApptListSize() < index) {
+            throw new CommandException(String.format(MESSAGE_OUT_OF_BOUNDS, nric));
+        } else {
+            patientFound.removeAppointment(index);
+        }
         model.updateFilteredPersonList(new NricPredicate(nric));
 
         return new CommandResult(String.format(MESSAGE_SUCCESS, index, nric));

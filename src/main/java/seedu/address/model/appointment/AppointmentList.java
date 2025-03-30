@@ -48,6 +48,10 @@ public class AppointmentList {
         return this.appointments;
     }
 
+    public int getSize() {
+        return this.appointments.size();
+    }
+
     private void sortAppointments() {
         appointments.sort(Comparator.comparing(Appointment::getApptDateTime));
     }
