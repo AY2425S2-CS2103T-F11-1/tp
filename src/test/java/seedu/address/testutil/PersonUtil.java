@@ -29,7 +29,7 @@ public class PersonUtil {
         sb.append(PREFIX_NAME + person.getName().fullName + " ");
         sb.append(PREFIX_PHONE + person.getPhone().value + " ");
         sb.append(PREFIX_NRIC + person.getNric().value + " ");
-        sb.append(PREFIX_DOB + person.getDateOfBirth().value.toString() + " ");
+        sb.append(PREFIX_DOB + person.getDateOfBirth().toString() + " ");
         person.getTags().stream().forEach(
             s -> sb.append(PREFIX_TAG + s.tagName + " ")
         );
