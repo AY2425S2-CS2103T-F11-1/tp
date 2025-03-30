@@ -19,7 +19,7 @@ public class PersonBuilder {
     public static final String DEFAULT_NAME = "Amy Bee";
     public static final String DEFAULT_PHONE = "85355255";
     public static final String DEFAULT_NRIC = "S8798863E";
-    public static final String DEFAULT_DOB = "1991-01-01";
+    public static final String DEFAULT_DOB = "01/01/1991";
 
     private Name name;
     private Phone phone;

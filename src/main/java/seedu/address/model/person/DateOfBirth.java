@@ -12,8 +12,8 @@ import java.time.format.DateTimeParseException;
  * Guarantees: immutable; is always valid
  */
 public class DateOfBirth {
-    public static final String MESSAGE_CONSTRAINTS =
-            "Date of Birth should be in the format: YYYY-MM-DD";
+    public static final String MESSAGE_CONSTRAINTS = "Date of Birth should be in the format: dd/MM/yyyy";
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public final LocalDate value;
 
     /**
@@ -24,7 +24,7 @@ public class DateOfBirth {
     public DateOfBirth(String dateOfBirth) {
         requireNonNull(dateOfBirth);
         checkArgument(isValidDate(dateOfBirth), MESSAGE_CONSTRAINTS);
-        value = LocalDate.parse(dateOfBirth);
+        value = LocalDate.parse(dateOfBirth, formatter);
     }
 
     /**
@@ -32,7 +32,7 @@ public class DateOfBirth {
      */
     public static boolean isValidDate(String test) {
         try {
-            LocalDate.parse(test);
+            LocalDate.parse(test, formatter);
             return true;
         } catch (DateTimeParseException e) {
             return false;
@@ -41,7 +41,8 @@ public class DateOfBirth {
 
     @Override
     public String toString() {
-        return value.format(DateTimeFormatter.ofPattern("YYYY-MM-dd"));
+        //return value.format(DateTimeFormatter.ofPattern("YYYY-MM-dd"));
+        return value.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
     @Override

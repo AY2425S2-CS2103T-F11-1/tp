@@ -25,13 +25,13 @@ public class AddCommand extends Command {
             + PREFIX_NAME + "NAME "
             + PREFIX_PHONE + "PHONE "
             + PREFIX_NRIC + "NRIC "
-            + PREFIX_DOB + "Date of Birth <YYYY-MM-DD> "
+            + PREFIX_DOB + "Date of Birth <dd/MM/yyyy> "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "John Doe "
             + PREFIX_PHONE + "98765432 "
             + PREFIX_NRIC + "S7257684E "
-            + PREFIX_DOB + "1998-05-03 ";
+            + PREFIX_DOB + "03/10/1998 ";
 
     public static final String MESSAGE_SUCCESS = "New person added: %1$s";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in HubHealth";

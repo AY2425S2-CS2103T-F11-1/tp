@@ -31,8 +31,8 @@ public class CommandTestUtil {
     public static final String VALID_PHONE_BOB = "22222222";
     public static final String VALID_NRIC_AMY = "S7803050Z";
     public static final String VALID_NRIC_BOB = "S9647327C";
-    public static final String VALID_DOB_AMY = "1978-05-07";
-    public static final String VALID_DOB_BOB = "1996-08-15";
+    public static final String VALID_DOB_AMY = "07/05/1978";
+    public static final String VALID_DOB_BOB = "15/08/1996";
     public static final String VALID_TAG_HUSBAND = "husband";
     public static final String VALID_TAG_FRIEND = "friend";
 
