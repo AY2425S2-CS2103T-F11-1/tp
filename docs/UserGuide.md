@@ -11,6 +11,8 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 <!-- * Table of Contents -->
 <page-nav-print />
 
+## Table of contents
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Quick start
@@ -176,8 +178,16 @@ Furthermore, certain edits can cause the AddressBook to behave in unexpected way
 
 ## FAQ
 
+**Q**: Can I use HubHealth on multiple computers?<br>
+**A**: No, HubHealth is built for private clinics who are moving to digital-based processes for the first time. 
+HubHealth is meant to be simple, and runs in a standalone environment, and does not support multiple computers.
+
 **Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous AddressBook home folder.
+**A**: Install HubHealth in the other computer and overwrite the empty data file it creates with the file that contains 
+the data of your previous AddressBook home folder.
+
+**Q**: Can I undo a command if I make a mistake?<br>
+**A**: No, the undo feature is currently not supported. 
 
 --------------------------------------------------------------------------------------------------------------------
 

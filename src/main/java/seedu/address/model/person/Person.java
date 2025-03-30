@@ -93,6 +93,14 @@ public class Person {
     }
 
     /**
+     * Removes an appointment from this person.
+     */
+    public void removeAppointment(int index) {
+        requireAllNonNull(index);
+        this.appointmentList.removeAppointment(index);
+    }
+
+    /**
      * Returns true if both persons have the same NRIC.
      * This defines a weaker notion of equality between two persons.
      * Though 'weaker', this is functionally strong enough.
