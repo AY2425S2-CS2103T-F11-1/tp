@@ -132,12 +132,16 @@ public class ParserUtil {
      *
      * @throws ParseException if the given dateTime string is invalid.
      */
-    public static LocalDateTime parseAppointmentDateTime(String dateTime) throws ParseException {
+    public static String parseAppointmentDateTime(String dateTime) throws ParseException {
         requireNonNull(dateTime);
         String trimmedDateTime = dateTime.trim();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         try {
-            return LocalDateTime.parse(trimmedDateTime, formatter);
+            if (LocalDateTime.parse(trimmedDateTime, formatter).isBefore(LocalDateTime.now())) {
+                throw new ParseException("Appointment date must not be in the past");
+            }
+            return LocalDateTime.parse(trimmedDateTime, formatter)
+                    .format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
         } catch (DateTimeParseException e) {
             throw new ParseException("Invalid date time format. Please use dd/MM/yyyy HH:mm");
         }

@@ -30,7 +30,7 @@ public class AddApptCommandParser implements Parser<AddApptCommand> {
         }
 
         String ic = ParserUtil.parseNric(argMultimap.getValue(PREFIX_NRIC).get()).toString();
-        String date = ParserUtil.parseAppointmentDateTime(argMultimap.getValue(PREFIX_DATE).get()).toString();
+        String date = ParserUtil.parseAppointmentDateTime(argMultimap.getValue(PREFIX_DATE).get());
 
         return new AddApptCommand(ic, date);
     }
