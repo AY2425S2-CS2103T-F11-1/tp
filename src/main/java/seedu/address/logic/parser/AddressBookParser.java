@@ -82,7 +82,7 @@ public class AddressBookParser {
         case AddApptCommand.COMMAND_WORD:
             return new AddApptCommandParser().parse(arguments);
 
-        case RmApptCommand.COMMAND_WORD:
+        case RmApptCommand.COMMAND_WORD, RmApptCommand.COMMAND_WORD_ALIAS:
             return new RmApptCommandParser().parse(arguments);
 
         default:
