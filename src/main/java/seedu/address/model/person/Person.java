@@ -101,6 +101,14 @@ public class Person {
     }
 
     /**
+     * Returns the size of the appointment list
+     * @return int of AppointmentList size
+     */
+    public int getApptListSize() {
+        return this.appointmentList.getSize();
+    }
+
+    /**
      * Returns true if both persons have the same NRIC.
      * This defines a weaker notion of equality between two persons.
      * Though 'weaker', this is functionally strong enough.
