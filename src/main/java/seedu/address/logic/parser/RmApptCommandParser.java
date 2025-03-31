@@ -27,7 +27,7 @@ public class RmApptCommandParser implements Parser<RmApptCommand> {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, RmApptCommand.MESSAGE_USAGE));
         }
 
-        String nric = ParserUtil.parseNric(argMultimap.getValue(PREFIX_NRIC).get()).toString();
+        String nric = ParserUtil.parseNric(argMultimap.getValue(PREFIX_NRIC).get().toUpperCase()).toString();
         String indexStr = argMultimap.getValue(PREFIX_INDEX).get();
 
         int index;
