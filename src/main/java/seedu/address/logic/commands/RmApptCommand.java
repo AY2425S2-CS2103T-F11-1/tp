@@ -15,7 +15,6 @@ import seedu.address.model.person.Person;
 public class RmApptCommand extends Command {
 
     public static final String COMMAND_WORD = "rmappt";
-    public static final String COMMAND_WORD_ALIAS = "rm";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Removes an appointment for a person identified by their NRIC.\n"
