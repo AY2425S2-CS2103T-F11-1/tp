@@ -46,6 +46,7 @@ public class RmApptCommand extends Command {
         requireNonNull(model);
 
         List<Person> filteredPersons = model.getFilteredPersonList();
+        model.updateFilteredPersonList(new NricPredicate(nric));
 
         if (filteredPersons.isEmpty()) {
             throw new CommandException(String.format(MESSAGE_PATIENT_NOT_FOUND, nric));
