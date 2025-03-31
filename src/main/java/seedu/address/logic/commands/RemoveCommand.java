@@ -16,6 +16,7 @@ import seedu.address.model.person.Person;
 public class RemoveCommand extends Command {
 
     public static final String COMMAND_WORD = "remove";
+    public static final String COMMAND_WORD_ALIAS = "rm";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Deletes the person identified by their NRIC.\n"

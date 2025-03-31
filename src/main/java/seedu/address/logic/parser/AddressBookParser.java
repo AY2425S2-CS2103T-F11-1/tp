@@ -58,7 +58,7 @@ public class AddressBookParser {
         case AddCommand.COMMAND_WORD:
             return new AddCommandParser().parse(arguments);
 
-        case RemoveCommand.COMMAND_WORD:
+        case RemoveCommand.COMMAND_WORD, RemoveCommand.COMMAND_WORD_ALIAS:
             return new RemoveCommandParser().parse(arguments);
 
         case ClearCommand.COMMAND_WORD:
@@ -82,7 +82,7 @@ public class AddressBookParser {
         case AddApptCommand.COMMAND_WORD:
             return new AddApptCommandParser().parse(arguments);
 
-        case RmApptCommand.COMMAND_WORD, RmApptCommand.COMMAND_WORD_ALIAS:
+        case RmApptCommand.COMMAND_WORD:
             return new RmApptCommandParser().parse(arguments);
 
         default:
