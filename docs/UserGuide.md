@@ -6,12 +6,28 @@
 
 # HubHealth User Guide
 
-HubHealth is built for you, clinic receptionists. HubHealth allows you to manage your patient’s contact and appointments with simple keyboard commands.
+HubHealth is built for you, clinic receptionists. HubHealth allows you to manage your patient's contact and appointments with simple keyboard commands.
 
 <!-- * Table of Contents -->
 <page-nav-print />
 
 ## Table of contents
+
+1. [Quick Start](#quick-start)
+2. [Features](#features)
+    - [Viewing help: `help`](#viewing-help-help)
+    - [Adding a patient: `add`](#adding-a-patient-add)
+    - [Listing all patients: `list`](#listing-all-patients-list)
+    - [Locating patients by name: `find`](#locating-patients-by-name-find)
+    - [Viewing patient details: `viewp`](#viewing-patient-details-viewp)
+    - [Removing a patient: `remove`](#removing-a-patient-remove)
+    - [Clearing all entries: `clear`](#clearing-all-entries-clear)
+    - [Exiting the program: `exit`](#exiting-the-program-exit)
+    - [Saving the data](#saving-the-data)
+    - [Editing the data file](#editing-the-data-file)
+3. [FAQ](#faq)
+4. [Known Issues](#known-issues)
+5. [Command Summary](#command-summary)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -122,7 +138,7 @@ Examples:
 * `find John` returns `john` and `John Doe`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
 
-### Viewing patient details
+### Viewing patient details : `viewp`
 
 Displays all patient details to you.
 
