@@ -20,17 +20,17 @@ public class SampleDataUtil {
     public static Person[] getSamplePersons() {
         return new Person[] {
             new Person(new Name("Alex Yeoh"), new Phone("87438807"), new Nric("S9132623Z"),
-                new DateOfBirth("01/01/1991"), getTagSet("friends")),
+                new DateOfBirth("01/01/1991"), getTagSet("CHAS-Green")),
             new Person(new Name("Bernice Yu"), new Phone("99272758"), new Nric("S4643396C"),
-                new DateOfBirth("12/06/1970"), getTagSet("colleagues", "friends")),
+                new DateOfBirth("12/06/1970"), getTagSet("Raffles-Medical")),
             new Person(new Name("Charlotte Oliveiro"), new Phone("93210283"), new Nric("S3164793B"),
-                new DateOfBirth("03/03/1945"), getTagSet("neighbours")),
+                new DateOfBirth("03/03/1945"), getTagSet("ElderShield")),
             new Person(new Name("David Li"), new Phone("91031282"), new Nric("S1289342F"),
-                new DateOfBirth("09/05/1940"), getTagSet("family")),
+                new DateOfBirth("09/05/1940"), getTagSet("CHAS-Blue")),
             new Person(new Name("Irfan Ibrahim"), new Phone("92492021"), new Nric("S4674105F"),
-                new DateOfBirth("03/02/1960"), getTagSet("classmates")),
+                new DateOfBirth("03/02/1960"), getTagSet("CHAS-Blue")),
             new Person(new Name("Roy Balakrishnan"), new Phone("92624417"), new Nric("S4921002G"),
-                new DateOfBirth("03/07/1950"), getTagSet("colleagues"))
+                new DateOfBirth("03/07/1950"), getTagSet("CHAS-Green"))
         };
     }
 
