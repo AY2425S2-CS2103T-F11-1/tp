@@ -24,7 +24,7 @@ public class ViewpCommandParser implements Parser<ViewpCommand> {
         }
 
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NRIC);
-        String nric = argMultimap.getValue(PREFIX_NRIC).get().toUpperCase();
+        String nric = ParserUtil.parseNric(argMultimap.getValue(PREFIX_NRIC).get().toUpperCase()).toString();
         return new ViewpCommand(nric);
     }
 }
