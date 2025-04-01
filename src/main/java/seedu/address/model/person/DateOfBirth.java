@@ -12,7 +12,8 @@ import java.time.format.DateTimeParseException;
  * Guarantees: immutable; is always valid
  */
 public class DateOfBirth {
-    public static final String MESSAGE_CONSTRAINTS = "Date of Birth should be in the format: dd/MM/yyyy";
+    public static final String MESSAGE_CONSTRAINTS = "Date of Birth should be in the format: dd/MM/yyyy and year "
+            + "should be after 1900, and date of birth cannot be after today's date.";
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public final LocalDate value;
 
@@ -31,17 +32,22 @@ public class DateOfBirth {
      * Returns true if a given string is a valid Date of Birth.
      */
     public static boolean isValidDate(String test) {
+        LocalDate inputDate;
         try {
-            LocalDate.parse(test, formatter);
-            return true;
+            inputDate = LocalDate.parse(test, formatter);
         } catch (DateTimeParseException e) {
             return false;
         }
+
+        if (inputDate.isBefore(LocalDate.of(1900, 1, 1)) || inputDate.isAfter(LocalDate.now())) {
+            return false;
+        }
+
+        return true;
     }
 
     @Override
     public String toString() {
-        //return value.format(DateTimeFormatter.ofPattern("YYYY-MM-dd"));
         return value.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
