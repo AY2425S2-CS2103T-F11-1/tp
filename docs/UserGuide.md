@@ -122,11 +122,11 @@ Examples:
 * `find John` returns `john` and `John Doe`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
 
-### Viewing patient details
+### Viewing patient details : `viewp`
 
 Displays all patient details to you.
 
-Format: viewp -IC <NRIC>
+Format: `viewp -IC <NRIC>`
 
 Examples:
 * `viewp -IC T01234567X` displays all the details of the patient whose IC is T01234567X
