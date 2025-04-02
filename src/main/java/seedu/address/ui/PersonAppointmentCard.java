@@ -33,28 +33,14 @@ public class PersonAppointmentCard extends UiPart<Region> {
 
     @FXML
     private HBox cardPane;
-    // @FXML
-    // private Label name;
-    // @FXML
-    // private Label id;
-    // @FXML
-    // private Label phone;
-    // @FXML
-    // private Label nric;
-    // @FXML
-    // private Label dateOfBirth;
-    // @FXML
-    // private FlowPane appointments;
-    // @FXML
-    // private FlowPane tags;
-    @FXML
-    private Label upcomingAppointmentsLabel;
     @FXML
     private Label pastAppointmentsLabel;
     @FXML
-    private FlowPane upcomingAppointments;
+    private Label upcomingAppointmentsLabel;
     @FXML
     private FlowPane pastAppointments;
+    @FXML
+    private FlowPane upcomingAppointments;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -63,26 +49,18 @@ public class PersonAppointmentCard extends UiPart<Region> {
         super(FXML);
         this.person = person;
         AtomicInteger index = new AtomicInteger(1);
-        // id.setText(displayedIndex + ". ");
-        // name.setText(person.getName().fullName);
-        // nric.setText(person.getNric().value);
-        // phone.setText(person.getPhone().value);
-        // dateOfBirth.setText(person.getDateOfBirth().toString());
+
         pastAppointmentsLabel.setText(PAST_APPOINTMENTS_LABEL);
         upcomingAppointmentsLabel.setText(UPCOMING_APPOINTMENTS_LABEL);
         person.getAppointmentList().stream()
-                .filter(appointment -> !appointment.getApptDateTime().isAfter(
-                            // LocalDateTime.now()))
-                            LocalDateTime.of(2025, 5, 12, 14, 30)))
+                .filter(appointment -> !appointment.getApptDateTime().isAfter(LocalDateTime.now()))
                 .sorted(Comparator.comparing(appointment -> appointment.toString()))
                 .forEach(appointment -> {
                     int i = index.getAndIncrement();
                     pastAppointments.getChildren().add(new Label(i + ". " + appointment.toString()));
                 });
         person.getAppointmentList().stream()
-                .filter(appointment -> appointment.getApptDateTime().isAfter(
-                            // LocalDateTime.now()))
-                            LocalDateTime.of(2025, 5, 12, 14, 30)))
+                .filter(appointment -> appointment.getApptDateTime().isAfter(LocalDateTime.now()))
                 .sorted(Comparator.comparing(appointment -> appointment.toString()))
                 .forEach(appointment -> {
                     int i = index.getAndIncrement();
