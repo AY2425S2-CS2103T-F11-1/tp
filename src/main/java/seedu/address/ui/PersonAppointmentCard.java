@@ -2,6 +2,7 @@ package seedu.address.ui;
 
 import java.time.LocalDateTime;
 import java.util.Comparator;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -15,10 +16,10 @@ import seedu.address.model.person.Person;
  */
 public class PersonAppointmentCard extends UiPart<Region> {
 
-    private static final String FXML = "PersonAppointmentListCard.fxml";
+    public static final String UPCOMING_APPOINTMENTS_LABEL = "Upcoming appointments:";
+    public static final String PAST_APPOINTMENTS_LABEL = "Past appointments:";
 
-    public static final String PAST_APPOINTMENTS_LABEL= "Past appointments:";
-    public static final String UPCOMING_APPOINTMENTS_LABEL= "Upcoming appointments:";
+    private static final String FXML = "PersonAppointmentListCard.fxml";
 
     /**
      * Note: Certain keywords such as "location" and "resources" are reserved keywords in JavaFX.
@@ -61,28 +62,31 @@ public class PersonAppointmentCard extends UiPart<Region> {
     public PersonAppointmentCard(Person person, int displayedIndex) {
         super(FXML);
         this.person = person;
+        AtomicInteger index = new AtomicInteger(1);
         // id.setText(displayedIndex + ". ");
         // name.setText(person.getName().fullName);
         // nric.setText(person.getNric().value);
         // phone.setText(person.getPhone().value);
         // dateOfBirth.setText(person.getDateOfBirth().toString());
-        upcomingAppointmentsLabel.setText(UPCOMING_APPOINTMENTS_LABEL);
         pastAppointmentsLabel.setText(PAST_APPOINTMENTS_LABEL);
-        person.getAppointmentList().stream()
-                .filter(appointment -> appointment.getApptDateTime().isAfter(
-                            // LocalDateTime.now()))
-                            LocalDateTime.of(2025, 5, 12, 14, 30)))
-                .sorted(Comparator.comparing(appointment -> appointment.toString()))
-                .forEach(appointment -> upcomingAppointments.getChildren().add(new Label(appointment.toString())));
+        upcomingAppointmentsLabel.setText(UPCOMING_APPOINTMENTS_LABEL);
         person.getAppointmentList().stream()
                 .filter(appointment -> !appointment.getApptDateTime().isAfter(
                             // LocalDateTime.now()))
                             LocalDateTime.of(2025, 5, 12, 14, 30)))
                 .sorted(Comparator.comparing(appointment -> appointment.toString()))
-                .forEach(appointment -> pastAppointments.getChildren().add(new Label(appointment.toString())));
-                // .forEach(appointment -> tags.getChildren().add(new Label(appointment.toString())));
-        // person.getTags().stream()
-        //          .sorted(Comparator.comparing(tag -> tag.tagName))
-        //          .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+                .forEach(appointment -> {
+                    int i = index.getAndIncrement();
+                    pastAppointments.getChildren().add(new Label(i + ". " + appointment.toString()));
+                });
+        person.getAppointmentList().stream()
+                .filter(appointment -> appointment.getApptDateTime().isAfter(
+                            // LocalDateTime.now()))
+                            LocalDateTime.of(2025, 5, 12, 14, 30)))
+                .sorted(Comparator.comparing(appointment -> appointment.toString()))
+                .forEach(appointment -> {
+                    int i = index.getAndIncrement();
+                    upcomingAppointments.getChildren().add(new Label(i + ". " + appointment.toString()));
+                });
     }
 }
