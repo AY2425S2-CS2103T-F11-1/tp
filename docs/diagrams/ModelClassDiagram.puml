@@ -19,6 +19,7 @@ Class Nric
 Class Name
 Class Phone
 Class Tag
+Class AppointmentList
 
 Class I #FFFFFF
 }
@@ -42,6 +43,8 @@ Person *--> Phone
 Person *--> Nric
 Person *--> DateOfBirth
 Person *--> "*" Tag
+Person *--> AppointmentList
+AppointmentList *--> "*" Appointment
 
 Person -[hidden]up--> I
 UniquePersonList -[hidden]right-> I
