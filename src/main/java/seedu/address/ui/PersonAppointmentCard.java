@@ -1,6 +1,8 @@
 package seedu.address.ui;
 
+import java.time.LocalDateTime;
 import java.util.Comparator;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -13,6 +15,9 @@ import seedu.address.model.person.Person;
  * An UI component that displays information of a {@code Person}.
  */
 public class PersonAppointmentCard extends UiPart<Region> {
+
+    public static final String UPCOMING_APPOINTMENTS_LABEL = "Upcoming appointments:";
+    public static final String PAST_APPOINTMENTS_LABEL = "Past appointments:";
 
     private static final String FXML = "PersonAppointmentListCard.fxml";
 
@@ -29,19 +34,13 @@ public class PersonAppointmentCard extends UiPart<Region> {
     @FXML
     private HBox cardPane;
     @FXML
-    private Label name;
+    private Label pastAppointmentsLabel;
     @FXML
-    private Label id;
+    private Label upcomingAppointmentsLabel;
     @FXML
-    private Label phone;
+    private FlowPane pastAppointments;
     @FXML
-    private Label nric;
-    @FXML
-    private Label dateOfBirth;
-    @FXML
-    private FlowPane appointments;
-    @FXML
-    private FlowPane tags;
+    private FlowPane upcomingAppointments;
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -49,16 +48,23 @@ public class PersonAppointmentCard extends UiPart<Region> {
     public PersonAppointmentCard(Person person, int displayedIndex) {
         super(FXML);
         this.person = person;
-        id.setText(displayedIndex + ". ");
-        name.setText(person.getName().fullName);
-        nric.setText(person.getNric().value);
-        phone.setText(person.getPhone().value);
-        dateOfBirth.setText(person.getDateOfBirth().toString());
+        AtomicInteger index = new AtomicInteger(1);
+
+        pastAppointmentsLabel.setText(PAST_APPOINTMENTS_LABEL);
+        upcomingAppointmentsLabel.setText(UPCOMING_APPOINTMENTS_LABEL);
         person.getAppointmentList().stream()
+                .filter(appointment -> !appointment.getApptDateTime().isAfter(LocalDateTime.now()))
                 .sorted(Comparator.comparing(appointment -> appointment.toString()))
-                .forEach(appointment -> appointments.getChildren().add(new Label(appointment.toString())));
-        person.getTags().stream()
-                 .sorted(Comparator.comparing(tag -> tag.tagName))
-                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+                .forEach(appointment -> {
+                    int i = index.getAndIncrement();
+                    pastAppointments.getChildren().add(new Label(i + ". " + appointment.toString()));
+                });
+        person.getAppointmentList().stream()
+                .filter(appointment -> appointment.getApptDateTime().isAfter(LocalDateTime.now()))
+                .sorted(Comparator.comparing(appointment -> appointment.toString()))
+                .forEach(appointment -> {
+                    int i = index.getAndIncrement();
+                    upcomingAppointments.getChildren().add(new Label(i + ". " + appointment.toString()));
+                });
     }
 }
