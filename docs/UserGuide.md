@@ -18,6 +18,22 @@ patient, further simplifying patient management.
 
 ## Table of contents
 
+1. [Quick Start](#quick-start)
+2. [Features](#features)
+    - [Viewing help: `help`](#viewing-help-help)
+    - [Adding a patient: `add`](#adding-a-patient-add)
+    - [Listing all patients: `list`](#listing-all-patients-list)
+    - [Locating patients by name: `find`](#locating-patients-by-name-find)
+    - [Viewing patient details: `viewp`](#viewing-patient-details-viewp)
+    - [Removing a patient: `remove`](#removing-a-patient-remove)
+    - [Clearing all entries: `clear`](#clearing-all-entries-clear)
+    - [Exiting the program: `exit`](#exiting-the-program-exit)
+    - [Saving the data](#saving-the-data)
+    - [Editing the data file](#editing-the-data-file)
+3. [FAQ](#faq)
+4. [Known Issues](#known-issues)
+5. [Command Summary](#command-summary)
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Quick start

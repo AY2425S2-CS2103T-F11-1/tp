@@ -18,20 +18,15 @@
       <padding>
         <Insets top="5" right="5" bottom="5" left="15" />
       </padding>
-      <HBox spacing="0.5" alignment="CENTER_LEFT">
-        <Label fx:id="id" styleClass="cell_big_label">
-          <minWidth>
-            <!-- Ensures that the label text is never truncated -->
-            <Region fx:constant="USE_PREF_SIZE" />
-          </minWidth>
-        </Label>
-        <Label fx:id="name" text="\$first" styleClass="cell_big_label" />
-      </HBox>
-      <FlowPane fx:id="tags" />
-      <FlowPane fx:id="appointments" />
-      <Label fx:id="nric" styleClass="cell_small_label" text="\$nric" />
-      <Label fx:id="phone" styleClass="cell_small_label" text="\$phone" />
-      <Label fx:id="dateOfBirth" styleClass="cell_small_label" text="\$dateOfBirth" />
+
+      <Label fx:id="pastAppointmentsLabel" styleClass="cell_big_label" text="\$pastAppointmentsLabel" />
+      <FlowPane fx:id="pastAppointments" />
+
+      <!-- Spacer -->
+      <Region prefHeight="10" />
+
+      <Label fx:id="upcomingAppointmentsLabel" styleClass="cell_big_label" text="\$upcomingAppointmentsLabel" />
+      <FlowPane fx:id="upcomingAppointments" />
     </VBox>
   </GridPane>
 </HBox>

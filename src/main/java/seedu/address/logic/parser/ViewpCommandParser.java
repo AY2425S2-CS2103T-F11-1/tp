@@ -23,7 +23,8 @@ public class ViewpCommandParser implements Parser<ViewpCommand> {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ViewpCommand.MESSAGE_USAGE));
         }
 
-        String nric = argMultimap.getValue(PREFIX_NRIC).get().toUpperCase();
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NRIC);
+        String nric = ParserUtil.parseNric(argMultimap.getValue(PREFIX_NRIC).get().toUpperCase()).toString();
         return new ViewpCommand(nric);
     }
 }
