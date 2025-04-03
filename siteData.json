@@ -124,6 +124,8 @@
         "locating-patients-by-name-find": "Locating patients by name: find",
         "viewing-patient-details-viewp": "Viewing patient details : viewp",
         "removing-a-patient-remove": "Removing a patient : remove",
+        "adding-appointment-to-patient-addappt": "Adding appointment to patient : addappt",
+        "removing-appointment-from-patient-rmappt": "Removing appointment from patient : rmappt",
         "clearing-all-entries-clear": "Clearing all entries : clear",
         "exiting-the-program-exit": "Exiting the program : exit",
         "coming-soon": "Coming soon",
