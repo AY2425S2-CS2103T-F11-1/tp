@@ -173,7 +173,7 @@ Allows you to create an appointment for a patient.
 Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`
 
 Example:
-* `addappt -IC S9123456Z -D 25/06/2025 09:00` creates an appointment at 25 June 2025 for the patient with the NRIC S9123456Z
+* `addappt -IC S9123456Z -D 25/06/2025 09:00` creates an appointment on 25 June 2025 at 9:00am for the patient with the NRIC S9123456Z
 
 #### 2.2.3 Removing appointment from patient : `rmappt`
 
