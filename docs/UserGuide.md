@@ -13,7 +13,7 @@ records (including name, birth date, contact information, etc.) and track past a
 simple keyboard commands. Additionally, the tagging system allows you to tag government-related subsidies
 (such as CHAS) or insurance information to your patient, simplifying patient management.
 
-If you are unfamiliar with any terminology in the HubHealth User Guide, refer to the [Glossary](#6-glossary).
+If you are unfamiliar with any terminology in the HubHealth User Guide, refer to the [Glossary](#7-glossary).
 
 ## Table of contents
   * [About HubHealth](#about-hubhealth)
@@ -77,7 +77,7 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 
 1. Refer to the [Features](#features) below for details of each command.
 
-<box type="info" seamless>
+<box type="info" seamless class="info-custom">
 
 **Note:** ONLY IF any of the above steps ([1.2 Getting started](#1-2-getting-started)) do not work, you may need to follow the instructions below:
 
@@ -199,7 +199,7 @@ Example:
 * `rmappt -IC S9123456Z -I 1` removes the appointment with index 1 from the patient with the NRIC S9123456Z
 
 <box type="tip" seamless class="tip-custom">
-**Tip:** Use viewp first to view the appointment list of a specified patient
+Use viewp first to view the appointment list of a specified patient
 </box>
 
 <br>
@@ -336,7 +336,7 @@ to bring HubHealth back into the primary screen.
 | **P**     | Phone Number                       | Compulsory <br> `add`                                         | Phone numbers should only contain numbers, and it should be at least 3 digits long                                     |
 | **DOB**   | Date of Birth                      | Compulsory <br> `add`                                         | Date of Birth should be in the format: dd/MM/yyyy and year should be after 1900, and cannot be after today's date      |
 | **I**     | Index (of Appointment)             | Compulsory <br> `rmappt`                                      | Index should only be a number, and should be within the range of the appointments a patient has. 0 is not allowed      |
-| **D**     | Date (of Appointment)              | Compulsory <br> `addappt`                                     |                                                                                                                        |
+| **D**     | Date (of Appointment)              | Compulsory <br> `addappt`                                     | Appointment date should be in the format: dd/MM/yyyy HH:mm and cannot be before today                                  |
 | **T**     | Find by Name(s)                    | Optional <br> `add`                                           | Tags names should be alphanumeric                                                                                      |
 
 --------------------------------------------------------------------------------------------------------------------
