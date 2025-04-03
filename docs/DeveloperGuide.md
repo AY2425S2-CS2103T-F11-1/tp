@@ -568,10 +568,13 @@ testers are expected to do more *exploratory* testing.
 
 Team size: 5
 
-1. Allow “/” character in name
-    * Name currently only supports alphanumeric characters and spaces, and does not support the character “/”, “@”
+1. Allow “/” and other special characters in name
+    * Name currently only supports alphanumeric characters and spaces, and does not support characters such as “/”,
+      “@” (list is non-exhaustive)
     * For example, the name “Ravi S/O Ramasamy” will not be allowed
-    * Support for “/”, “@” in the name will be added in a future release
+    * Support for “/”, “@” and other special characters used in the name will be added in a future release
+
+<br>
 
 2. Allow editing of patient information
     * For example, allow phone number and tags (tracking patient’s CHAS information, insurance information etc.) to be

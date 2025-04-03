@@ -9,7 +9,7 @@
 ## About HubHealth
 HubHealth is a **Clinic Appointment Management System** designed to empower clinic receptionists to efficiently 
 **manage patient information** and **schedule appointments**. As a clinic receptionist, you can easily manage patient 
-records (including name, birth date, contact information, etc.), and track past and future appointments with 
+records (including name, birth date, contact information, etc.), and track past and upcoming appointments with 
 simple keyboard commands. Additionally, the tagging system allows you to tag government-related subsidies
 (such as CHAS) or insurance information to your patient, simplifying patient management.
 
@@ -229,26 +229,39 @@ Allow you to exit HubHealth.
 
 Format: `exit`
 
+<br>
+<br>
+
 ### 2.4 Coming soon
-1. Allow “/” character in name
-   * Name currently only supports alphanumeric characters and spaces, and does not support the character “/”, “@” 
+1. Allow “/” and other special characters in name
+   * Name currently only supports alphanumeric characters and spaces, and does not support characters such as “/”, 
+     “@” (list is non-exhaustive) 
    * For example, the name “Ravi S/O Ramasamy” will not be allowed 
-   * Support for “/”, “@” in the name will be added in a future release
+   * Support for “/”, “@” and other special characters used in the name will be added in a future release
+
+<br>
 
 2. Allow editing of patient information
    * For example, allow phone number and tags (tracking patient’s CHAS information, insurance information etc.) to be 
    editable
    * However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created
 
+<br>
 
 3. Allow name searches to match only names that start with any of the keywords
    * The `find` command currently returns patients whose name contain any of the keywords in any part of their name
    * For example, `find Le` can return patients named "Levanne" and "Violet"
    * This search may be refined to only return patients whose name starts with a keyword in a future release.
 
+<br>
+<br>
+
 ### 2.5 Saving the data
 
 HubHealth data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+
+<br>
+<br>
 
 ### 2.6 Editing the data file
 
