@@ -4,7 +4,7 @@
   pageNav: 3
 ---
 
-# AB-3 Developer Guide
+# HubHealth Developer Guide
 
 <!-- * Table of Contents -->
 <page-nav-print />
@@ -159,6 +159,18 @@ Classes used by multiple components are in the `seedu.address.commons` package.
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
+
+### \[Proposed\] Extend Person class to support child subclasses
+
+#### Proposed Implementation
+Currently, HubHealth only supports 1 type of Person - patient. Therefore, the model continues to use Person for the 
+name as part of the model, and is representing the patient.
+
+As some clinics have locum doctors, the Person object will be extended in the future to support Patient and Doctor
+subclasses. Common identity fields such as Name, Phone will be kept in the parent class, while data fields such as tags
+and appointmentList will be moved to the Patient subclass.
+
+<br>
 
 ### \[Proposed\] Undo/redo feature
 
@@ -549,3 +561,22 @@ testers are expected to do more *exploratory* testing.
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Planned enhancements**
+
+Team size: 5
+
+1. Allow “/” and other special characters in name
+    * Name currently only supports alphanumeric characters and spaces, and does not support characters such as “/”,
+      “@” (list is non-exhaustive)
+    * For example, the name “Ravi S/O Ramasamy” will not be allowed
+    * Support for “/”, “@” and other special characters used in the name will be added in a future release
+
+<br>
+
+2. Allow editing of patient information
+    * For example, allow phone number and tags (tracking patient’s CHAS information, insurance information etc.) to be
+      editable
+    * However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created

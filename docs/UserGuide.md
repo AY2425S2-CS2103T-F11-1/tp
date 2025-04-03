@@ -7,39 +7,47 @@
 # HubHealth User Guide
 
 ## About HubHealth
-HubHealth is a **Clinic Appointment Management System** that empowers clinic receptionist to **manage your patient's 
-information** and their **appointments**. As a clinic receptionist, you can do away with paper-based processes and 
-manage the information easily with simple keyboard commands (No mouse needed!). Additionally, our easy-to-use 
-tagging system allows you to tag government-related subsidies (such as CHAS) or insurance information to your 
-patient, further simplifying patient management.
-
-<!-- * Table of Contents -->
-<page-nav-print />
+HubHealth is a **Clinic Appointment Management System** designed to empower clinic receptionists to efficiently 
+**manage patient information** and **schedule appointments**. As a clinic receptionist, you can easily manage patient 
+records (including name, birth date, contact information, etc.), and track past and upcoming appointments with 
+simple keyboard commands. Additionally, the tagging system allows you to tag government-related subsidies
+(such as CHAS) or insurance information to your patient, simplifying patient management.
 
 ## Table of contents
-
-1. [Quick Start](#quick-start)
-2. [Features](#features)
-    - [Viewing help: `help`](#viewing-help-help)
-    - [Adding a patient: `add`](#adding-a-patient-add)
-    - [Listing all patients: `list`](#listing-all-patients-list)
-    - [Locating patients by name: `find`](#locating-patients-by-name-find)
-    - [Viewing patient details: `viewp`](#viewing-patient-details-viewp)
-    - [Removing a patient: `remove`](#removing-a-patient-remove)
-    - [Clearing all entries: `clear`](#clearing-all-entries-clear)
-    - [Exiting the program: `exit`](#exiting-the-program-exit)
-    - [Saving the data](#saving-the-data)
-    - [Editing the data file](#editing-the-data-file)
-3. [FAQ](#faq)
-4. [Known Issues](#known-issues)
-5. [Command Summary](#command-summary)
-6. [Glossary](#glossary)
+  * [About HubHealth](#about-hubhealth)
+  * [Table of contents](#table-of-contents)
+  * [1. Quick start](#1-quick-start)
+    * [1.1 Installation](#1-1-installation)
+    * [1.2 Getting started](#1-2-getting-started)
+  * [2. Features](#2-features)
+    * [2.1 Patient management](#2-1-patient-management)
+      * [2.1.1 Listing all patients : `list`](#2-1-1-listing-all-patients-list)
+      * [2.1.2 Locating patients by name: `find`](#2-1-2-locating-patients-by-name-find)
+      * [2.1.3 Adding a patient: `add`](#2-1-3-adding-a-patient-add)
+      * [2.1.4 Removing a patient : `remove`](#2-1-4-removing-a-patient-remove)
+    * [2.2 Appointment management (for patient)](#2-2-appointment-management-for-patient)
+      * [2.2.1 Viewing patient details : `viewp`](#2-2-1-viewing-patient-details-viewp)
+      * [2.2.2 Adding appointment to patient : `addappt`](#2-2-2-adding-appointment-to-patient-addappt)
+      * [2.2.3 Removing appointment from patient : `rmappt`](#2-2-3-removing-appointment-from-patient-rmappt)
+    * [2.3 HubHealth general features](#2-3-hubhealth-general-features)
+      * [2.3.1 Viewing help : `help`](#2-3-1-viewing-help-help)
+      * [2.3.2 Clearing all entries : `clear`](#2-3-2-clearing-all-entries-clear)
+      * [2.3.3 Exiting HubHealth : `exit`](#2-3-3-exiting-hubhealth-exit)
+    * [2.4 Coming soon](#2-4-coming-soon)
+    * [2.5 Saving the data](#2-5-saving-the-data)
+    * [2.6 Editing the data file](#2-6-editing-the-data-file)
+  * [3. FAQ](#3-faq)
+  * [4. Known issues](#4-known-issues)
+  * [5. Command summary](#5-command-summary)
+  * [6. Glossary](#6-glossary)
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Quick start
+## 1. Quick start
+This section provides a quick start to HubHealth. If HubHealth is already installed on your computer, you may 
+skip the Installation and jump to [Getting Started](#1-2-getting-started).
 
-### Installation
+### 1.1 Installation
 
 1. Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
    - **Checking whether you have the right version of Java installed:**<br>
@@ -50,7 +58,7 @@ patient, further simplifying patient management.
 
 1. Download the latest `.jar` file from [here](https://github.com/AY2425S2-CS2103T-F11-1/tp/releases). This is the HubHealth application.
 
-### Getting Started
+### 1.2 Getting started
 
 1. Copy the file to the folder you want to use as the _home folder_ for HubHealth.
 
@@ -79,9 +87,9 @@ patient, further simplifying patient management.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Features
+## 2. Features
 
-<box type="info" seamless>
+<box type="info" seamless class="info-custom">
 
 **Notes about the command format:**<br>
 
@@ -100,37 +108,21 @@ patient, further simplifying patient management.
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
 
-### Viewing help : `help`
+### 2.1 Patient management
 
-Shows you a message explaining how to access the help page.
+#### 2.1.1 Listing all patients : `list`
 
-![help message](images/helpMessage.png)
-
-Format: `help`
-
-
-### Adding a patient: `add`
-
-Allows you to add a new patient to the address book.
-
-Format: `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`
-
-Examples:
-* `add -IC T0000000A -N John Doe -P 81234567 -DOB 2005-02-02`
-
-### Listing all patients : `list`
-
-Shows you a list of all patients in the address book.
+Shows you a list of all patients in HubHealth.
 
 Format: `list`
 
 
-<box type="tip" seamless>
+<box type="tip" seamless class="tip-custom">
 
 **Tip:** You can also use `ls` to list all patients in HubHealth.
 </box>
 
-### Locating patients by name: `find`
+#### 2.1.2 Locating patients by name: `find`
 
 Allows you to search for patients whose names contains a given name.
 
@@ -147,28 +139,42 @@ Examples:
 * `find John` returns `john` and `John Doe`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
 
-### Viewing patient details : `viewp`
 
-Displays all patient details to you.
+#### 2.1.3 Adding a patient: `add`
 
-Format: `viewp -IC <NRIC>`
+Allows you to add a new patient to HubHealth.
 
-Examples:
-* `viewp -IC T01234567X` displays all the details of the patient whose IC is T01234567X
+Format: `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`
 
-### Removing a patient : `remove`
+Example:
+* `add -IC T0000000A -N John Doe -P 81234567 -DOB 2005-02-02`
+
+#### 2.1.4 Removing a patient : `remove`
 
 Allows you to remove the specified patient from HubHealth.
 
 Format: `remove -IC <NRIC>`
-<box type="tip" seamless>
+<box type="tip" seamless class="tip-custom">
 
 **Tip:** You can also use `rm` instead of `remove`.
 </box>
 
 * Deletes the patient with the specified `<NRIC>`.
 
-### Adding appointment to patient : `addappt`
+<br>
+<br>
+
+### 2.2 Appointment management (for patient)
+#### 2.2.1 Viewing patient details : `viewp`
+
+Displays all patient details to you.
+
+Format: `viewp -IC <NRIC>`
+
+Example:
+* `viewp -IC T01234567X` displays all the details of the patient whose IC is T01234567X
+
+#### 2.2.2 Adding appointment to patient : `addappt`
 
 Allows you to create an appointment for a patient.
 
@@ -177,10 +183,10 @@ Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`
 Example:
 * addappt -IC S9123456Z -D 25/06/2025 09:00
 
-### Removing appointment from patient : `rmappt`
+#### 2.2.3 Removing appointment from patient : `rmappt`
 
 Allows you to remove an appointment from a patient at the specified index.
-<box type="tip" seamless>
+<box type="tip" seamless class="tip-custom">
 
 **Tip:** Use viewp first to view the appointment list for a specified patient
 </box>
@@ -190,62 +196,88 @@ Format: `rmappt -IC <NRIC> -I <index in appointment list>`
 Example:
 * rmappt -IC S9123456Z -I 1
 
-### Clearing all entries : `clear`
+<br>
+<br>
+
+### 2.3 HubHealth general features
+
+#### 2.3.1 Viewing help : `help`
+
+Shows you a message explaining how to access the help page.
+
+![help message](images/helpMessage.png)
+
+Format: `help`
+
+#### 2.3.2 Clearing all entries : `clear`
 
 Clears all entries from HubHealth.
 
 Format: `clear`
 
-<box type="tip" seamless>
+<box type="tip" seamless class="tip-custom">
 A useful first step to creating your own patient record: Deleting the existing sample data.
 </box>
 
-<box type="warning" seamless>
+<box type="warning" seamless class="warning-custom">
 We do not support undoing commands yet. Clearing of patient records is thus permanent. Use this command wisely.
 </box>
 
-### Exiting the program : `exit`
+#### 2.3.3 Exiting HubHealth : `exit`
 
-Allow you to exit the program.
+Allow you to exit HubHealth.
 
 Format: `exit`
 
-### Coming soon
-1. Allow “/” character in name
-   * Name currently only supports alphanumeric characters and spaces, and does not support the character “/”, “@” 
-   * For example, the name “Ravi S/O Ramasamy” will not be allowed 
-   * Support for “/”, “@” in the name will be added in a future release
+<br>
+<br>
 
+### 2.4 Coming soon
+1. Allow “/” and other special characters in name
+   * Name currently only supports alphanumeric characters and spaces, and does not support characters such as “/”, 
+     “@” (list is non-exhaustive) 
+   * For example, the name “Ravi S/O Ramasamy” will not be allowed 
+   * Support for “/”, “@” and other special characters used in the name will be added in a future release
+
+<br>
 
 2. Allow editing of patient information
    * For example, allow phone number and tags (tracking patient’s CHAS information, insurance information etc.) to be 
    editable
    * However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created
 
+<br>
 
 3. Allow name searches to match only names that start with any of the keywords
    * The `find` command currently returns patients whose name contain any of the keywords in any part of their name
    * For example, `find Le` can return patients named "Levanne" and "Violet"
    * This search may be refined to only return patients whose name starts with a keyword in a future release.
 
-### Saving the data
+<br>
+<br>
 
-AddressBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+### 2.5 Saving the data
 
-### Editing the data file
+HubHealth data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
-AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
+<br>
+<br>
+
+### 2.6 Editing the data file
+
+HubHealth data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are 
+welcome to update data directly by editing that data file.
 
 
-<box type="warning" seamless>
-If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+<box type="warning" seamless class="warning-custom">
+If your changes to the data file makes its format invalid, HubHealth will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
+Furthermore, certain edits can cause the HubHealth to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
 
 
 --------------------------------------------------------------------------------------------------------------------
 
-## FAQ
+## 3. FAQ
 
 **Q**: Can I use HubHealth on multiple computers?<br>
 **A**: No, HubHealth is built for private clinics who are moving to digital-based processes for the first time. 
@@ -260,14 +292,14 @@ the data of your previous HubHealth home folder.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Known issues
+## 4. Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 2. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+## 5. Command summary
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -282,8 +314,9 @@ Action     | Format, Examples
 **Help**   | `help`
 **Exit**   | `exit`
 
+--------------------------------------------------------------------------------------------------------------------
 
-## Glossary
+## 6. Glossary
 
 Term       |  Meaning
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
