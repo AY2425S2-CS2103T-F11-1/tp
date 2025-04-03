@@ -45,6 +45,7 @@ If you are unfamiliar with any terminology in the HubHealth User Guide, refer to
   * [7. Glossary](#7-glossary)
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## 1. Quick start
 This section provides a quick start to HubHealth. If HubHealth is already installed on your computer, you may 
@@ -97,6 +98,8 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 </box>
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## 2. Features
 
@@ -302,6 +305,8 @@ Furthermore, certain edits can cause the HubHealth to behave in unexpected ways 
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## 3. FAQ
 
 **Q**: Can I use HubHealth on multiple computers?<br>
@@ -340,6 +345,8 @@ to bring HubHealth back into the primary screen.
 | **T**     | Find by Name(s)                    | Optional <br> `add`                                           | Tags names should be alphanumeric                                                                                      |
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## 6. Command summary
 
