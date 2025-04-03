@@ -64,9 +64,9 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 
    * `list` : Lists all patients recorded in HubHealth.
 
-   * `add -N John Doe -P 98765432 -IC S7257684E -DOB 03/10/1998` : Adds a patient named `John Doe` to HubHealth.
+   * `add -N John Doe -P 98765432 -IC S9123456Z -DOB 03/10/1998` : Adds a patient named `John Doe` to HubHealth.
 
-   * `remove -IC S7257684E` : Removes the patient with the NRIC `S7257684E`.
+   * `remove -IC S9123456Z` : Removes the patient with the NRIC `S9123456Z`.
 
    * `clear` : Removes all patients recorded in HubHealth.
 
@@ -151,7 +151,8 @@ Allows you to add a new patient to HubHealth.
 Format: `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`
 
 Example:
-* `add -IC T0000000A -N John Doe -P 81234567 -DOB 02/02/2005` will add a patient with name `John Doe`, NRIC `T0000000A`, phone number `81234567` and date of birth `2nd Feb 2005` to HubHealth
+* `add -IC S9123456Z -N John Doe -P 81234567 -DOB 02/02/1995` will add a patient with name `John Doe`, NRIC 
+  `S9123456Z`, phone number `81234567` and date of birth `2nd Feb 1995` to HubHealth
 
 #### 2.1.4 Removing a patient : `remove`
 
@@ -162,7 +163,7 @@ Format: `remove -IC <NRIC>` or `rm -IC <NRIC>`
 * Deletes the patient with the specified `<NRIC>`
 
 Example:
-* `remove -IC T0000000A` removes the patient with the NRIC T0000000A
+* `remove -IC S9123456Z` removes the patient with the NRIC S9123456Z
 
 <br>
 <br>
@@ -175,7 +176,9 @@ Shows you the details of a patient.
 Format: `viewp -IC <NRIC>`
 
 Example:
-* `viewp -IC T01234567X` shows details of the patient with the NRIC T01234567X
+* `viewp -IC S9123456Z` shows details of the patient with the NRIC S9123456Z
+![viewp](images/Viewp.png)
+In the screenshot above, we can see that this patient has no past or upcoming appointments.
 
 #### 2.2.2 Adding appointment to patient : `addappt`
 
@@ -185,6 +188,9 @@ Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`
 
 Example:
 * `addappt -IC S9123456Z -D 25/06/2025 09:00` creates an appointment on 25 June 2025 at 9:00am for the patient with the NRIC S9123456Z
+![addappt](images/Addappt.png)
+In the screenshot above, we can see that a new upcoming appointment has been added for this patient. You can also 
+see the date and time for this appointment.
 
 #### 2.2.3 Removing appointment from patient : `rmappt`
 
@@ -194,19 +200,17 @@ Format: `rmappt -IC <NRIC> -I <index in appointment list>`
 
 Example:
 * `rmappt -IC S9123456Z -I 1` removes the appointment with index 1 from the patient with the NRIC S9123456Z
-
-<box type="tip" seamless class="tip-custom">
-**Tip:** Use viewp first to view the appointment list of a specified patient
-</box>
-
-<br>
+![rmappt](images/Rmappt.png)
+In the screenshot above, we can see that the first appointment (added using the example `addappt` command above) has 
+been removed for this patient. This patient now has no more appointments.
 <br>
 
 ### 2.3 HubHealth general features
 
 #### 2.3.1 Viewing help : `help`
 
-Shows you a message explaining how to access the help page.
+Shows you a message explaining how to access the help page. The URL shown can be copied via the `Copy URL` button, 
+and pasted into a browser to access the help page.
 
 ![help message](images/helpMessage.png)
 
