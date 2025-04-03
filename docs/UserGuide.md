@@ -33,6 +33,7 @@ patient, further simplifying patient management.
 3. [FAQ](#faq)
 4. [Known Issues](#known-issues)
 5. [Command Summary](#command-summary)
+6. [Glossary](#glossary)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -41,7 +42,7 @@ patient, further simplifying patient management.
 ### Installation
 
 1. Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
-   - **Checking whether you have the right version of Java:**<br>
+   - **Checking whether you have the right version of Java installed:**<br>
      - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no results that lead to an application. You do not have Java installed. Otherwise, click on `About Java`, and it show you the version of Java currently downloaded on your computer.<br>
      - **Mac users:** Open a new Terminal window, and enter `java -version`. Hit enter and you should see the Java version downloaded on your computer.<br>
    - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
@@ -138,7 +139,7 @@ Format: `find <Name> [MORE_NAMES]`
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
 * Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
+* Partial words will be matched e.g. `Han` will match `Hans`
 * Patients whose name is matching with at least one keyword will be returned (i.e. `OR` search).
   e.g. Finding `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
@@ -221,6 +222,12 @@ Format: `exit`
    editable
    * However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created
 
+
+3. Allow name searches to match only names that start with any of the keywords
+   * The `find` command currently returns patients whose name contain any of the keywords in any part of their name
+   * For example, `find Le` can return patients named "Levanne" and "Violet"
+   * This search may be refined to only return patients whose name starts with a keyword in a future release.
+
 ### Saving the data
 
 AddressBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
@@ -274,3 +281,12 @@ Action     | Format, Examples
 **List**   | `list`, `ls`
 **Help**   | `help`
 **Exit**   | `exit`
+
+
+## Glossary
+
+Term       |  Meaning
+-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**GUI**    |  The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands.
+**IC/ NRIC** |  They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands. 
+**Patient/ Person** |  In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information. 
