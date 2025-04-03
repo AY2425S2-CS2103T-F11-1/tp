@@ -7,11 +7,13 @@
 # HubHealth User Guide
 
 ## About HubHealth
-HubHealth is a **Clinic Appointment Management System** designed to empower clinic receptionists to efficiently 
-**manage patient information** and **schedule appointments**. As a clinic receptionist, you can easily manage patient 
-records (including name, birth date, contact information, etc.), and track past and upcoming appointments with 
+HubHealth is a **Clinic Appointment Management System** designed to empower clinic receptionists to **manage
+patient information** and **schedule appointments** efficiently. As a clinic receptionist, you can easily manage patient 
+records (including name, birth date, contact information, etc.) and track past and upcoming appointments with 
 simple keyboard commands. Additionally, the tagging system allows you to tag government-related subsidies
 (such as CHAS) or insurance information to your patient, simplifying patient management.
+
+If you are unfamiliar with any terminology in the HubHealth User Guide, refer to the [Glossary](#7-glossary).
 
 ## Table of contents
   * [About HubHealth](#about-hubhealth)
@@ -38,10 +40,12 @@ simple keyboard commands. Additionally, the tagging system allows you to tag gov
     * [2.6 Editing the data file](#2-6-editing-the-data-file)
   * [3. FAQ](#3-faq)
   * [4. Known issues](#4-known-issues)
-  * [5. Command summary](#5-command-summary)
-  * [6. Glossary](#6-glossary)
+  * [5. Parameter Constraint Table](#5-parameter-constraint-table)
+  * [6. Command summary](#6-command-summary)
+  * [7. Glossary](#7-glossary)
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## 1. Quick start
 This section provides a quick start to HubHealth. If HubHealth is already installed on your computer, you may 
@@ -74,7 +78,7 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 
 1. Refer to the [Features](#features) below for details of each command.
 
-<box type="info" seamless>
+<box type="info" seamless class="info-custom">
 
 **Note:** ONLY IF any of the above steps ([1.2 Getting started](#1-2-getting-started)) do not work, you may need to follow the instructions below:
 
@@ -94,6 +98,8 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 </box>
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## 2. Features
 
@@ -203,6 +209,14 @@ Example:
 ![rmappt](images/Rmappt.png)
 In the screenshot above, we can see that the first appointment (added using the example `addappt` command above) has 
 been removed for this patient. This patient now has no more appointments.
+
+<box type="tip" seamless class="tip-custom">
+
+Use `viewp` first to view the appointment list of a specified patient
+
+</box>
+
+<br>
 <br>
 
 ### 2.3 HubHealth general features
@@ -303,6 +317,8 @@ Furthermore, certain edits can cause the HubHealth to behave in unexpected ways 
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## 3. FAQ
 
 **Q**: Can I use HubHealth on multiple computers?<br>
@@ -320,12 +336,34 @@ the data of your previous HubHealth home folder.
 
 ## 4. Known issues
 
-1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+1. **When using multiple screens**, if you move HubHealth to a secondary screen, and later switch to using only
+the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the
+application before running HubHealth again.
+<br>
+**Windows users:**
+Alternatively, you may press the `Windows Key` + `Right-Arrow Key` to bring HubHealth back into the primary screen.
+
 2. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## 5. Command summary
+## 5. Parameter Constraint Table
+
+| Parameter | Parameter Representation/Full Name | Requirement (Commands)                                        | Constraint                                                                                                             |
+|-----------|------------------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| **IC**    | Identity Card Number (NRIC)        | Compulsory <br> `add`, `remove`, `viewp`, `addappt`, `rmappt` | NRIC should only contain alphabets or numbers, starting with S,T,F,G followed by 7 digits, and ending with an alphabet |
+| **N**     | Patient's Name                     | Compulsory <br> `add`                                         | Names should only contain alphanumeric characters and spaces, and it should not be blank                               |
+| **P**     | Phone Number                       | Compulsory <br> `add`                                         | Phone numbers should only contain numbers, and it should be at least 3 digits long                                     |
+| **DOB**   | Date of Birth                      | Compulsory <br> `add`                                         | Date of Birth should be in the format: dd/MM/yyyy and year should be after 1900, and cannot be after today's date      |
+| **I**     | Index (of Appointment)             | Compulsory <br> `rmappt`                                      | Index should only be a number, and should be within the range of the appointments a patient has. 0 is not allowed      |
+| **D**     | Date (of Appointment)              | Compulsory <br> `addappt`                                     | Appointment date should be in the format: dd/MM/yyyy HH:mm and cannot be before today                                  |
+| **T**     | Find by Name(s)                    | Optional <br> `add`                                           | Tags names should be alphanumeric, may contain `-` and no spaces                                                       |
+
+--------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
+
+## 6. Command summary
 
 Action     | Format(s)
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -343,7 +381,7 @@ Exiting HubHealth | [`exit`](#2-3-3-exiting-hubhealth-exit)
 
 --------------------------------------------------------------------------------------------------------------------
 
-## 6. Glossary
+## 7. Glossary
 
 Term       |  Meaning
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
