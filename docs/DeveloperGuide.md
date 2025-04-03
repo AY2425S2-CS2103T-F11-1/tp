@@ -13,7 +13,8 @@
 
 ## **Acknowledgements**
 
-_{ list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the original source as well }_
+The layout and design elements are adapted from the User Guide [here]
+(https://ay2223s1-cs2103t-w16-2.github.io/tp/UserGuide)
 
 --------------------------------------------------------------------------------------------------------------------
 
