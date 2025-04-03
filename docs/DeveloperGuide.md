@@ -527,14 +527,13 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: Patient with NRIC T0288759A in the list. View patient's details using `viewp` command.
 
-   1. Test case: `addappt -IC T0288759A -D 28/06/2025 17:00`<br>
+   1. Test case: `addappt -IC T0288759A -D 25/06/2025 17:00`<br>
       Expected: New appointment is added to the patient. Details of the new appointment shown in the status message. Timestamp in the status bar is updated.
 
-   1. Test case: `addappt -IC 1 -D 28/06/2025 17:00`<br>
+   1. Test case: `addappt -IC 1 -D 25/06/2025 -T 17:00`<br>
       Expected: Error details shown in the status message. Status bar remains the same.
 
-   1. Other incorrect add commands to try: `appt -IC a -D b -T c`, `appt`, `...` (where a, b, c are invalid NRIC, 
-      date and time respectively)<br>
+   1. Other incorrect add commands to try: `addappt -IC x -D y`, `addappt`, `...` (where x, y are invalid NRIC, datetime respectively)<br>
       Expected: Similar to previous.
 
 1. _{ more test cases …​ }_
