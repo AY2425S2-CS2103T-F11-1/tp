@@ -52,9 +52,15 @@ The bulk of the app's work is done by the following four components:
 
 **How the architecture components interact with each other**
 
-The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete 1`.
+The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user 
+issues the command `remove S1234567A`.
 
 <puml src="diagrams/ArchitectureSequenceDiagram.puml" width="574" />
+
+In this interaction, the `UI` component takes in the command `remove S1234567A`, which is passed to the `Logic` 
+component. It checks whether this command exists, and whether the syntax is valid. If so, it executes, removing the 
+person with the NRIC of `S1234567A` from `Model`. This change needs to be saved in order for it to persist, and so 
+`Storage` saves this change to the file on the hard disk. 
 
 Each of the four main components (also shown in the diagram above),
 
@@ -311,13 +317,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `HubHealth` and the **Actor** is the `User`, unless specified otherwise)
+<box type="info" seamless>
+For all use cases below, the **System** refers to `HubHealth` and the **Actor** is the `User`, unless specified 
+otherwise.
+</box>
 
 #### **Use case: UC01 List all patients**
 
 **MSS**
 
-1. User requests to see a list all of the patients.
+1. User requests to see a list of all patients.
 2. HubHealth shows a list of patients.
 
     Use case ends.
@@ -326,8 +335,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **MSS**
 
-1. User requests to add a new patient into the list.
-2. Hubhealth adds the new patient into the list.
+1. User requests to add a new patient to the list.
+2. HubHealth adds the new patient to the list.
 
     Use case ends.
 
@@ -416,9 +425,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Non-Functional Requirements
 
-1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
+1.  HubHealth should work on any _mainstream OS_ as long as it has Java `17` or above installed.
+2.  HubHealth should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical 
+    usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+4.  HubHealth should work independent of internet connectivity.
 
 *{More to be added}*
 
@@ -446,7 +457,8 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample patients. The window size may not be optimum.
+   1. Double-click the jar file
+       Expected: GUI appears and shows a set of sample patients. The window size may not be optimum.
 
 1. Saving window preferences
 
@@ -463,10 +475,10 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: List all patients using the `list` or `ls` command.
 
-   1. Test case: `add -IC T0288759A -N John Tan -P 89897777 -DOB 2002-02-02`<br>
+   1. Test case: `add -IC T0288759A -N John Tan -P 89897777 -DOB 02/02/2002`<br>
       Expected: New patient is added into the list. Details of the new patient shown in the status message. Timestamp in the status bar is updated.
 
-   1. Test case: `add -IC T -N John Tan -P 89897777 -DOB 2002-02-02`<br>
+   1. Test case: `add -IC T -N John Tan -P 89897777 -DOB 02/02/2002`<br>
       Expected: No patient is added. Error details shown in the status message. Status bar remains the same.
 
    1. Other incorrect add commands to try: `add`, `add -IC a -N John Tan -P c -DOB d`, `...` (where a, b, c, d are invalid NRIC, phone number and date respectively)<br>
@@ -546,6 +558,27 @@ testers are expected to do more *exploratory* testing.
 
 1. Dealing with missing/corrupted data files
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+   1. _Prerequisites: At least one valid patient present in the list. Validity can be confirmed by the appearance of 
+      the patient when listed with `list` or `ls`. The `data` folder should be present in the same location as the 
+      jar file for the app. This can be guaranteed by starting the app once and closing it. 
+
+   1. Test case (Missing data file): Close HubHealth (if it is open). Navigate to the `data` folder. Delete the `addressbook.json` file if it exists. Launch the app once again by double-clicking it.
+      Expected: Default list of patients shown. There should be a list of patients displayed, starting with a 
+      patient named "Alex Yeoh"
+      
+   1. Test case (Corrupted data files - invalid data): Close HubHealth (if it is open). Navigate to the `data` 
+      folder. Change the birth year of any patient to 1899 and save the changes using any text editor. Launch the 
+      app again by double-clicking it.
+      Expected: No patients shown. 
+
+   1. Test case (Corrupted data files - wrong format): Close HubHealth (if it is open). Navigate to the `data`
+      folder. Delete the birth year of any patient (leaving something like 02/02/ in the file) and save the changes 
+      using any text editor. Launch the app again by double-clicking it.
+      Expected: No patients shown.
+
+   1. Other ways to corrupt file data to try: Delete closing parentheses from the `addressbook.json` file, or delete 
+      the NRIC completely from an entry in the file. Alternatively, change the NRIC values to illegal values like 
+      "abc". Save the corrupting changes and launch the app again by double-clicking it. 
+      Expected: Similar to previous.
 
 1. _{ more test cases …​ }_
