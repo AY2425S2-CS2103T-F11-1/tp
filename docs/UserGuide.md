@@ -89,7 +89,7 @@ skip the Installation and jump to [Getting Started](#1-2-getting-started).
 
 ## 2. Features
 
-<box type="info" seamless>
+<box type="info" seamless class="info-custom">
 
 **Notes about the command format:**<br>
 
@@ -117,7 +117,7 @@ Shows you a list of all patients in HubHealth.
 Format: `list`
 
 
-<box type="tip" seamless>
+<box type="tip" seamless class="tip-custom">
 
 **Tip:** You can also use `ls` to list all patients in HubHealth.
 </box>
@@ -154,7 +154,7 @@ Example:
 Allows you to remove the specified patient from HubHealth.
 
 Format: `remove -IC <NRIC>`
-<box type="tip" seamless>
+<box type="tip" seamless class="tip-custom">
 
 **Tip:** You can also use `rm` instead of `remove`.
 </box>
@@ -186,7 +186,7 @@ Example:
 #### 2.2.3 Removing appointment from patient : `rmappt`
 
 Allows you to remove an appointment from a patient at the specified index.
-<box type="tip" seamless>
+<box type="tip" seamless class="tip-custom">
 
 **Tip:** Use viewp first to view the appointment list for a specified patient
 </box>
@@ -215,11 +215,11 @@ Clears all entries from HubHealth.
 
 Format: `clear`
 
-<box type="tip" seamless>
+<box type="tip" seamless class="tip-custom">
 A useful first step to creating your own patient record: Deleting the existing sample data.
 </box>
 
-<box type="warning" seamless>
+<box type="warning" seamless class="warning-custom">
 We do not support undoing commands yet. Clearing of patient records is thus permanent. Use this command wisely.
 </box>
 
@@ -256,7 +256,7 @@ HubHealth data are saved automatically as a JSON file `[JAR file location]/data/
 welcome to update data directly by editing that data file.
 
 
-<box type="warning" seamless>
+<box type="warning" seamless class="warning-custom">
 If your changes to the data file makes its format invalid, HubHealth will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the HubHealth to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
@@ -301,6 +301,7 @@ Action     | Format, Examples
 **Help**   | `help`
 **Exit**   | `exit`
 
+--------------------------------------------------------------------------------------------------------------------
 
 ## 6. Glossary
 
