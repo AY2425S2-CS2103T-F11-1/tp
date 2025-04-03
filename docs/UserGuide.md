@@ -7,11 +7,13 @@
 # HubHealth User Guide
 
 ## About HubHealth
-HubHealth is a **Clinic Appointment Management System** designed to empower clinic receptionists to efficiently 
-**manage patient information** and **schedule appointments**. As a clinic receptionist, you can easily manage patient 
-records (including name, birth date, contact information, etc.), and track past and upcoming appointments with 
+HubHealth is a **Clinic Appointment Management System** designed to empower clinic receptionists to **manage
+patient information** and **schedule appointments** efficiently. As a clinic receptionist, you can easily manage patient 
+records (including name, birth date, contact information, etc.) and track past and upcoming appointments with 
 simple keyboard commands. Additionally, the tagging system allows you to tag government-related subsidies
 (such as CHAS) or insurance information to your patient, simplifying patient management.
+
+If you are unfamiliar with any terminology in the HubHealth User Guide, refer to the [Glossary](#6-glossary).
 
 ## Table of contents
   * [About HubHealth](#about-hubhealth)
@@ -294,7 +296,10 @@ the data of your previous HubHealth home folder.
 
 ## 4. Known issues
 
-1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
+1. **When using multiple screens**, if you move HubHealth to a secondary screen, and later switch to using only
+the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the
+application before running HubHealth again. Alternatively, you may press the `Windows Key` + `Right-Arrow Key`
+to bring HubHealth back into the primary screen.
 2. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
 
 --------------------------------------------------------------------------------------------------------------------
