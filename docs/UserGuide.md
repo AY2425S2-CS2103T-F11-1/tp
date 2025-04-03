@@ -199,6 +199,7 @@ Format: `exit`
    editable
    * However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created
 
+
 3. Allow name searches to match only names that start with any of the keywords
    * The `find` command currently returns patients whose name contain any of the keywords in any part of their name
    * For example, `find Le` can return patients named "Levanne" and "Violet"
