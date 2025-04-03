@@ -167,6 +167,28 @@ Format: `remove -IC <NRIC>`
 
 * Deletes the patient with the specified `<NRIC>`.
 
+### Adding appointment to patient : `addappt`
+
+Allows you to create an appointment for a patient.
+
+Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`
+
+Example:
+* addappt -IC S9123456Z -D 25/06/2025 09:00
+
+### Removing appointment from patient : `rmappt`
+
+Allows you to remove an appointment from a patient at the specified index.
+<box type="tip" seamless>
+
+**Tip:** Use viewp first to view the appointment list for a specified patient
+</box>
+
+Format: `rmappt -IC <NRIC> -I <index in appointment list>`
+
+Example:
+* rmappt -IC S9123456Z -I 1
+
 ### Clearing all entries : `clear`
 
 Clears all entries from HubHealth.
