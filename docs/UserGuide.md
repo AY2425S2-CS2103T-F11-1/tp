@@ -40,8 +40,9 @@ If you are unfamiliar with any terminology in the HubHealth User Guide, refer to
     * [2.6 Editing the data file](#2-6-editing-the-data-file)
   * [3. FAQ](#3-faq)
   * [4. Known issues](#4-known-issues)
-  * [5. Command summary](#5-command-summary)
-  * [6. Glossary](#6-glossary)
+  * [5. Parameter Constraint Table](#5-parameter-constraint-table)
+  * [6. Command summary](#6-command-summary)
+  * [7. Glossary](#7-glossary)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -304,7 +305,21 @@ to bring HubHealth back into the primary screen.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## 5. Command summary
+## 5. Parameter Constraint Table
+
+| Parameter | Parameter Representation/Full Name | Requirement (Commands)                                        | Constraint                                                                                                             |
+|-----------|------------------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| **IC**    | Identity Card Number (NRIC)        | Compulsory <br> `add`, `remove`, `viewp`, `addappt`, `rmappt` | NRIC should only contain alphabets or numbers, starting with S,T,F,G followed by 7 digits, and ending with an alphabet |
+| **N**     | Patient's Name                     | Compulsory <br> `add`                                         | Names should only contain alphanumeric characters and spaces, and it should not be blank                               |
+| **P**     | Phone Number                       | Compulsory                                                    | Phone numbers should only contain numbers, and it should be at least 3 digits long                                     |
+| **DOB**   | Date of Birth                      | Compulsory                                                    | Date of Birth should be in the format: dd/MM/yyyy and year should be after 1900, and cannot be after today's date      |
+| **I**     | Index of Appointment               | Compulsory                                                    | Index should only be a number, and should be within the range of the appointments a patient has. 0 is not allowed      |
+| **D**     | Date                               | Compulsory                                                    |                                                                                                                        |
+| **T**     | Find by Name(s)                    | Optional <br> `add`                                           | Tags names should be alphanumeric                                                                                      |
+
+--------------------------------------------------------------------------------------------------------------------
+
+## 6. Command summary
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -321,7 +336,7 @@ Action     | Format, Examples
 
 --------------------------------------------------------------------------------------------------------------------
 
-## 6. Glossary
+## 7. Glossary
 
 Term       |  Meaning
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
