@@ -36,7 +36,7 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 ### Installation
 
 1. Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
-   - **Checking whether you have Java installed the right Java version:**<br>
+   - **Checking whether you have the right version of Java:**<br>
      - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no results that lead to an application. You do not have Java installed. Otherwise, click on `About Java`, and it show you the version of Java currently downloaded on your computer.<br>
      - **Mac users:** Open a new Terminal window, and enter `java -version`. Hit enter and you should see the Java version downloaded on your computer.<br>
    - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
@@ -61,7 +61,7 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 
    * `list` : Lists all patients recorded in HubHealth.
 
-   * `add -N John Doe -P 98765432 -IC S7257684E -DOB 03/10/1998</box>` : Adds a patient named `John Doe` to HubHealth.
+   * `add -N John Doe -P 98765432 -IC S7257684E -DOB 03/10/1998` : Adds a patient named `John Doe` to HubHealth.
 
    * `remove -IC S7257684E` : Removes the patient with the NRIC `S7257684E`.
 
