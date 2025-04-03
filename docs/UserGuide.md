@@ -48,28 +48,17 @@ If you are unfamiliar with any terminology in the HubHealth User Guide, refer to
 
 ## 1. Quick start
 This section provides a quick start to HubHealth. If HubHealth is already installed on your computer, you may 
-skip the Installation and jump to [Getting Started](#1-2-getting-started).
+skip the Installation and jump to [Getting started](#1-2-getting-started).
 
 ### 1.1 Installation
 
-1. Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
-   - **Checking whether you have the right version of Java installed:**<br>
-     - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no results that lead to an application. You do not have Java installed. Otherwise, click on `About Java`, and it show you the version of Java currently downloaded on your computer.<br>
-     - **Mac users:** Open a new Terminal window, and enter `java -version`. Hit enter and you should see the Java version downloaded on your computer.<br>
-   - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
-     - **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
-
-1. Download the latest `.jar` file from [here](https://github.com/AY2425S2-CS2103T-F11-1/tp/releases). This is the HubHealth application.
+1. Download the latest release (`HubHealth.jar`) from [here](https://github.com/AY2425S2-CS2103T-F11-1/tp/releases). This is the HubHealth application.
 
 ### 1.2 Getting started
 
-1. Copy the file to the folder you want to use as the _home folder_ for HubHealth.
+1. Copy the app (`HubHealth.jar`) to the folder you want to use as the _home folder/base folder_ for HubHealth.<br>
 
-1. Open a command terminal, and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in. <br>
-   - For instance, if the application is in the Downloads folder, the command you enter should look something like `cd C:\Users\user\Downloads`<br>
-   - (You can find the location of the application by right-clicking on it, and selecting `Properties` or `Get info` for Windows and Mac users.)
-
-1. Next, enter the command `java -jar HubHealth.jar` and press Enter to start the application.<br>
+1. Double click the downloaded file `HubHealth.jar` to start HubHealth.<br>
    - A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
@@ -87,6 +76,25 @@ skip the Installation and jump to [Getting Started](#1-2-getting-started).
    * `exit` : Exits the app.
 
 1. Refer to the [Features](#features) below for details of each command.
+
+<box type="info" seamless>
+
+**Note:** ONLY IF any of the above steps ([1.2 Getting started](#1-2-getting-started)) do not work, you may need to follow the instructions below:
+
+1. Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
+    - **Checking whether you have the right version of Java installed:**<br>
+      - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no results that lead to an application. You do not have Java installed. Otherwise, click on `About Java`, and it show you the version of Java currently downloaded on your computer.<br>
+      - **Mac users:** Open a new Terminal window, and enter `java -version`. Hit enter and you should see the Java version downloaded on your computer.<br>
+    - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
+      - **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
+
+1. Open a command terminal (e.g. `cmd.exe`, `PowerShell.exe`, etc.), and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in. <br>
+   - For instance, if the application is in the Downloads folder, the command you enter should look something like `cd C:\Users\user\Downloads`<br>
+   - (You can find the directory of the application by right-clicking on it, and selecting `Properties` or `Get info` for Windows and Mac users.)
+
+1. Next, enter the command `java -jar HubHealth.jar` and press Enter to start the application.<br>
+
+</box>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -108,7 +116,7 @@ skip the Installation and jump to [Getting Started](#1-2-getting-started).
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `ls`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
-* If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
+* If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as certain characters (i.e. whitespace) surrounding line-breaks may be omitted when copied over to the application, resulting in the copied command not working.
 </box>
 
 ### 2.1 Patient management
@@ -117,13 +125,10 @@ skip the Installation and jump to [Getting Started](#1-2-getting-started).
 
 Shows you a list of all patients in HubHealth.
 
-Format: `list`
+Format: `list` or `ls`
 
-
-<box type="tip" seamless class="tip-custom">
-
-**Tip:** You can also use `ls` to list all patients in HubHealth.
-</box>
+Example:
+- `list` will display a list of patients currently saved in HubHealth
 
 #### 2.1.2 Locating patients by name: `find`
 
@@ -133,15 +138,14 @@ Format: `find <Name> [MORE_NAMES]`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-* Only the name is searched.
+* Only the name is searched
 * Partial words will be matched e.g. `Han` will match `Hans`
-* Patients whose name is matching with at least one keyword will be returned (i.e. `OR` search).
+* Patients whose name is matching with at least one keyword will be returned (i.e. `OR` search)
   e.g. Finding `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
 * `find John` returns `john` and `John Doe`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
-
 
 #### 2.1.3 Adding a patient: `add`
 
@@ -150,19 +154,18 @@ Allows you to add a new patient to HubHealth.
 Format: `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`
 
 Example:
-* `add -IC T0000000A -N John Doe -P 81234567 -DOB 2005-02-02`
+* `add -IC T0000000A -N John Doe -P 81234567 -DOB 02/02/2005` will add a patient with name `John Doe`, NRIC `T0000000A`, phone number `81234567` and date of birth `2nd Feb 2005` to HubHealth
 
 #### 2.1.4 Removing a patient : `remove`
 
 Allows you to remove the specified patient from HubHealth.
 
-Format: `remove -IC <NRIC>`
-<box type="tip" seamless class="tip-custom">
+Format: `remove -IC <NRIC>` or `rm -IC <NRIC>`
 
-**Tip:** You can also use `rm` instead of `remove`.
-</box>
+* Deletes the patient with the specified `<NRIC>`
 
-* Deletes the patient with the specified `<NRIC>`.
+Example:
+* `remove -IC T0000000A` removes the patient with the NRIC T0000000A
 
 <br>
 <br>
@@ -170,12 +173,12 @@ Format: `remove -IC <NRIC>`
 ### 2.2 Appointment management (for patient)
 #### 2.2.1 Viewing patient details : `viewp`
 
-Displays all patient details to you.
+Shows you the details of a patient.
 
 Format: `viewp -IC <NRIC>`
 
 Example:
-* `viewp -IC T01234567X` displays all the details of the patient whose IC is T01234567X
+* `viewp -IC T01234567X` shows details of the patient with the NRIC T01234567X
 
 #### 2.2.2 Adding appointment to patient : `addappt`
 
@@ -184,20 +187,20 @@ Allows you to create an appointment for a patient.
 Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`
 
 Example:
-* addappt -IC S9123456Z -D 25/06/2025 09:00
+* `addappt -IC S9123456Z -D 25/06/2025 09:00` creates an appointment on 25 June 2025 at 9:00am for the patient with the NRIC S9123456Z
 
 #### 2.2.3 Removing appointment from patient : `rmappt`
 
 Allows you to remove an appointment from a patient at the specified index.
-<box type="tip" seamless class="tip-custom">
-
-**Tip:** Use viewp first to view the appointment list for a specified patient
-</box>
 
 Format: `rmappt -IC <NRIC> -I <index in appointment list>`
 
 Example:
-* rmappt -IC S9123456Z -I 1
+* `rmappt -IC S9123456Z -I 1` removes the appointment with index 1 from the patient with the NRIC S9123456Z
+
+<box type="tip" seamless class="tip-custom">
+**Tip:** Use viewp first to view the appointment list of a specified patient
+</box>
 
 <br>
 <br>
@@ -212,11 +215,17 @@ Shows you a message explaining how to access the help page.
 
 Format: `help`
 
+Example:
+* `help` will open a message window as shown in the above screenshot
+
 #### 2.3.2 Clearing all entries : `clear`
 
 Clears all entries from HubHealth.
 
 Format: `clear`
+
+Example:
+* `clear` will clear all patients, leaving HubHealth with an empty patient list
 
 <box type="tip" seamless class="tip-custom">
 A useful first step to creating your own patient record: Deleting the existing sample data.
@@ -228,15 +237,22 @@ We do not support undoing commands yet. Clearing of patient records is thus perm
 
 #### 2.3.3 Exiting HubHealth : `exit`
 
-Allow you to exit HubHealth.
+Allows you to exit HubHealth.
 
 Format: `exit`
+
+Example:
+* `exit` will close the HubHealth application
+
+<box type="tip" seamless class="tip-custom">
+You may close HubHealth as you normally would any other application (i.e. by clicking 'x' on the top left/right corner). This command only exists in case closing HubHealth normally does not work.
+</box>
 
 <br>
 <br>
 
 ### 2.4 Coming soon
-1. Allow “/” and other special characters in name
+1. Allow “/” and other special characters in patient name
    * Name currently only supports alphanumeric characters and spaces, and does not support characters such as “/”, 
      “@” (list is non-exhaustive) 
    * For example, the name “Ravi S/O Ramasamy” will not be allowed 
@@ -254,7 +270,13 @@ Format: `exit`
 3. Allow name searches to match only names that start with any of the keywords
    * The `find` command currently returns patients whose name contain any of the keywords in any part of their name
    * For example, `find Le` can return patients named "Levanne" and "Violet"
-   * This search may be refined to only return patients whose name starts with a keyword in a future release.
+   * This search may be refined to only return patients whose name starts with a keyword in a future release
+
+<br>
+
+4. Allows undoing of commands in the current session
+   * There is no current method of undoing any wrong commands, including potentially destructive commands such as removing a patient or an appointment
+   * This allows for users to roll back the application in case any command has been mistakenly executed
 
 <br>
 <br>
@@ -321,18 +343,19 @@ to bring HubHealth back into the primary screen.
 
 ## 6. Command summary
 
-Action     | Format, Examples
+Action     | Format(s)
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `add -IC <NRIC> -N <Name> -P <Phone number> -DOB <Date of birth in dd/MM/yyyy format>`<br> e.g. `add -IC S1234567A -N John Doe -P 81234567 -DOB 02/02/1998`
-**Remove** | `remove -IC <NRIC>`, `rm -IC <NRIC>`<br> e.g. `remove -IC S1234567A`
-**View Patient** | `viewp -IC <NRIC>`<br> e.g. `viewp -IC S1234567A`
-**Add appointment** | `addappt -IC <NRIC> -D <Date in dd/MM/yyyy HH:mm format>`<br> e.g. `addappt -IC S1234567A -D 12/03/2025 14:30`
-**Remove appointment** | `rmappt -IC <NRIC> -I <Appointment index>`<br> e.g. `rmappt -IC S1234567A -I 1`
-**Find**   | `find <Name> [MORE_NAMES]`<br> e.g. `find James Jake`
-**Clear**  | `clear`
-**List**   | `list`, `ls`
-**Help**   | `help`
-**Exit**   | `exit`
+Listing all patients | [`list`](#2-1-1-listing-all-patients-list)
+Locating patients by name | [`find <Name> [MORE_NAMES]`](#2-1-2-locating-patients-by-name-find)
+Adding a patient| [`add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`](#2-1-3-adding-a-patient-add)
+Removing a patient | [`remove -IC <NRIC>`, `rm -IC <NRIC>`](#2-1-4-removing-a-patient-remove)
+Viewing patient details | [`viewp -IC <NRIC>`](#2-2-1-viewing-patient-details-viewp)
+Adding appointment to patient | [`addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`](#2-2-2-adding-appointment-to-patient-addappt)
+Removing appointment from patient | [`rmappt -IC <NRIC> -I <index in appointment list>`](#2-2-3-removing-appointment-from-patient-rmappt)
+Viewing help | [`help`](#2-3-1-viewing-help-help)
+Clearing all entries | [`clear`](#2-3-2-clearing-all-entries-clear)
+Exiting HubHealth | [`exit`](#2-3-3-exiting-hubhealth-exit)
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -343,3 +366,5 @@ Term       |  Meaning
 **GUI**    |  The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands.
 **IC/ NRIC** |  They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands. 
 **Patient/ Person** |  In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information. 
+**(File) Directory** | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info)
+**Home Folder** | The folder in which HubHealth (i.e. `HubHealth.jar`) resides
