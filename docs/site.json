@@ -2,7 +2,7 @@
   "baseUrl": "",
   "titlePrefix": "HubHealth",
   "titleSuffix": "AddressBook Level-3",
-  "faviconPath": "images/SeEduLogo.png",
+  "faviconPath": "images/HubHealthIcon.png",
   "style": {
     "codeTheme": "light"
   },
