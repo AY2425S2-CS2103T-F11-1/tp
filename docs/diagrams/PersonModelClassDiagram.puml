@@ -1,0 +1,16 @@
+@startuml
+!include style.puml
+
+skinparam class {
+    BackgroundColor LightGreen
+    BorderColor Black
+    FontColor Black
+}
+
+class Person #Green
+class Patient
+class Doctor
+
+Person <|-- Patient
+Person <|-- Doctor
+@enduml
