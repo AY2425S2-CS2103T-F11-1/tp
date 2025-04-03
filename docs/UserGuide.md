@@ -215,6 +215,7 @@ Format: `exit`
    * For example, the name “Ravi S/O Ramasamy” will not be allowed 
    * Support for “/”, “@” in the name will be added in a future release
 
+
 2. Allow editing of patient information
    * For example, allow phone number and tags (tracking patient’s CHAS information, insurance information etc.) to be 
    editable
