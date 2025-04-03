@@ -53,13 +53,9 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 
 ### 1.2 Getting started
 
-1. Copy the app (`HubHealth.jar`) to the folder you want to use as the _home folder/base folder_ for HubHealth.
+1. Copy the app (`HubHealth.jar`) to the folder you want to use as the _home folder/base folder_ for HubHealth.<br>
 
-1. Open a command terminal (e.g. `cmd.exe`, `PowerShell.exe`, etc.), and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in. <br>
-   - For instance, if the application is in the Downloads folder, the command you enter should look something like `cd C:\Users\user\Downloads`<br>
-   - (You can find the directory of the application by right-clicking on it, and selecting `Properties` or `Get info` for Windows and Mac users.)
-
-1. Next, enter the command `java -jar HubHealth.jar` and press Enter to start the application.<br>
+1. Double click the downloaded file `HubHealth.jar` to start HubHealth.<br>
    - A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
@@ -82,12 +78,18 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 
 **Note:** ONLY IF any of the above steps ([1.2 Getting started](#1-2-getting-started)) do not work, you may need to follow the instructions below:
 
-Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
-  - **Checking whether you have the right version of Java installed:**<br>
-    - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no results that lead to an application. You do not have Java installed. Otherwise, click on `About Java`, and it show you the version of Java currently downloaded on your computer.<br>
-    - **Mac users:** Open a new Terminal window, and enter `java -version`. Hit enter and you should see the Java version downloaded on your computer.<br>
-  - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
-    - **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
+1. Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
+    - **Checking whether you have the right version of Java installed:**<br>
+      - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no results that lead to an application. You do not have Java installed. Otherwise, click on `About Java`, and it show you the version of Java currently downloaded on your computer.<br>
+      - **Mac users:** Open a new Terminal window, and enter `java -version`. Hit enter and you should see the Java version downloaded on your computer.<br>
+    - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
+      - **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
+
+1. Open a command terminal (e.g. `cmd.exe`, `PowerShell.exe`, etc.), and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in. <br>
+   - For instance, if the application is in the Downloads folder, the command you enter should look something like `cd C:\Users\user\Downloads`<br>
+   - (You can find the directory of the application by right-clicking on it, and selecting `Properties` or `Get info` for Windows and Mac users.)
+
+1. Next, enter the command `java -jar HubHealth.jar` and press Enter to start the application.<br>
 
 </box>
 
