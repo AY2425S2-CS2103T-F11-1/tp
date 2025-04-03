@@ -114,13 +114,7 @@ skip the Installation and jump to [Getting Started](#1-2-getting-started).
 
 Shows you a list of all patients in HubHealth.
 
-Format: `list`
-
-
-<box type="tip" seamless class="tip-custom">
-
-**Tip:** You can also use `ls` to list all patients in HubHealth.
-</box>
+Format: `list` or `ls`
 
 #### 2.1.2 Locating patients by name: `find`
 
@@ -139,7 +133,6 @@ Examples:
 * `find John` returns `john` and `John Doe`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
 
-
 #### 2.1.3 Adding a patient: `add`
 
 Allows you to add a new patient to HubHealth.
@@ -147,19 +140,18 @@ Allows you to add a new patient to HubHealth.
 Format: `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`
 
 Example:
-* `add -IC T0000000A -N John Doe -P 81234567 -DOB 2005-02-02`
+* `add -IC T0000000A -N John Doe -P 81234567 -DOB 02/02/2005`
 
 #### 2.1.4 Removing a patient : `remove`
 
 Allows you to remove the specified patient from HubHealth.
 
-Format: `remove -IC <NRIC>`
-<box type="tip" seamless class="tip-custom">
-
-**Tip:** You can also use `rm` instead of `remove`.
-</box>
+Format: `remove -IC <NRIC>` or `rm -IC <NRIC>`
 
 * Deletes the patient with the specified `<NRIC>`.
+
+Example:
+* `remove -IC T0000000A` removes the patient with the NRIC T0000000A.
 
 <br>
 <br>
@@ -167,12 +159,12 @@ Format: `remove -IC <NRIC>`
 ### 2.2 Appointment management (for patient)
 #### 2.2.1 Viewing patient details : `viewp`
 
-Displays all patient details to you.
+Shows you the details of a patient.
 
 Format: `viewp -IC <NRIC>`
 
 Example:
-* `viewp -IC T01234567X` displays all the details of the patient whose IC is T01234567X
+* `viewp -IC T01234567X` shows details of the patient with the NRIC T01234567X
 
 #### 2.2.2 Adding appointment to patient : `addappt`
 
@@ -181,20 +173,20 @@ Allows you to create an appointment for a patient.
 Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`
 
 Example:
-* addappt -IC S9123456Z -D 25/06/2025 09:00
+* `addappt -IC S9123456Z -D 25/06/2025 09:00` creates an appointment on 25 June 2025 at 9:00am for the patient with the NRIC S9123456Z
 
 #### 2.2.3 Removing appointment from patient : `rmappt`
 
 Allows you to remove an appointment from a patient at the specified index.
-<box type="tip" seamless class="tip-custom">
-
-**Tip:** Use viewp first to view the appointment list for a specified patient
-</box>
 
 Format: `rmappt -IC <NRIC> -I <index in appointment list>`
 
 Example:
-* rmappt -IC S9123456Z -I 1
+* `rmappt -IC S9123456Z -I 1` removes the appointment with index 1 from the patient with the NRIC S9123456Z
+
+<box type="tip" seamless class="tip-custom">
+**Tip:** Use viewp first to view the appointment list of a specified patient
+</box>
 
 <br>
 <br>
