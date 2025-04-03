@@ -16,6 +16,8 @@ Person -up-> "*" Tag
 
 Person *--> Name
 Person *--> Phone
-Person *--> Email
-Person *--> Address
+Person *--> Nric
+Person *--> DateOfBirth
+Person *--> AppointmentList
+AppointmentList *--> "*" Appointment
 @enduml
