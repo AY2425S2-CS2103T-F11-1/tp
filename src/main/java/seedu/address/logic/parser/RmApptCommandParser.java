@@ -14,12 +14,17 @@ import seedu.address.logic.parser.exceptions.ParseException;
  * Expected format: "rmappt -IC NRIC -I Appointment Index"
  */
 public class RmApptCommandParser implements Parser<RmApptCommand> {
+
+    public static final String MESSAGE_INVALID_INDEX_FORMAT = "Invalid format for appointment index";
+    public static final String MESSAGE_OUT_OF_BOUNDS = "Invalid appointment index";
+
     /**
      * Parses the given {@code String} of arguments in the context of the RmApptCommand
      * and returns an RmApptCommand object for execution.
      * @throws ParseException if the user input does not conform to the expected format.
      */
     public RmApptCommand parse(String args) throws ParseException {
+
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args, PREFIX_NRIC, PREFIX_INDEX);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NRIC, PREFIX_INDEX)
@@ -27,6 +32,7 @@ public class RmApptCommandParser implements Parser<RmApptCommand> {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, RmApptCommand.MESSAGE_USAGE));
         }
 
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NRIC, PREFIX_INDEX);
         String nric = ParserUtil.parseNric(argMultimap.getValue(PREFIX_NRIC).get().toUpperCase()).toString();
         String indexStr = argMultimap.getValue(PREFIX_INDEX).get();
 
@@ -34,10 +40,10 @@ public class RmApptCommandParser implements Parser<RmApptCommand> {
         try {
             index = Integer.parseInt(indexStr);
             if (index <= 0) {
-                throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, RmApptCommand.MESSAGE_USAGE));
+                throw new ParseException(String.format(MESSAGE_OUT_OF_BOUNDS, RmApptCommand.MESSAGE_USAGE));
             }
         } catch (NumberFormatException e) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, RmApptCommand.MESSAGE_USAGE));
+            throw new ParseException(String.format(MESSAGE_INVALID_INDEX_FORMAT, RmApptCommand.MESSAGE_USAGE));
         }
 
         return new RmApptCommand(nric, index);
