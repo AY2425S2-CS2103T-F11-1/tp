@@ -14,7 +14,6 @@ simple keyboard commands. Additionally, the tagging system allows you to tag gov
 (such as CHAS) or insurance information to your patient, simplifying patient management.
 
 ## Table of contents
-* [HubHealth User Guide](#hubhealth-user-guide)
   * [About HubHealth](#about-hubhealth)
   * [Table of contents](#table-of-contents)
   * [1. Quick start](#1-quick-start)
