@@ -357,7 +357,7 @@ Alternatively, you may press the `Windows Key` + `Right-Arrow Key` to bring HubH
 | **DOB**   | Date of Birth                      | Compulsory <br> `add`                                         | Date of Birth should be in the format: dd/MM/yyyy and year should be after 1900, and cannot be after today's date      |
 | **I**     | Index (of Appointment)             | Compulsory <br> `rmappt`                                      | Index should only be a number, and should be within the range of the appointments a patient has. 0 is not allowed      |
 | **D**     | Date (of Appointment)              | Compulsory <br> `addappt`                                     | Appointment date should be in the format: dd/MM/yyyy HH:mm and cannot be before today                                  |
-| **T**     | Find by Name(s)                    | Optional <br> `add`                                           | Tags names should be alphanumeric                                                                                      |
+| **T**     | Find by Name(s)                    | Optional <br> `add`                                           | Tags names should be alphanumeric, may contain `-` and no spaces                                                       |
 
 --------------------------------------------------------------------------------------------------------------------
 
