@@ -265,7 +265,7 @@ HubHealth data are saved in the hard disk automatically after any command that c
 
 ### 2.6 Editing the data file
 
-HubHealth data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are 
+HubHealth data are saved automatically as a JSON file `[JAR file location]/data/HubHealth.json`. Advanced users are 
 welcome to update data directly by editing that data file.
 
 
