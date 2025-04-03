@@ -29,6 +29,7 @@ public class AddApptCommandParser implements Parser<AddApptCommand> {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddApptCommand.MESSAGE_USAGE));
         }
 
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NRIC, PREFIX_DATE);
         String ic = ParserUtil.parseNric(argMultimap.getValue(PREFIX_NRIC).get()).toString();
         String date = ParserUtil.parseAppointmentDateTime(argMultimap.getValue(PREFIX_DATE).get());
 
