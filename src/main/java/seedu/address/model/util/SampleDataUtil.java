@@ -18,7 +18,8 @@ import seedu.address.model.tag.Tag;
  */
 public class SampleDataUtil {
     public static Person[] getSamplePersons() {
-        return new Person[] {
+        // return new Person[] {
+        Person[] personList = {
             new Person(new Name("Alex Yeoh"), new Phone("87438807"), new Nric("S9132623Z"),
                 new DateOfBirth("01/01/1991"), getTagSet("CHAS-Green")),
             new Person(new Name("Bernice Yu"), new Phone("99272758"), new Nric("S4643396C"),
@@ -32,6 +33,13 @@ public class SampleDataUtil {
             new Person(new Name("Roy Balakrishnan"), new Phone("92624417"), new Nric("S4921002G"),
                 new DateOfBirth("03/07/1950"), getTagSet("CHAS-Green"))
         };
+
+        personList[0].addAppointment("01/08/2024 10:00");
+        personList[0].addAppointment("19/11/2024 12:00");
+        personList[0].addAppointment("19/04/2025 20:00");
+        personList[0].addAppointment("26/05/2025 13:00");
+
+        return personList;
     }
 
     public static ReadOnlyAddressBook getSampleAddressBook() {
