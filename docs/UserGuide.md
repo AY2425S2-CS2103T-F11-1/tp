@@ -4,73 +4,38 @@
   pageNav: 3
 ---
 
-# HubHealth User Guide
+# AB-3 User Guide
 
-## About HubHealth
-HubHealth is a **Clinic Appointment Management System** that empowers clinic receptionist to **manage your patient's 
-information** and their **appointments**. As a clinic receptionist, you can do away with paper-based processes and 
-manage the information easily with simple keyboard commands (No mouse needed!). Additionally, our easy-to-use 
-tagging system allows you to tag government-related subsidies (such as CHAS) or insurance information to your 
-patient, further simplifying patient management.
+AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized for use via a  Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps.
 
 <!-- * Table of Contents -->
 <page-nav-print />
-
-## Table of contents
-
-1. [Quick Start](#quick-start)
-2. [Features](#features)
-    - [Viewing help: `help`](#viewing-help-help)
-    - [Adding a patient: `add`](#adding-a-patient-add)
-    - [Listing all patients: `list`](#listing-all-patients-list)
-    - [Locating patients by name: `find`](#locating-patients-by-name-find)
-    - [Viewing patient details: `viewp`](#viewing-patient-details-viewp)
-    - [Removing a patient: `remove`](#removing-a-patient-remove)
-    - [Clearing all entries: `clear`](#clearing-all-entries-clear)
-    - [Exiting the program: `exit`](#exiting-the-program-exit)
-    - [Saving the data](#saving-the-data)
-    - [Editing the data file](#editing-the-data-file)
-3. [FAQ](#faq)
-4. [Known Issues](#known-issues)
-5. [Command Summary](#command-summary)
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Quick start
 
-### Installation
+1. Ensure you have Java `17` or above installed in your Computer.<br>
+   **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-1. Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
-   - **Checking whether you have the right version of Java:**<br>
-     - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no results that lead to an application. You do not have Java installed. Otherwise, click on `About Java`, and it show you the version of Java currently downloaded on your computer.<br>
-     - **Mac users:** Open a new Terminal window, and enter `java -version`. Hit enter and you should see the Java version downloaded on your computer.<br>
-   - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
-     - **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
+1. Download the latest `.jar` file from [here](https://github.com/se-edu/addressbook-level3/releases).
 
-1. Download the latest `.jar` file from [here](https://github.com/AY2425S2-CS2103T-F11-1/tp/releases). This is the HubHealth application.
+1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
 
-### Getting Started
-
-1. Copy the file to the folder you want to use as the _home folder_ for HubHealth.
-
-1. Open a command terminal, and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in. <br>
-   - For instance, if the application is in the Downloads folder, the command you enter should look something like `cd C:\Users\user\Downloads`<br>
-   - (You can find the location of the application by right-clicking on it, and selecting `Properties` or `Get info` for Windows and Mac users.)
-
-1. Next, enter the command `java -jar HubHealth.jar` and press Enter to start the application.<br>
-   - A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar addressbook.jar` command to run the application.<br>
+   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   * `list` : Lists all patients recorded in HubHealth.
+   * `list` : Lists all contacts.
 
-   * `add -N John Doe -P 98765432 -IC S7257684E -DOB 03/10/1998` : Adds a patient named `John Doe` to HubHealth.
+   * `add -IC T0000000A -N John Doe -P 81234567 -DOB 2005-02-02` : Adds a patient named `John Doe` to the Address Book.
 
-   * `remove -IC S7257684E` : Removes the patient with the NRIC `S7257684E`.
+   * `delete -IC <NRIC>` : Deletes the patient with the given NRIC.
 
-   * `clear` : Removes all patients recorded in HubHealth.
+   * `clear` : Deletes all contacts.
 
    * `exit` : Exits the app.
 
@@ -88,7 +53,7 @@ patient, further simplifying patient management.
   e.g. in `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`, `<Name>` is a parameter which can be used as `add -N John Doe`.
 
 * Parameters can be in any order.<br>
-  e.g. if the command specifies `-N <Name> -P <Phone_Number>` in the command format, `-P <Phone_Number> -N <Name>` is also acceptable.
+  e.g. if the command specifies `-N <Name> and -P <Phone_Number>`, `-P <Phone_Number> -N <Name>` is also acceptable.
 
 * Items in square brackets are optional.<br>
   e.g `find <Name> [MORE_NAMES]` can be used as `find Alex` or as `find Alex David`.
@@ -123,10 +88,9 @@ Shows you a list of all patients in the address book.
 
 Format: `list`
 
-
 <box type="tip" seamless>
 
-**Tip:** You can also use `ls` to list all patients in HubHealth.
+**Tip:** You can also use `ls` to list all patients in the address book.
 </box>
 
 ### Locating patients by name: `find`
@@ -140,63 +104,59 @@ Format: `find <Name> [MORE_NAMES]`
 * Only the name is searched.
 * Only full words will be matched e.g. `Han` will not match `Hans`
 * Patients whose name is matching with at least one keyword will be returned (i.e. `OR` search).
-  e.g. Finding `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
 * `find John` returns `john` and `John Doe`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
 
-### Viewing patient details : `viewp`
+### Viewing patient details
 
 Displays all patient details to you.
 
-Format: `viewp -IC <NRIC>`
+Format: viewp -IC <NRIC>
 
 Examples:
 * `viewp -IC T01234567X` displays all the details of the patient whose IC is T01234567X
 
 ### Removing a patient : `remove`
 
-Allows you to remove the specified patient from HubHealth.
+Allows you to remove the specified patient from the address book.
 
 Format: `remove -IC <NRIC>`
-<box type="tip" seamless>
-
-**Tip:** You can also use `rm` instead of `remove`.
-</box>
 
 * Deletes the patient with the specified `<NRIC>`.
 
+### Adding appointment to patient : `addappt`
+
+Allows you to create an appointment for a patient.
+
+Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`
+
+Example:
+* addappt -IC S9123456Z -D 25/06/2025 09:00
+
+### Removing appointment from patient : `rmappt`
+
+Allows you to remove an appointment from a patient at the specified index. 
+* Use viewp first to view the appointment list for a specified patient
+
+Format: `rmappt -IC <NRIC> -I <index in appointment list>`
+
+Example:
+* rmappt -IC S9123456Z -I 1
+
 ### Clearing all entries : `clear`
 
-Clears all entries from HubHealth.
+Clears all entries from the address book.
 
 Format: `clear`
-
-<box type="tip" seamless>
-A useful first step to creating your own patient record: Deleting the existing sample data.
-</box>
-
-<box type="warning" seamless>
-We do not support undoing commands yet. Clearing of patient records is thus permanent. Use this command wisely.
-</box>
 
 ### Exiting the program : `exit`
 
 Allow you to exit the program.
 
 Format: `exit`
-
-### Coming soon
-1. Allow “/” character in name
-   * Name currently only supports alphanumeric characters and spaces, and does not support the character “/”, “@” 
-   * For example, the name “Ravi S/O Ramasamy” will not be allowed 
-   * Support for “/”, “@” in the name will be added in a future release
-
-2. Allow editing of patient information
-   * For example, allow phone number and tags (tracking patient’s CHAS information, insurance information etc.) to be 
-   editable
-   * However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created
 
 ### Saving the data
 
@@ -206,27 +166,19 @@ AddressBook data are saved in the hard disk automatically after any command that
 
 AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
 
-
 <box type="warning" seamless>
+
+**Caution:**
 If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
-
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## FAQ
 
-**Q**: Can I use HubHealth on multiple computers?<br>
-**A**: No, HubHealth is built for private clinics who are moving to digital-based processes for the first time. 
-HubHealth is meant to be simple, and runs in a standalone environment, and does not support multiple computers.
-
 **Q**: How do I transfer my data to another Computer?<br>
-**A**: Install HubHealth in the other computer and overwrite the empty data file it creates with the file that contains 
-the data of your previous HubHealth home folder.
-
-**Q**: Can I undo a command if I make a mistake?<br>
-**A**: No, the undo feature is currently not supported. 
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous AddressBook home folder.
 
 --------------------------------------------------------------------------------------------------------------------
 
