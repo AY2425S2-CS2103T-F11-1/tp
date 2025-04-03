@@ -6,7 +6,12 @@
 
 # HubHealth User Guide
 
-HubHealth is built for you, clinic receptionists. HubHealth allows you to manage your patient's contact and appointments with simple keyboard commands.
+## About HubHealth
+HubHealth is a **Clinic Appointment Management System** that empowers clinic receptionist to **manage your patient's 
+information** and their **appointments**. As a clinic receptionist, you can do away with paper-based processes and 
+manage the information easily with simple keyboard commands (No mouse needed!). Additionally, our easy-to-use 
+tagging system allows you to tag government-related subsidies (such as CHAS) or insurance information to your 
+patient, further simplifying patient management.
 
 <!-- * Table of Contents -->
 <page-nav-print />
@@ -142,7 +147,7 @@ Examples:
 
 Displays all patient details to you.
 
-Format: viewp -IC <NRIC>
+Format: `viewp -IC <NRIC>`
 
 Examples:
 * `viewp -IC T01234567X` displays all the details of the patient whose IC is T01234567X
@@ -174,6 +179,17 @@ We do not support undoing commands yet. Clearing of patient records is thus perm
 Allow you to exit the program.
 
 Format: `exit`
+
+### Coming soon
+1. Allow “/” character in name
+   * Name currently only supports alphanumeric characters and spaces, and does not support the character “/”, “@” 
+   * For example, the name “Ravi S/O Ramasamy” will not be allowed 
+   * Support for “/”, “@” in the name will be added in a future release
+
+2. Allow editing of patient information
+   * For example, allow phone number and tags (tracking patient’s CHAS information, insurance information etc.) to be 
+   editable
+   * However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created
 
 ### Saving the data
 
