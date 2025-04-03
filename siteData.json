@@ -52,8 +52,6 @@
         "common-classes": "Common classes",
         "implementation": "Implementation",
         "proposed-extend-person-class-to-support-child-subclasses": "[Proposed] Extend Person class to support child subclasses",
-        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
-        "proposed-data-archiving": "[Proposed] Data archiving",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
@@ -128,8 +126,9 @@
         "2-6-editing-the-data-file": "2.6 Editing the data file",
         "3-faq": "3. FAQ",
         "4-known-issues": "4. Known issues",
-        "5-command-summary": "5. Command summary",
-        "6-glossary": "6. Glossary"
+        "5-parameter-constraint-table": "5. Parameter Constraint Table",
+        "6-command-summary": "6. Command summary",
+        "7-glossary": "7. Glossary"
       },
       "headingKeywords": {}
     },
@@ -168,7 +167,7 @@
       "src": "team/hugochia.md",
       "title": "Hugo Chia's Project Portfolio Page",
       "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
+        "project-hubhealth": "Project: HubHealth"
       },
       "headingKeywords": {}
     },
