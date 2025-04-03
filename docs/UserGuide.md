@@ -6,7 +6,12 @@
 
 # HubHealth User Guide
 
-HubHealth is built for you, clinic receptionists. HubHealth allows you to manage your patient's contact and appointments with simple keyboard commands.
+## About HubHealth
+HubHealth is a **Clinic Appointment Management System** that empowers clinic receptionist to **manage your patient's 
+information** and their **appointments**. As a clinic receptionist, you can do away with paper-based processes and 
+manage the information easily with simple keyboard commands (No mouse needed!). Additionally, our easy-to-use 
+tagging system allows you to tag government-related subsidies (such as CHAS) or insurance information to your 
+patient, further simplifying patient management.
 
 <!-- * Table of Contents -->
 <page-nav-print />
@@ -33,8 +38,10 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 
 ## Quick start
 
+### Installation
+
 1. Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
-   - **Checking whether you have Java installed/ the right Java version:**<br>
+   - **Checking whether you have the right version of Java:**<br>
      - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no results that lead to an application. You do not have Java installed. Otherwise, click on `About Java`, and it show you the version of Java currently downloaded on your computer.<br>
      - **Mac users:** Open a new Terminal window, and enter `java -version`. Hit enter and you should see the Java version downloaded on your computer.<br>
    - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
@@ -42,15 +49,16 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 
 1. Download the latest `.jar` file from [here](https://github.com/AY2425S2-CS2103T-F11-1/tp/releases). This is the HubHealth application.
 
+### Getting Started
+
 1. Copy the file to the folder you want to use as the _home folder_ for HubHealth.
 
 1. Open a command terminal, and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in. <br>
-  For instance, if the application is in the Downloads folder, the command you enter should look something like `cd
- C:\Users\user\Downloads`<br>
-   (You can find the location of the application by right-clicking on it, and selecting `Properties` or `Get info` for Windows and Mac users.)
+   - For instance, if the application is in the Downloads folder, the command you enter should look something like `cd C:\Users\user\Downloads`<br>
+   - (You can find the location of the application by right-clicking on it, and selecting `Properties` or `Get info` for Windows and Mac users.)
 
-2. Next, enter the command `java -jar addressbook.jar` and press Enter to start the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+1. Next, enter the command `java -jar HubHealth.jar` and press Enter to start the application.<br>
+   - A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
@@ -58,11 +66,11 @@ HubHealth is built for you, clinic receptionists. HubHealth allows you to manage
 
    * `list` : Lists all patients recorded in HubHealth.
 
-   * `add -N John Doe -P 98765432 -IC S1234567A` : Adds a patient named `John Doe` to HubHealth.
+   * `add -N John Doe -P 98765432 -IC S7257684E -DOB 03/10/1998` : Adds a patient named `John Doe` to HubHealth.
 
-   * `delete -IC <NRIC>` : Deletes the patient with the given NRIC.
+   * `remove -IC S7257684E` : Removes the patient with the NRIC `S7257684E`.
 
-   * `clear` : Deletes all patients recorded in HubHealth.
+   * `clear` : Removes all patients recorded in HubHealth.
 
    * `exit` : Exits the app.
 
@@ -118,7 +126,7 @@ Format: `list`
 
 <box type="tip" seamless>
 
-**Tip:** You can also use `ls` to list all patients in the address book.
+**Tip:** You can also use `ls` to list all patients in HubHealth.
 </box>
 
 ### Locating patients by name: `find`
@@ -142,7 +150,7 @@ Examples:
 
 Displays all patient details to you.
 
-Format: viewp -IC <NRIC>
+Format: `viewp -IC <NRIC>`
 
 Examples:
 * `viewp -IC T01234567X` displays all the details of the patient whose IC is T01234567X
@@ -152,27 +160,12 @@ Examples:
 Allows you to remove the specified patient from HubHealth.
 
 Format: `remove -IC <NRIC>`
+<box type="tip" seamless>
+
+**Tip:** You can also use `rm` instead of `remove`.
+</box>
 
 * Deletes the patient with the specified `<NRIC>`.
-
-### Adding appointment to patient : `addappt`
-
-Allows you to create an appointment for a patient.
-
-Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`
-
-Example:
-* addappt -IC S9123456Z -D 25/06/2025 09:00
-
-### Removing appointment from patient : `rmappt`
-
-Allows you to remove an appointment from a patient at the specified index. 
-* Use viewp first to view the appointment list for a specified patient
-
-Format: `rmappt -IC <NRIC> -I <index in appointment list>`
-
-Example:
-* rmappt -IC S9123456Z -I 1
 
 ### Clearing all entries : `clear`
 
@@ -193,6 +186,17 @@ We do not support undoing commands yet. Clearing of patient records is thus perm
 Allow you to exit the program.
 
 Format: `exit`
+
+### Coming soon
+1. Allow “/” character in name
+   * Name currently only supports alphanumeric characters and spaces, and does not support the character “/”, “@” 
+   * For example, the name “Ravi S/O Ramasamy” will not be allowed 
+   * Support for “/”, “@” in the name will be added in a future release
+
+2. Allow editing of patient information
+   * For example, allow phone number and tags (tracking patient’s CHAS information, insurance information etc.) to be 
+   editable
+   * However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created
 
 ### Saving the data
 
@@ -219,7 +223,7 @@ HubHealth is meant to be simple, and runs in a standalone environment, and does 
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install HubHealth in the other computer and overwrite the empty data file it creates with the file that contains 
-the data of your previous AddressBook home folder.
+the data of your previous HubHealth home folder.
 
 **Q**: Can I undo a command if I make a mistake?<br>
 **A**: No, the undo feature is currently not supported. 
@@ -237,12 +241,13 @@ the data of your previous AddressBook home folder.
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_of_Birth> <br>` e.g., `add -IC T0000000A -N John Doe -P 81234567 -DOB 2005-02-02`
-**Remove** | `remove -IC <NRIC>`
-**View Patient** | `viewp -IC <NRIC>`
-**Find**   | `find <Name> [MORE_NAMES]`<br> e.g., `find James Jake`
-**Add Appointment** | `addappt -IC <NRIC> -D <date in dd/MM/yy HH:mm>`
-**Remove Appointment** | `rmappt -IC <NRIC> -I <index>`
+**Add**    | `add -IC <NRIC> -N <Name> -P <Phone number> -DOB <Date of birth in dd/MM/yyyy format>`<br> e.g. `add -IC S1234567A -N John Doe -P 81234567 -DOB 02/02/1998`
+**Remove** | `remove -IC <NRIC>`, `rm -IC <NRIC>`<br> e.g. `remove -IC S1234567A`
+**View Patient** | `viewp -IC <NRIC>`<br> e.g. `viewp -IC S1234567A`
+**Add appointment** | `addappt -IC <NRIC> -D <Date in dd/MM/yyyy HH:mm format>`<br> e.g. `addappt -IC S1234567A -D 12/03/2025 14:30`
+**Remove appointment** | `rmappt -IC <NRIC> -I <Appointment index>`<br> e.g. `rmappt -IC S1234567A -I 1`
+**Find**   | `find <Name> [MORE_NAMES]`<br> e.g. `find James Jake`
 **Clear**  | `clear`
 **List**   | `list`, `ls`
 **Help**   | `help`
+**Exit**   | `exit`
