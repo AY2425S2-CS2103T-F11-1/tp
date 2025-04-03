@@ -177,6 +177,8 @@ As some clinics have locum doctors, the Person object will be extended in the fu
 subclasses. Common identity fields such as Name, Phone will be kept in the parent class, while data fields such as tags
 and appointmentList will be moved to the Patient subclass.
 
+<puml src="diagrams/PersonModelClassDiagram.puml" width="450" />
+
 <br>
 
 --------------------------------------------------------------------------------------------------------------------
