@@ -1,7 +1,7 @@
 {
   "baseUrl": "",
   "titlePrefix": "HubHealth",
-  "faviconPath": "images/SeEduLogo.png",
+  "faviconPath": "images/HubHealthIcon.png",
   "style": {
     "codeTheme": "light"
   },
