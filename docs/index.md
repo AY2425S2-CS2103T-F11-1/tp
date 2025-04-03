@@ -19,3 +19,5 @@
 **Acknowledgements**
 
 * Libraries used: [JavaFX](https://openjfx.io/), [Jackson](https://github.com/FasterXML/jackson), [JUnit5](https://github.com/junit-team/junit5)
+* User Guide referenced: [User Guide](https://ay2223s1-cs2103t-w16-2.github.io/tp/UserGuide)
+* Image for site icon: [Stethoscope Icon](https://pixabay.com/vectors/stethoscope-icon-stethoscope-icon-2316460/) by mcmurryjulie on Pixabay
