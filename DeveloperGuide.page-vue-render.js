@@ -389,6 +389,6 @@ with(this){return _c('ol',[_c('li',[_v("Allow “/” and other special characte
 with(this){return _c('ol',{attrs:{"start":"2"}},[_c('li',[_v("Allow editing of patient information\n"),_c('ul',[_c('li',[_v("For example, allow phone number and tags (tracking patient’s CHAS information, insurance information etc.) to be\neditable")]),_v(" "),_c('li',[_v("However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Thu, 3 Apr 2025, 23:24:30 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Thu, 3 Apr 2025, 23:25:15 GMT+8]")])])])}
 }];
   
