@@ -40,10 +40,10 @@ public class Messages {
         builder.append(person.getName())
                 .append("; Phone: ")
                 .append(person.getPhone())
-                .append("; Email: ")
-                .append(person.getEmail())
-                .append("; Address: ")
-                .append(person.getAddress())
+                .append("; NRIC: ")
+                .append(person.getNric())
+                .append("; Date-of-birth: ")
+                .append(person.getDateOfBirth())
                 .append("; Tags: ");
         person.getTags().forEach(builder::append);
         return builder.toString();

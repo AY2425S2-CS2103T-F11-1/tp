@@ -4,10 +4,13 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.appointment.Appointment;
+import seedu.address.model.appointment.AppointmentList;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -19,23 +22,24 @@ public class Person {
     // Identity fields
     private final Name name;
     private final Phone phone;
-    private final Email email;
     private final Nric nricNumber;
+    private final DateOfBirth dateOfBirth;
 
     // Data fields
-    private final Address address;
     private final Set<Tag> tags = new HashSet<>();
+    private final AppointmentList appointmentList;
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Nric nricNumber, Address address, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, nricNumber, address);
+    public Person(Name name, Phone phone, Nric nricNumber, DateOfBirth dateOfBirth, Set<Tag> tags) {
+        requireAllNonNull(name, phone, nricNumber, dateOfBirth);
         this.name = name;
         this.phone = phone;
-        this.email = email;
         this.nricNumber = nricNumber;
-        this.address = address;
+        this.dateOfBirth = dateOfBirth;
+
+        this.appointmentList = new AppointmentList();
         this.tags.addAll(tags);
     }
 
@@ -47,16 +51,12 @@ public class Person {
         return phone;
     }
 
-    public Email getEmail() {
-        return email;
-    }
-
     public Nric getNric() {
         return nricNumber;
     }
 
-    public Address getAddress() {
-        return address;
+    public DateOfBirth getDateOfBirth() {
+        return dateOfBirth;
     }
 
     /**
@@ -65,6 +65,47 @@ public class Person {
      */
     public Set<Tag> getTags() {
         return Collections.unmodifiableSet(tags);
+    }
+
+    /**
+     * Returns an immutable appointment list, which throws {@code UnsupportedOperationException}
+     * if modification is attempted.
+     */
+    public List<Appointment> getAppointmentList() {
+        return Collections.unmodifiableList(appointmentList.getAppointments());
+    }
+
+    /**
+     * Adds an appointment to this person.
+     * This method is used by storage to reconstruct a person with their appointments.
+     */
+    public void addAppointment(Appointment appointment) {
+        requireAllNonNull(appointment);
+        this.appointmentList.addAppointment(appointment);
+    }
+
+    /**
+     * Adds an appointment to this person using a string representation.
+     */
+    public void addAppointment(String appointmentString) {
+        requireAllNonNull(appointmentString);
+        this.appointmentList.addAppointment(appointmentString);
+    }
+
+    /**
+     * Removes an appointment from this person.
+     */
+    public void removeAppointment(int index) {
+        requireAllNonNull(index);
+        this.appointmentList.removeAppointment(index);
+    }
+
+    /**
+     * Returns the size of the appointment list
+     * @return int of AppointmentList size
+     */
+    public int getApptListSize() {
+        return this.appointmentList.getSize();
     }
 
     /**
@@ -99,16 +140,15 @@ public class Person {
         Person otherPerson = (Person) other;
         return name.equals(otherPerson.name)
                 && phone.equals(otherPerson.phone)
-                && email.equals(otherPerson.email)
                 && nricNumber.equals(otherPerson.nricNumber)
-                && address.equals(otherPerson.address)
+                && dateOfBirth.equals(otherPerson.dateOfBirth)
                 && tags.equals(otherPerson.tags);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, nricNumber, address, tags);
+        return Objects.hash(name, phone, nricNumber, dateOfBirth, tags);
     }
 
     @Override
@@ -116,9 +156,8 @@ public class Person {
         return new ToStringBuilder(this)
                 .add("name", name)
                 .add("phone", phone)
-                .add("email", email)
                 .add("nric", nricNumber)
-                .add("address", address)
+                .add("dateOfBirth", dateOfBirth)
                 .add("tags", tags)
                 .toString();
     }

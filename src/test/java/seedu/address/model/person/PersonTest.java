@@ -3,8 +3,6 @@ package seedu.address.model.person;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NRIC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
@@ -15,6 +13,7 @@ import static seedu.address.testutil.TypicalPersons.BOB;
 
 import org.junit.jupiter.api.Test;
 
+import seedu.address.model.appointment.Appointment;
 import seedu.address.testutil.PersonBuilder;
 
 public class PersonTest {
@@ -26,6 +25,29 @@ public class PersonTest {
     }
 
     @Test
+    public void getAppointmentList_modifyList_throwsUnsupportedOperationException() {
+        Person person = new PersonBuilder().build();
+        assertThrows(UnsupportedOperationException.class, () -> person.getAppointmentList().remove(0));
+    }
+
+    @Test
+    public void addAppointment_validAppointment_success() {
+        Person person = new PersonBuilder().build();
+        String appointmentDateTime = "01/01/2025 15:00";
+        person.addAppointment(appointmentDateTime);
+        assertTrue(person.getAppointmentList().stream()
+                .anyMatch(appointment -> appointment.toString().equals(appointmentDateTime)));
+    }
+
+    @Test
+    public void addAppointment_validAppointmentObject_success() {
+        Person person = new PersonBuilder().build();
+        Appointment appointment = Appointment.createAppointment("01/01/2025 15:00");
+        person.addAppointment(appointment);
+        assertTrue(person.getAppointmentList().contains(appointment));
+    }
+
+    @Test
     public void isSamePerson() {
         // same object -> returns true
         assertTrue(ALICE.isSamePerson(ALICE));
@@ -33,22 +55,19 @@ public class PersonTest {
         // null -> returns false
         assertFalse(ALICE.isSamePerson(null));
 
-        // same name, all other attributes different -> returns true
-        Person editedAlice = new PersonBuilder(ALICE).withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB)
-                .withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND).build();
+        // same nric, all other attributes different -> returns true
+        Person editedAlice =
+                new PersonBuilder(ALICE).withDateOfBirth("15/12/1982").withPhone(VALID_PHONE_BOB)
+                        .withTags(VALID_TAG_HUSBAND).build();
         assertTrue(ALICE.isSamePerson(editedAlice));
 
-        // different name, all other attributes same -> returns true
-        editedAlice = new PersonBuilder(ALICE).withName(VALID_NAME_BOB).build();
-        assertTrue(ALICE.isSamePerson(editedAlice));
-
-        // name differs in case, all other attributes same -> returns true
-        Person editedBob = new PersonBuilder(BOB).withName(VALID_NAME_BOB.toLowerCase()).build();
-        assertTrue(BOB.isSamePerson(editedBob));
+        // different nric, all other attributes same -> returns false
+        editedAlice = new PersonBuilder(ALICE).withNric(VALID_NRIC_BOB).build();
+        assertFalse(ALICE.isSamePerson(editedAlice));
 
         // name has trailing spaces, all other attributes same -> returns true
         String nameWithTrailingSpaces = VALID_NAME_BOB + " ";
-        editedBob = new PersonBuilder(BOB).withName(nameWithTrailingSpaces).build();
+        Person editedBob = new PersonBuilder(BOB).withName(nameWithTrailingSpaces).build();
         assertTrue(BOB.isSamePerson(editedBob));
     }
 
@@ -78,16 +97,8 @@ public class PersonTest {
         editedAlice = new PersonBuilder(ALICE).withPhone(VALID_PHONE_BOB).build();
         assertFalse(ALICE.equals(editedAlice));
 
-        // different email -> returns false
-        editedAlice = new PersonBuilder(ALICE).withEmail(VALID_EMAIL_BOB).build();
-        assertFalse(ALICE.equals(editedAlice));
-
         // different nric -> returns false
         editedAlice = new PersonBuilder(ALICE).withNric(VALID_NRIC_BOB).build();
-        assertFalse(ALICE.equals(editedAlice));
-
-        // different address -> returns false
-        editedAlice = new PersonBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).build();
         assertFalse(ALICE.equals(editedAlice));
 
         // different tags -> returns false
@@ -98,7 +109,7 @@ public class PersonTest {
     @Test
     public void toStringMethod() {
         String expected = Person.class.getCanonicalName() + "{name=" + ALICE.getName() + ", phone=" + ALICE.getPhone()
-                + ", email=" + ALICE.getEmail() + ", nric=" + ALICE.getNric() + ", address=" + ALICE.getAddress()
+                + ", nric=" + ALICE.getNric() + ", dateOfBirth=" + ALICE.getDateOfBirth()
                 + ", tags=" + ALICE.getTags() + "}";
         assertEquals(expected, ALICE.toString());
     }

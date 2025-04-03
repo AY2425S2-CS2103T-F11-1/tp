@@ -22,7 +22,11 @@ public class ViewpCommand extends Command {
             + "Parameters: " + PREFIX_NRIC + "NRIC\n"
             + "Example: " + COMMAND_WORD + " " + PREFIX_NRIC + "S1234567A";
 
-    public static final String MESSAGE_PATIENT_FOUND = "Patient found: %1$s";
+    public static final String MESSAGE_PATIENT_FOUND = "Patient found: %1$s\n"
+            + "Phone: %2$s\n"
+            + "NRIC: %3$s\n"
+            + "Date of Birth: %4$s";
+
     public static final String MESSAGE_PATIENT_NOT_FOUND = "Patient with NRIC %1$s not found";
 
     private final String nric;
@@ -48,7 +52,11 @@ public class ViewpCommand extends Command {
 
         // We expect only one person to match by NRIC since NRIC is unique
         Person patientFound = filteredPersons.get(0);
-        return new CommandResult(String.format(MESSAGE_PATIENT_FOUND, patientFound.getName()));
+        return new CommandResult(String.format(MESSAGE_PATIENT_FOUND,
+                    patientFound.getName(),
+                    patientFound.getPhone(),
+                    patientFound.getNric(),
+                    patientFound.getDateOfBirth()));
     }
 
     @Override
