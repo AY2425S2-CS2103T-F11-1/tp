@@ -463,10 +463,10 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: List all patients using the `list` or `ls` command.
 
-   1. Test case: `add -IC T0288759A -N John Tan -P 89897777 -DOB 2002-02-02`<br>
+   1. Test case: `add -IC T0288759A -N John Tan -P 89897777 -DOB 02/02/2002`<br>
       Expected: New patient is added into the list. Details of the new patient shown in the status message. Timestamp in the status bar is updated.
 
-   1. Test case: `add -IC T -N John Tan -P 89897777 -DOB 2002-02-02`<br>
+   1. Test case: `add -IC T -N John Tan -P 89897777 -DOB 02/02/2002`<br>
       Expected: No patient is added. Error details shown in the status message. Status bar remains the same.
 
    1. Other incorrect add commands to try: `add`, `add -IC a -N John Tan -P c -DOB d`, `...` (where a, b, c, d are invalid NRIC, phone number and date respectively)<br>
@@ -480,7 +480,7 @@ testers are expected to do more *exploratory* testing.
 
    1. Prerequisites: List all patients using the `list` or `ls` command. Multiple patients in the list. Patient with NRIC T0288759A in the list.
 
-   1. Test case: `remove -IC T0288759A`<br>
+   1. Test case: `remove -IC T0288759A` or `rm -IC T0288759A`<br>
       Expected: Patient with NRIC T0288759A is removed from the list. Details of the removed patient shown in the status message. Timestamp in the status bar is updated.
 
    1. Test case: `remove -IC 1`<br>
@@ -512,24 +512,24 @@ testers are expected to do more *exploratory* testing.
 
 1. Add an appointment to a patient while the patient's details are being shown
 
-   1. Prerequisites: Patient with NRIC T0288759A in the list. View patient's details using `viewp` command.
+   1. Prerequisites: Patient with NRIC T0288759A in the list. View patient's details using `viewp -IC T0288759A` command.
 
-   1. Test case: `appt -IC T0288759A -D 2025-06-28 -T 17:00`<br>
+   1. Test case: `addappt -IC T0288759A -D 25/06/2025 17:00`<br>
       Expected: New appointment is added to the patient. Details of the new appointment shown in the status message. Timestamp in the status bar is updated.
 
-   1. Test case: `appt -IC 1 -D 2025-06-28 -T 17:00`<br>
+   1. Test case: `addappt -IC 1 -D 25/06/2025 -T 17:00`<br>
       Expected: Error details shown in the status message. Status bar remains the same.
 
-   1. Other incorrect add commands to try: `appt -IC a -D b -T c`, `appt`, `...` (where a, b, c are invalid NRIC, date and time respectively)<br>
+   1. Other incorrect add commands to try: `addappt -IC x -D y`, `addappt`, `...` (where x, y are invalid NRIC, datetime respectively)<br>
       Expected: Similar to previous.
 
 1. _{ more test cases …​ }_
 
 ### Remove an appointment from a patient
 
-1. Add an appointment to a patient while the patient's details are being shown
+1. Remove an appointment from a patient while the patient's details are being shown
 
-   1. Prerequisites: Patient with NRIC T0288759A in the list. Patient have multiple appointments. View patient's details using `viewp` command.
+   1. Prerequisites: Patient with NRIC T0288759A in the list. Patient have multiple appointments. View patient's details using `viewp -IC T0288759A` command.
 
    1. Test case: `rmappt -IC T0288759A -I 1`<br>
       Expected: Appointment with index 1 is removed from the patient's details. Details of the removed appointment shown in the status message. Timestamp in the status bar is updated.
