@@ -160,6 +160,18 @@ Classes used by multiple components are in the `seedu.address.commons` package.
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### \[Proposed\] Extend Person class to support child subclasses
+
+#### Proposed Implementation
+Currently, HubHealth only supports 1 type of Person - patient. Therefore, the model continues to use Person for the 
+name as part of the model, and is representing the patient.
+
+As some clinics have locum doctors, the Person object will be extended in the future to support Patient and Doctor
+subclasses. Common identity fields such as Name, Phone will be kept in the parent class, while data fields such as tags
+and appointmentList will be moved to the Patient subclass.
+
+<br>
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
@@ -549,3 +561,10 @@ testers are expected to do more *exploratory* testing.
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Planned enhancements**
+
+Team size: 5
+
