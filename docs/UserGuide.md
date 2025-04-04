@@ -60,7 +60,8 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 1. Copy the app (`HubHealth.jar`) to the folder you want to use as the _home folder/base folder_ for HubHealth.<br>
 
 1. Double click the downloaded file `HubHealth.jar` to start HubHealth.<br>
-   - A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+   - HubHealth should appear in a few seconds as seen in the screenshot below. Note how HubHealth contains some sample 
+     data.<br>
    ![Ui](images/Ui.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
