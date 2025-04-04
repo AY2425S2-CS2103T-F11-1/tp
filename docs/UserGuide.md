@@ -77,7 +77,7 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 
    * `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+1. Refer to the [Features](#2-features) below for details of each command.
 
 <box type="info" seamless class="info-custom">
 
