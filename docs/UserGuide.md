@@ -365,20 +365,21 @@ Alternatively, you may press the `Windows Key` + `Right-Arrow Key` to bring HubH
 <div style="page-break-after: always;"></div>
 
 ## 6. Command summary
+This section provides a summary of all commands that HubHealth provides. You may click on the command to go to the 
+respective section for more detailed information regarding the command.
 
-Action     | Format(s)
------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Listing all patients | [`list`](#2-1-1-listing-all-patients-list)
-Locating patients by name | [`find <Name> [MORE_NAMES]`](#2-1-2-locating-patients-by-name-find)
-Adding a patient| [`add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`](#2-1-3-adding-a-patient-add)
-Removing a patient | [`remove -IC <NRIC>`, `rm -IC <NRIC>`](#2-1-4-removing-a-patient-remove)
-Viewing patient details | [`viewp -IC <NRIC>`](#2-2-1-viewing-patient-details-viewp)
-Adding appointment to patient | [`addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`](#2-2-2-adding-appointment-to-patient-addappt)
-Removing appointment from patient | [`rmappt -IC <NRIC> -I <index in appointment list>`](#2-2-3-removing-appointment-from-patient-rmappt)
-Viewing help | [`help`](#2-3-1-viewing-help-help)
-Clearing all entries | [`clear`](#2-3-2-clearing-all-entries-clear)
-Exiting HubHealth | [`exit`](#2-3-3-exiting-hubhealth-exit)
-
+| Action                            | Format(s)                                                                                             |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------|
+| Listing all patients              | [`list`](#2-1-1-listing-all-patients-list)                                                            |
+| Locating patients by name         | [`find <Name> [MORE_NAMES]`](#2-1-2-locating-patients-by-name-find)                                   |
+| Adding a patient                  | [`add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`](#2-1-3-adding-a-patient-add)      |
+| Removing a patient                | [`remove -IC <NRIC>`, `rm -IC <NRIC>`](#2-1-4-removing-a-patient-remove)                              |
+| Viewing patient details           | [`viewp -IC <NRIC>`](#2-2-1-viewing-patient-details-viewp)                                            |
+| Adding appointment to patient     | [`addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`](#2-2-2-adding-appointment-to-patient-addappt)    |
+| Removing appointment from patient | [`rmappt -IC <NRIC> -I <index in appointment list>`](#2-2-3-removing-appointment-from-patient-rmappt) |
+| Viewing help                      | [`help`](#2-3-1-viewing-help-help)                                                                    |
+| Clearing all entries              | [`clear`](#2-3-2-clearing-all-entries-clear)                                                          |
+| Exiting HubHealth                 | [`exit`](#2-3-3-exiting-hubhealth-exit)                                                               |
 
 --------------------------------------------------------------------------------------------------------------------
 
