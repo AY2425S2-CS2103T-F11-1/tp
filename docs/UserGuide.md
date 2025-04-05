@@ -172,6 +172,18 @@ Format: `remove -IC <NRIC>` or `rm -IC <NRIC>`
 Example:
 * `remove -IC S9123456Z` removes the patient with the NRIC S9123456Z
 
+<box type="info" seamless class="info-custom">
+
+**Notes about NRIC when removing a patient:**<br>
+
+* Rationale for not supporting `remove INDEX_NUMBER`, where `INDEX_NUMBER` is the index of a patient in HubHealth.
+* While `remove INDEX_NUMBER` is an easier command, this is a deliberate design decision to ensure that
+you go through 1 more round of checking (**implicit verification built into HubHealth** as opposed to explicit 
+verification, asking "Are you sure you want to delete patient John Doe, NRIC: S9123456Z").
+* This ensures patient records are not accidentally deleted, for example using `delete 3` vs `delete 4`.
+
+  </box>
+
 <br>
 <br>
 
