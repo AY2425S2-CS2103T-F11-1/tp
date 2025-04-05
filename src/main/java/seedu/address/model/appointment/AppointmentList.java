@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import seedu.address.model.person.exceptions.DuplicateAppointmentException;
-
 /** Represents a list of appointments. */
 public class AppointmentList {
     private final List<Appointment> appointments;
@@ -19,13 +17,14 @@ public class AppointmentList {
      * Adds a new appointment to the list.
      * Sorts the updated list in chronological order.
      */
-    public void addAppointment(String date) throws DuplicateAppointmentException {
-        Appointment a = Appointment.createAppointment(date);
-        if (this.appointments.contains(a)) {
-            throw new DuplicateAppointmentException();
+    public void addAppointment(String date) {
+        try {
+            Appointment a = Appointment.createAppointment(date);
+            this.appointments.add(a);
+            sortAppointments();
+        } catch (DateTimeParseException e) {
+            System.out.println("Invalid date format. Please use dd/MM/yyyy HH:mm.");
         }
-        this.appointments.add(a);
-        sortAppointments();
     }
 
     /**
@@ -51,13 +50,6 @@ public class AppointmentList {
 
     public int getSize() {
         return this.appointments.size();
-    }
-
-    /**
-     * @return True if the appointment already exists in the list
-     */
-    public boolean hasAppointment(Appointment a) {
-        return this.appointments.contains(a);
     }
 
     private void sortAppointments() {

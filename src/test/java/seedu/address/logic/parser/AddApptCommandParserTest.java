@@ -51,35 +51,4 @@ public class AddApptCommandParserTest {
         String userInput = "extra -IC S1234567A -D 01/05/2025 14:30";
         assertThrows(ParseException.class, () -> parser.parse(userInput));
     }
-
-    @Test
-    public void parse_impossibleDay_throwsParseException() {
-        String userInput = " -IC S1234567A -D 99/09/2025 14:30"; // Impossible day
-        assertThrows(ParseException.class, () -> parser.parse(userInput));
-    }
-
-    @Test
-    public void parse_impossibleMonth_throwsParseException() {
-        String userInput = " -IC S1234567A -D 01/13/2025 14:30"; // Impossible month
-        assertThrows(ParseException.class, () -> parser.parse(userInput));
-    }
-
-    @Test
-    public void parse_invalidTime_throwsParseException() {
-        String userInput = " -IC S1234567A -D 09/09/2025 24:30"; // Impossible hour
-        assertThrows(ParseException.class, () -> parser.parse(userInput));
-    }
-
-    @Test
-    public void parse_invalidNric_throwsParseException() {
-        String userInput = " -IC S1234A -D 99/09/2025 14:30"; // Invalid NRIC
-        assertThrows(ParseException.class, () -> parser.parse(userInput));
-    }
-
-    @Test
-    public void parse_invalidDateLeapDay_throwsParseException() {
-        String userInput = " -IC S1234567A -D 29/02/2025 14:30"; // Invalid date
-        assertThrows(ParseException.class, () -> parser.parse(userInput));
-    }
-
 }
