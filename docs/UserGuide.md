@@ -79,7 +79,9 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 
    * `exit` : Exits the app.
 
-1. Refer to the [Features](#2-features) below for details of each command.
+1. Refer to the [Features](#2-features) section for details of each command.
+
+<div style="page-break-after: always;"></div>
 
 <box type="info" seamless class="info-custom">
 
@@ -87,16 +89,20 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 
 1. Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
     - **Checking whether you have the right version of Java installed:**<br>
-      - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no results that lead to an application. You do not have Java installed. Otherwise, click on `About Java`, and it show you the version of Java currently downloaded on your computer.<br>
+      - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no 
+        results that lead to an application, you do not have Java installed. Otherwise, click on `About Java`, and 
+        it will show you the version of Java currently downloaded on your computer.<br>
       - **Mac users:** Open a new Terminal window, and enter `java -version`. Hit enter and you should see the Java version downloaded on your computer.<br>
     - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
       - **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
 1. Open a command terminal (e.g. `cmd.exe`, `PowerShell.exe`, etc.), and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in. <br>
-   - For instance, if the application is in the Downloads folder, the command you enter should look something like `cd C:\Users\user\Downloads`<br>
-   - (You can find the directory of the application by right-clicking on it, and selecting `Properties` or `Get info` for Windows and Mac users.)
+   - For instance, if HubHealth is in the Downloads folder, the command you enter should look something like `cd 
+   C:\Users\user\Downloads`<br>
+   - (You can find the directory of HubHealth by right-clicking on it, and selecting `Properties` or `Get info` for 
+     Windows and Mac users.)
 
-1. Next, enter the command `java -jar HubHealth.jar` and press Enter to start the application.<br>
+1. Next, enter the command `java -jar HubHealth.jar` and press Enter to start HubHealth.<br>
 
 </box>
 
@@ -122,7 +128,9 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `ls`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
-* If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as certain characters (i.e. whitespace) surrounding line-breaks may be omitted when copied over to the application, resulting in the copied command not working.
+* If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple 
+  lines as certain characters (i.e. whitespace) surrounding line-breaks may be omitted when copied over to HubHealth, 
+  resulting in the copied command not working.
 </box>
 
 ### 2.1 Patient management
@@ -314,7 +322,8 @@ Example:
 * `exit` will close the HubHealth application
 
 <box type="tip" seamless class="tip-custom">
-You may close HubHealth as you normally would any other application (i.e. by clicking 'x' on the top left/right corner). This command only exists in case closing HubHealth normally does not work.
+You may close HubHealth as you would normally close any other application (i.e. by clicking 'x' on the top left/right 
+corner). This command only exists in case closing HubHealth normally does not work.
 </box>
 
 <br>
@@ -399,11 +408,11 @@ the data of your previous HubHealth home folder.
 ## 4. Known issues
 
 1. **When using multiple screens**, if you move HubHealth to a secondary screen, and later switch to using only
-the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the
-application before running HubHealth again.
+the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by 
+   HubHealth before running HubHealth again.
 <br>
-**Windows users:**
-Alternatively, you may press the `Windows Key` + `Right-Arrow Key` to bring HubHealth back into the primary screen.
+**Windows users:** Alternatively, you may press the `Windows Key` + `Right-Arrow Key` to bring HubHealth back into 
+   the primary screen.
 
 2. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
 
