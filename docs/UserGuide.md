@@ -161,6 +161,26 @@ Example:
 * `add -IC S9123456Z -N John Doe -P 81234567 -DOB 02/02/1995` will add a patient with name `John Doe`, NRIC 
   `S9123456Z`, phone number `81234567` and date of birth `2nd Feb 1995` to HubHealth
 
+<box type="info" seamless class="info-custom">
+
+**Notes about NRIC when adding a patient:**<br>
+
+* NRIC is used to identify a unique patient. HubHealth does not validate duplicate name or phone number. In real life, 
+  possible scenarios include **two patients having the same name** or **a child and parent patient sharing the same phone 
+  number**. 
+
+* You should note that NRIC checksum verification is not implemented as the current level of validation is deemed 
+  sufficient. You may refer to [5. Parameter Constraint Table](#5-parameter-constraint-table) for more information.
+
+</box>
+
+<box type="tip" seamless class="tip-custom">
+
+Pro tip: Alphabets in NRIC are case-insensitive. The following (non-exhaustive) may be accepted `S9123456Z`, 
+`s9123456z`, `S9123456z`.
+
+</box>
+
 #### 2.1.4 Removing a patient : `remove`
 
 Allows you to remove the specified patient from HubHealth.
