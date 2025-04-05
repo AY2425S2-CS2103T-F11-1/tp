@@ -25,7 +25,7 @@ public class AddApptCommand extends Command {
     public static final String MESSAGE_PATIENT_NOT_FOUND = "Patient with NRIC %1$s not found";
 
     public static final String MESSAGE_SUCCESS = "New appointment added for person with IC %1$s on %2$s";
-    public static final String MESSAGE_FAILURE = "Failed to add appointment: %1$s";
+    public static final String MESSAGE_FAILURE_APPOINTMENT_EXISTS = "This appointment already exists!";
 
     private final String ic;
     private final String date;
@@ -56,6 +56,9 @@ public class AddApptCommand extends Command {
 
         // We expect only one person to match by NRIC since NRIC is unique
         Person patientFound = filteredPersons.get(0);
+        if (patientFound.hasAppointment(date)) {
+            throw new CommandException(MESSAGE_FAILURE_APPOINTMENT_EXISTS);
+        }
         patientFound.addAppointment(date);
 
         model.updateFilteredPersonList(new NricPredicate(ic));
