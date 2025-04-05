@@ -234,9 +234,11 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-<box type="info" seamless>
+<box type="info" seamless class="info-custom">
+
 For all use cases below, the **System** refers to `HubHealth` and the **Actor** is the `User`, unless specified 
 otherwise.
+
 </box>
 
 #### **Use case: UC01 List all patients**
