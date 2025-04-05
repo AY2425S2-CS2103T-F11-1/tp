@@ -38,11 +38,13 @@ If you are unfamiliar with any terminology in the HubHealth User Guide, refer to
     * [2.4 Coming soon](#2-4-coming-soon)
     * [2.5 Saving the data](#2-5-saving-the-data)
     * [2.6 Editing the data file](#2-6-editing-the-data-file)
+    * [2.7 Backing up the data file](#2-7-backing-up-the-data-file)
   * [3. FAQ](#3-faq)
   * [4. Known issues](#4-known-issues)
   * [5. Parameter Constraint Table](#5-parameter-constraint-table)
   * [6. Command summary](#6-command-summary)
   * [7. Glossary](#7-glossary)
+
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
@@ -295,7 +297,11 @@ A useful first step to creating your own patient record: Deleting the existing s
 </box>
 
 <box type="warning" seamless class="warning-custom">
-We do not support undoing commands yet. Clearing of patient records is thus permanent. Use this command wisely.
+
+We do not support undoing commands yet. Clearing of patient records is thus permanent. If you are worried about 
+losing your data, you may refer to [2.7 Backing up the data file](#2-7-backing-up-the-data-file) to back up your 
+data. Use this command wisely.
+
 </box>
 
 #### 2.3.3 Exiting HubHealth : `exit`
@@ -353,14 +359,22 @@ HubHealth data are saved in the hard disk automatically after any command that c
 
 ### 2.6 Editing the data file
 
-HubHealth data are saved automatically as a JSON file `[JAR file location]/data/HubHealth.json`. Advanced users are 
+HubHealth data are saved automatically as a JSON file in `[Home folder]/data/HubHealth.json`. **Advanced users** are 
 welcome to update data directly by editing that data file.
-
 
 <box type="warning" seamless class="warning-custom">
 If your changes to the data file makes its format invalid, HubHealth will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the HubHealth to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
+
+<br>
+<br>
+
+### 2.7 Backing up the data file
+
+HubHealth data are saved automatically as a JSON file in `[Home folder]/data/HubHealth.json`. Users who wish to 
+perform periodic backup of the data, may make a copy of the file and store the file in another location, such as 
+another folder on the computer or on a thumbdrive.
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -432,10 +446,10 @@ respective section for more detailed information regarding the command.
 
 ## 7. Glossary
 
-| Term                 | Meaning                                                                                                                                                                                                               |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **GUI**              | The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands. |
-| **IC/ NRIC**         | They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands.                                           |
-| **Patient/ Person**  | In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information.                                               |
-| **(File) Directory** | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info).                                                                                                        |
-| **Home Folder**      | The folder in which HubHealth (i.e. `HubHealth.jar`) resides.                                                                                                                                                         |
+| Term                  | Meaning                                                                                                                                                                                                               |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **GUI**               | The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands. |
+| **IC/ NRIC**          | They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands.                                           |
+| **Patient/ Person**   | In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information.                                               |
+| **(File) Directory**  | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info).                                                                                                        |
+| **Home Folder**       | The folder in which HubHealth (i.e. `HubHealth.jar`) resides.                                                                                                                                                         |
