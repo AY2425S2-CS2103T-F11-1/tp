@@ -260,7 +260,7 @@ been removed for this patient. This patient now has no more appointments.
 
 <box type="tip" seamless class="tip-custom">
 
-Use `viewp` first to view the appointment list of a specified patient
+Use `viewp` first to view the appointment list of a specified patient.
 
 </box>
 
