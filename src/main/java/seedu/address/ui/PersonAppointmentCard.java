@@ -1,7 +1,7 @@
 package seedu.address.ui;
 
 import java.time.LocalDateTime;
-import java.util.Comparator;
+//import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javafx.fxml.FXML;
@@ -54,14 +54,12 @@ public class PersonAppointmentCard extends UiPart<Region> {
         upcomingAppointmentsLabel.setText(UPCOMING_APPOINTMENTS_LABEL);
         person.getAppointmentList().stream()
                 .filter(appointment -> !appointment.getApptDateTime().isAfter(LocalDateTime.now()))
-                .sorted(Comparator.comparing(appointment -> appointment.toString()))
                 .forEach(appointment -> {
                     int i = index.getAndIncrement();
                     pastAppointments.getChildren().add(new Label(i + ". " + appointment.toString()));
                 });
         person.getAppointmentList().stream()
                 .filter(appointment -> appointment.getApptDateTime().isAfter(LocalDateTime.now()))
-                .sorted(Comparator.comparing(appointment -> appointment.toString()))
                 .forEach(appointment -> {
                     int i = index.getAndIncrement();
                     upcomingAppointments.getChildren().add(new Label(i + ". " + appointment.toString()));
