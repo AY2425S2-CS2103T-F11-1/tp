@@ -385,10 +385,10 @@ respective section for more detailed information regarding the command.
 
 ## 7. Glossary
 
-Term       |  Meaning
------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**GUI**    |  The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands.
-**IC/ NRIC** |  They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands. 
-**Patient/ Person** |  In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information. 
-**(File) Directory** | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info)
-**Home Folder** | The folder in which HubHealth (i.e. `HubHealth.jar`) resides
+| Term                 | Meaning                                                                                                                                                                                                               |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **GUI**              | The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands. |
+| **IC/ NRIC**         | They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands.                                           |
+| **Patient/ Person**  | In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information.                                               |
+| **(File) Directory** | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info).                                                                                                        |
+| **Home Folder**      | The folder in which HubHealth (i.e. `HubHealth.jar`) resides.                                                                                                                                                         |
