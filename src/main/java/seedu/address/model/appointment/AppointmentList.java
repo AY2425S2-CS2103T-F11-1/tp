@@ -65,4 +65,8 @@ public class AppointmentList {
         }
         return s;
     }
+
+    public boolean hasAppointment(Appointment appointment) {
+        return this.appointments.contains(appointment);
+    }
 }
