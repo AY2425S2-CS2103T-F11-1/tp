@@ -11,6 +11,7 @@ import java.util.Set;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.appointment.Appointment;
 import seedu.address.model.appointment.AppointmentList;
+import seedu.address.model.person.exceptions.DuplicateAppointmentException;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -85,9 +86,16 @@ public class Person {
     }
 
     /**
+     * Returns true if this person already has an appointment on this {@code date}
+     */
+    public boolean hasAppointment(String date) {
+        return this.appointmentList.hasAppointment(Appointment.createAppointment(date));
+    }
+
+    /**
      * Adds an appointment to this person using a string representation.
      */
-    public void addAppointment(String appointmentString) {
+    public void addAppointment(String appointmentString)  {
         requireAllNonNull(appointmentString);
         this.appointmentList.addAppointment(appointmentString);
     }
