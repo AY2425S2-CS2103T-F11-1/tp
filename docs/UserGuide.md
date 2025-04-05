@@ -208,6 +208,21 @@ verification, asking "Are you sure you want to delete patient John Doe, NRIC: S9
 <br>
 
 ### 2.2 Appointment management (for patient)
+<box type="info" seamless class="info-custom">
+
+**Managing patient appointments:**<br>
+
+* When managing a specific patient (i.e. using the following commands: `viewp`, `addappt`, `rmappt`), you will be 
+  brought to a different page displaying all the appointments of **only one patient**.
+
+  </box>
+<box type="tip" seamless class="tip-custom">
+
+Use `list` or `ls` to go back to the main window to **view all patients**.
+
+</box>
+
+
 #### 2.2.1 Viewing patient details : `viewp`
 
 Shows you the details of a patient.
