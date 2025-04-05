@@ -161,6 +161,8 @@ Examples:
 * `find John` returns `john` and `John Doe`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
 
+<div style="page-break-after: always;"></div>
+
 #### 2.1.3 Adding a patient: `add`
 
 Allows you to add a new patient to HubHealth.
@@ -217,6 +219,8 @@ verification, asking "Are you sure you want to delete patient John Doe, NRIC: S9
 <br>
 <br>
 
+<div style="page-break-after: always;"></div>
+
 ### 2.2 Appointment management (for patient)
 <box type="info" seamless class="info-custom">
 
@@ -255,6 +259,8 @@ Example:
 ![addappt](images/Addappt.png)
 In the screenshot above, we can see that a new upcoming appointment has been added for this patient. You can also 
 see the date and time for this appointment.
+
+<div style="page-break-after: always;"></div>
 
 #### 2.2.3 Removing appointment from patient : `rmappt`
 
@@ -311,6 +317,8 @@ losing your data, you may refer to [2.7 Backing up the data file](#2-7-backing-u
 data. Use this command wisely.
 
 </box>
+
+<div style="page-break-after: always;"></div>
 
 #### 2.3.3 Exiting HubHealth : `exit`
 
@@ -378,6 +386,8 @@ Furthermore, certain edits can cause the HubHealth to behave in unexpected ways 
 
 <br>
 <br>
+
+<div style="page-break-after: always;"></div>
 
 ### 2.7 Backing up the data file
 
