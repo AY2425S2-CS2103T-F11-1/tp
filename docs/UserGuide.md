@@ -167,11 +167,13 @@ Examples:
 
 Allows you to add a new patient to HubHealth.
 
-Format: `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`
+Format: `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth> [-T <Tag> [MORE_TAGS]]`
 
-Example:
+Examples:
 * `add -IC S9123456Z -N John Doe -P 81234567 -DOB 02/02/1995` will add a patient with name `John Doe`, NRIC 
   `S9123456Z`, phone number `81234567` and date of birth `2nd Feb 1995` to HubHealth
+* `add -IC S9123456Z -N John Doe -P 81234567 -DOB 02/02/1995 -T CHAS-Blue Raffles-Medical` will add the same patient 
+  as the example above, with the additional tags of `CHAS-Blue` and `Raffles-Medical`, to HubHealth
 
 <box type="info" seamless class="info-custom">
 
@@ -438,7 +440,7 @@ the primary screen, the GUI will open off-screen. The remedy is to delete the `p
 | **DOB**   | Date of Birth (of Patient)                                                                                                                                                 | Compulsory <br> `add`                                         | Date of Birth should be in the format: dd/MM/yyyy and year should be after 1900, and cannot be after today's date.                                                                                                                                                                                                                                                                                                                            |
 | **I**     | Index (of Appointment)                                                                                                                                                     | Compulsory <br> `rmappt`                                      | Index should only be a number, and should be within the range of the appointments a patient has. 0 is not allowed.                                                                                                                                                                                                                                                                                                                            |
 | **D**     | Date (of Appointment)                                                                                                                                                      | Compulsory <br> `addappt`                                     | Appointment date should be in the format: dd/MM/yyyy HH:mm and cannot be before today.                                                                                                                                                                                                                                                                                                                                                        |
-| **T**     | Tag Name (a wildcard for clinic receptionist to add any useful tags necessary for work) <br><br> A suggested use case is adding CHAS/insurance information to the patient. | Optional <br> `add`                                           | Tag names should be alphanumeric, may contain `-` and no spaces.                                                                                                                                                                                                                                                                                                                                                                              |
+| **T**     | Tag Name (a wildcard for clinic receptionist to add any useful tags necessary for work) <br><br> A suggested use case is adding CHAS/insurance information to the patient. | Optional <br> `add`                                           | Tag names should be alphanumeric, may contain `-` and must not contain spaces. <br>Tag names must start with an alphanumeric character, and be at most 30 characters long.                                                                                                                                                                                                                                                                    |
 
 --------------------------------------------------------------------------------------------------------------------
 
