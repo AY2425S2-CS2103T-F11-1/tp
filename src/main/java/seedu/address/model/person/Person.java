@@ -163,4 +163,7 @@ public class Person {
                 .toString();
     }
 
+    public boolean hasAppointment(String date) {
+        return this.appointmentList.hasAppointment(Appointment.createAppointment(date));
+    }
 }

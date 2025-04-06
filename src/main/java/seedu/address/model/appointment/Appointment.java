@@ -31,4 +31,12 @@ public class Appointment {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         return apptDateTime.format(formatter);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Appointment other) {
+            return this.apptDateTime.equals(other.apptDateTime);
+        }
+        return false;
+    }
 }
