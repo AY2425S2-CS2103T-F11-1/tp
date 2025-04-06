@@ -19,6 +19,17 @@
         <Insets top="5" right="5" bottom="5" left="15" />
       </padding>
 
+      <HBox spacing="0.5" alignment="CENTER_LEFT">
+        <Label fx:id="name" text="\$first" styleClass="cell_big_label" />
+      </HBox>
+      <FlowPane fx:id="tags" />
+      <Label fx:id="nric" styleClass="cell_small_label" text="\$nric" />
+      <Label fx:id="phone" styleClass="cell_small_label" text="\$phone" />
+      <Label fx:id="dateOfBirth" styleClass="cell_small_label" text="\$dateOfBirth" />
+
+      <!-- Spacer -->
+      <Region prefHeight="10" />
+
       <Label fx:id="pastAppointmentsLabel" styleClass="cell_big_label" text="\$pastAppointmentsLabel" />
       <FlowPane fx:id="pastAppointments" />
 

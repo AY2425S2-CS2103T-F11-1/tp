@@ -34,6 +34,16 @@ public class PersonAppointmentCard extends UiPart<Region> {
     @FXML
     private HBox cardPane;
     @FXML
+    private Label name;
+    @FXML
+    private Label phone;
+    @FXML
+    private Label nric;
+    @FXML
+    private Label dateOfBirth;
+    @FXML
+    private FlowPane tags;
+    @FXML
     private Label pastAppointmentsLabel;
     @FXML
     private Label upcomingAppointmentsLabel;
@@ -49,6 +59,14 @@ public class PersonAppointmentCard extends UiPart<Region> {
         super(FXML);
         this.person = person;
         AtomicInteger index = new AtomicInteger(1);
+
+        name.setText(person.getName().fullName);
+        nric.setText(person.getNric().value);
+        phone.setText(person.getPhone().value);
+        dateOfBirth.setText(person.getDateOfBirth().toString());
+        person.getTags().stream()
+                 .sorted(Comparator.comparing(tag -> tag.tagName))
+                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
 
         pastAppointmentsLabel.setText(PAST_APPOINTMENTS_LABEL);
         upcomingAppointmentsLabel.setText(UPCOMING_APPOINTMENTS_LABEL);

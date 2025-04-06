@@ -40,11 +40,7 @@ public class ViewpCommandTest {
         expectedModel.updateFilteredPersonList(new NricPredicate("S1234567A"));
 
         assertCommandSuccess(viewpCommand, model,
-            String.format(ViewpCommand.MESSAGE_PATIENT_FOUND,
-                personWithNric.getName(),
-                personWithNric.getPhone(),
-                personWithNric.getNric(),
-                personWithNric.getDateOfBirth()),
+            String.format(ViewpCommand.MESSAGE_PATIENT_FOUND, personWithNric.getName()),
             expectedModel);
     }
 
