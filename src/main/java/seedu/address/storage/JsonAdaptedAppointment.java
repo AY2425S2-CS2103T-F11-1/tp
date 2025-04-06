@@ -3,7 +3,7 @@ package seedu.address.storage;
 import java.time.format.DateTimeParseException;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.appointment.Appointment;
@@ -19,7 +19,7 @@ class JsonAdaptedAppointment {
      * Constructs a {@code JsonAdaptedAppointment} with the given appointment details.
      */
     @JsonCreator
-    public JsonAdaptedAppointment(@JsonProperty("datetime") String appointmentDateTime) {
+    public JsonAdaptedAppointment(String appointmentDateTime) {
         this.appointmentDateTime = appointmentDateTime;
     }
 
@@ -28,6 +28,15 @@ class JsonAdaptedAppointment {
      */
     public JsonAdaptedAppointment(Appointment source) {
         appointmentDateTime = source.toString();
+    }
+
+    /**
+     * Gets the string representation of the appointment for Jackson serialization.
+     * This instructs Jackson to serialize the appointment as a simple string.
+     */
+    @JsonValue
+    public String getAppointmentDateTime() {
+        return appointmentDateTime;
     }
 
     /**

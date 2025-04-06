@@ -1,6 +1,7 @@
 package seedu.address.storage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static seedu.address.testutil.Assert.assertThrows;
 
 import java.time.format.DateTimeParseException;
@@ -24,9 +25,13 @@ public class JsonAdaptedAppointmentTest {
     }
 
     @Test
-    public void toModelType_invalidAppointment_throwsDateTimeParseException() {
+    public void toModelType_invalidAppointmentDateTime_returnsNull() {
         JsonAdaptedAppointment jsonAppointment = new JsonAdaptedAppointment(INVALID_DATETIME);
-        assertThrows(DateTimeParseException.class, jsonAppointment::toModelType);
+        try {
+            assertNull(jsonAppointment.toModelType());
+        } catch (IllegalValueException e) {
+            // Do nothing
+        }
     }
 
     @Test

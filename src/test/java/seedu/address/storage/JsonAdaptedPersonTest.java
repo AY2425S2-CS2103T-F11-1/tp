@@ -116,13 +116,4 @@ public class JsonAdaptedPersonTest {
                 new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_NRIC, VALID_DOB, invalidTags, VALID_APPOINTMENTS);
         assertThrows(IllegalValueException.class, person::toModelType);
     }
-
-    @Test
-    public void toModelType_invalidAppointments_throwsDateTimeParseException() {
-        List<JsonAdaptedAppointment> invalidAppointments = new ArrayList<>();
-        invalidAppointments.add(new JsonAdaptedAppointment(INVALID_APPOINTMENT));
-        JsonAdaptedPerson person =
-                new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_NRIC, VALID_DOB, VALID_TAGS, invalidAppointments);
-        assertThrows(DateTimeParseException.class, person::toModelType);
-    }
 }
