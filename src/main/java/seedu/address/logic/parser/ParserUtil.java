@@ -135,15 +135,16 @@ public class ParserUtil {
     public static String parseAppointmentDateTime(String dateTime) throws ParseException {
         requireNonNull(dateTime);
         String trimmedDateTime = dateTime.trim();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/uuuu HH:mm")
+                .withResolverStyle(java.time.format.ResolverStyle.STRICT);
         try {
             if (LocalDateTime.parse(trimmedDateTime, formatter).isBefore(LocalDateTime.now())) {
                 throw new ParseException("Appointment date must not be in the past");
             }
             return LocalDateTime.parse(trimmedDateTime, formatter)
-                    .format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+                    .format(DateTimeFormatter.ofPattern("dd/MM/uuuu HH:mm"));
         } catch (DateTimeParseException e) {
-            throw new ParseException("Invalid date time format. Please use dd/MM/yyyy HH:mm");
+            throw new ParseException("Invalid date time. Please use dd/MM/yyyy HH:mm");
         }
     }
 }
