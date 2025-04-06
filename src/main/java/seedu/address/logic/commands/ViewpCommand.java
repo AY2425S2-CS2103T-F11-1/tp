@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NRIC;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
@@ -25,7 +26,8 @@ public class ViewpCommand extends Command {
     public static final String MESSAGE_PATIENT_FOUND = "Patient found: %1$s\n"
             + "Phone: %2$s\n"
             + "NRIC: %3$s\n"
-            + "Date of Birth: %4$s";
+            + "Date of Birth: %4$s\n"
+            + "Tag(s): %5$s";
 
     public static final String MESSAGE_PATIENT_NOT_FOUND = "Patient with NRIC %1$s not found";
 
@@ -56,7 +58,8 @@ public class ViewpCommand extends Command {
                     patientFound.getName(),
                     patientFound.getPhone(),
                     patientFound.getNric(),
-                    patientFound.getDateOfBirth()));
+                    patientFound.getDateOfBirth(),
+                    patientFound.getTags().stream().map(tag -> tag.tagName).collect(Collectors.joining(", "))));
     }
 
     @Override

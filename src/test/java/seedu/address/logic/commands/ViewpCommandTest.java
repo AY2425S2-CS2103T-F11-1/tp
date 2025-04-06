@@ -6,6 +6,8 @@ import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.assertFilteredCommandFailure;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
+import java.util.stream.Collectors;
+
 import org.junit.jupiter.api.Test;
 
 import seedu.address.model.Model;
@@ -44,7 +46,8 @@ public class ViewpCommandTest {
                 personWithNric.getName(),
                 personWithNric.getPhone(),
                 personWithNric.getNric(),
-                personWithNric.getDateOfBirth()),
+                personWithNric.getDateOfBirth(),
+                personWithNric.getTags().stream().map(tag -> tag.tagName).collect(Collectors.joining(", "))),
             expectedModel);
     }
 
