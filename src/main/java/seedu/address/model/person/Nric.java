@@ -12,7 +12,7 @@ public class Nric {
             "NRICs should only contain alphabets or numbers, and it should start with S,T,F,G followed by "
                     + "7 digits, and ending with an alphabet";
     //NRIC regex reference: https://stackoverflow.com/questions/29743154/regular-expression-for-nric-fin-in-singapore
-    public static final String VALIDATION_REGEX = "^[STFGstfg]\\d{7}[A-Za-z]$";
+    public static final String VALIDATION_REGEX = "^[STFGMstfgm]\\d{7}[A-Za-z]$";
     public final String value;
 
     /**
