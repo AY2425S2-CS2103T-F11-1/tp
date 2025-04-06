@@ -81,7 +81,12 @@ class JsonAdaptedPerson {
 
         final List<Appointment> personAppointments = new ArrayList<>();
         for (JsonAdaptedAppointment appointment : appointments) {
-            personAppointments.add(appointment.toModelType());
+            // Try convert to model type
+            Appointment appointmentAdapted = appointment.toModelType();
+            // If not null, add to list
+            if (appointmentAdapted != null) {
+                personAppointments.add(appointmentAdapted);
+            }
         }
 
         if (name == null) {

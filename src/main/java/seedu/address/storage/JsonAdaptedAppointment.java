@@ -35,7 +35,7 @@ class JsonAdaptedAppointment {
      *
      * @throws IllegalValueException if there were any data constraints violated in the adapted appointment.
      */
-    public Appointment toModelType() throws IllegalValueException, DateTimeParseException {
+    public Appointment toModelType() throws IllegalValueException {
         if (appointmentDateTime == null) {
             throw new IllegalValueException("Appointment date time is missing!");
         }
@@ -43,11 +43,8 @@ class JsonAdaptedAppointment {
         try {
             return Appointment.createAppointment(appointmentDateTime);
         } catch (DateTimeParseException e) {
-            throw new DateTimeParseException(
-                "Invalid date format. Please use dd/MM/yyyy HH:mm.",
-                appointmentDateTime,
-                0
-                );
+            // Return null appointment
+            return null;
         }
     }
 }
