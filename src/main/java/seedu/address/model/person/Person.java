@@ -119,8 +119,8 @@ public class Person {
         }
 
         return otherPerson != null
-                && (otherPerson.getNric().equals(getNric()) || (otherPerson.getName().equals(getName()) &&
-                otherPerson.getPhone().equals(getPhone()) && otherPerson.getDateOfBirth().equals(getDateOfBirth())));
+                && (otherPerson.getNric().equals(getNric()) || (otherPerson.getName().equals(getName())
+                && otherPerson.getPhone().equals(getPhone()) && otherPerson.getDateOfBirth().equals(getDateOfBirth())));
     }
 
     /**
