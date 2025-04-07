@@ -7,11 +7,11 @@
 # HubHealth User Guide
 
 ## About HubHealth
-HubHealth is a **Clinic Appointment Management System** designed to empower clinic receptionists to **manage
-patient information** and **schedule appointments** efficiently. As a clinic receptionist, you can easily manage patient 
-records (including name, birth date, contact information, etc.) and track past and upcoming appointments with 
-simple keyboard commands. Additionally, the tagging system allows you to tag government-related subsidies
-(such as CHAS) or insurance information to your patient, simplifying patient management.
+Introducing HubHealth, a **Clinic Appointment Management System** designed to empower **Singaporean clinic 
+receptionists** to **manage patient information** and **schedule appointments** efficiently. As a clinic receptionist,
+you can easily manage patient records (including name, birth date, contact information, etc.) and track past and
+upcoming appointments with simple keyboard commands. Additionally, the **tagging system** allows you to tag
+government-related subsidies (such as CHAS) or insurance information to your patient, simplifying patient management.
 
 If you are unfamiliar with any terminology in the HubHealth User Guide, refer to the [Glossary](#7-glossary).
 
@@ -210,11 +210,8 @@ Example:
 
 **Notes about NRIC when removing a patient:**<br>
 
-* Rationale for not supporting `remove INDEX_NUMBER`, where `INDEX_NUMBER` is the index of a patient in HubHealth.
-* While `remove INDEX_NUMBER` is an easier command, this is a deliberate design decision to ensure that
-you go through 1 more round of checking (**implicit verification built into HubHealth** as opposed to explicit 
-verification, asking "Are you sure you want to delete patient John Doe, NRIC: S9123456Z").
-* This ensures patient records are not accidentally deleted, for example using `delete 3` vs `delete 4`.
+* You must use the `-IC` command format as this ensures you will not accidentally delete another patient's information.
+* This applies to other commands that use `-IC` as well.
 
   </box>
 
@@ -412,8 +409,6 @@ another folder on the computer or on a thumbdrive.
 
 --------------------------------------------------------------------------------------------------------------------
 
-<div style="page-break-after: always;"></div>
-
 ## 3. FAQ
 
 **Q**: Can I use HubHealth on multiple computers?<br>
@@ -442,17 +437,19 @@ the primary screen, the GUI will open off-screen. The remedy is to delete the `p
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## 5. Parameter Constraint Table
 
-| Parameter | Parameter Representation/Full Name                                                                                                                                         | Requirement (Commands)                                        | Constraint                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **IC**    | Identity Card Number (NRIC) (of Patient)                                                                                                                                   | Compulsory <br> `add`, `remove`, `viewp`, `addappt`, `rmappt` | NRIC should only contain alphabets or numbers, starting with S,T,F,G,M followed by 7 digits, and ending with an alphabet. <br/><br/> *A user may prefer to use lower case alphabets for the NRIC and it is accepted too (We support the feature but will not include it in the error message for brevity sake). <br/><br/> *Note that NRIC checksum verification is not implemented, as the current level of validation is deemed sufficient. |
-| **N**     | Name (of Patient)                                                                                                                                                          | Compulsory <br> `add`                                         | Names should only contain alphanumeric characters and spaces, and it should not be blank.                                                                                                                                                                                                                                                                                                                                                     |
-| **P**     | Phone Number (of Patient)                                                                                                                                                  | Compulsory <br> `add`                                         | Phone numbers should only contain numbers, and it should be at least 3 digits long.                                                                                                                                                                                                                                                                                                                                                           |
-| **DOB**   | Date of Birth (of Patient)                                                                                                                                                 | Compulsory <br> `add`                                         | Date of Birth should be in the format: dd/MM/yyyy and year should be after 1900, and cannot be after today's date.                                                                                                                                                                                                                                                                                                                            |
-| **I**     | Index (of Appointment)                                                                                                                                                     | Compulsory <br> `rmappt`                                      | Index should only be a number, and should be within the range of the appointments a patient has. 0 is not allowed.                                                                                                                                                                                                                                                                                                                            |
-| **D**     | Date (of Appointment)                                                                                                                                                      | Compulsory <br> `addappt`                                     | Appointment date should be in the format: dd/MM/yyyy HH:mm and cannot be before today.                                                                                                                                                                                                                                                                                                                                                        |
-| **T**     | Tag Name (a wildcard for clinic receptionist to add any useful tags necessary for work) <br><br> A suggested use case is adding CHAS/insurance information to the patient. | Optional <br> `add`                                           | Tag names should be alphanumeric, may contain `-` and must not contain spaces. <br>Tag names must start with an alphanumeric character, and be at most 30 characters long.                                                                                                                                                                                                                                                                    |
+| Parameter | Parameter Representation/Full Name                                                                                                                                         | Requirement (Commands)                                        | Constraint                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **IC**    | Identity Card Number (NRIC) (of Patient)                                                                                                                                   | Compulsory <br> `add`, `remove`, `viewp`, `addappt`, `rmappt` | NRIC should only contain `alphanumeric characters`, `starting with S,T,F,G,M` followed by `7 digits`, and `ending with an alphabet`. <br/><br/> *A user may prefer to use lower case alphabets for the NRIC and it is accepted too (We support the feature but will not include it in the error message for brevity sake). <br/><br/> *Note that NRIC checksum verification is not implemented, as the current level of validation is sufficient. |
+| **N**     | Name (of Patient)                                                                                                                                                          | Compulsory <br> `add`                                         | Name should only contain `alphanumeric characters` and `spaces`, and it should not be blank. <br><br> It must be at most `66 characters long`.                                                                                                                                                                                                                                                                                                    |
+| **P**     | Phone Number (of Patient)                                                                                                                                                  | Compulsory <br> `add`                                         | Phone number may start with a `+`, and must contain `only numbers` thereafter. <br><br> It must be between `3 to 30 numbers long`.                                                                                                                                                                                                                                                                                                                |
+| **DOB**   | Date of Birth (of Patient)                                                                                                                                                 | Compulsory <br> `add`                                         | Date of Birth should be in the format: `dd/MM/yyyy`. The year should be after 1900, and cannot be after today's date.                                                                                                                                                                                                                                                                                                                             |
+| **I**     | Index (of Appointment)                                                                                                                                                     | Compulsory <br> `rmappt`                                      | Index should only be `a number`, and should be within the range of the appointments a patient has. 0 is not allowed.                                                                                                                                                                                                                                                                                                                              |
+| **D**     | Date (of Appointment)                                                                                                                                                      | Compulsory <br> `addappt`                                     | Appointment date should be in the format: `dd/MM/yyyy HH:mm` and cannot be before today.                                                                                                                                                                                                                                                                                                                                                          |
+| **T**     | Tag Name (a wildcard for clinic receptionist to add any useful tags necessary for work) <br><br> A suggested use case is adding CHAS/insurance information to the patient. | Optional <br> `add`                                           | Tag names must start with an `alphanumeric character`, may contain `-`, must not contain spaces. <br><br> It must be at most `30 characters long`.                                                                                                                                                                                                                                                                                                |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -464,7 +461,7 @@ respective section for more detailed information regarding the command.
 
 | Action                            | Format(s)                                                                                             |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------|
-| Listing all patients              | [`list`](#2-1-1-listing-all-patients-list)                                                            |
+| Listing all patients              | [`list`, `ls`](#2-1-1-listing-all-patients-list)                                                      |
 | Locating patients by name         | [`find <Name> [MORE_NAMES]`](#2-1-2-locating-patients-by-name-find)                                   |
 | Adding a patient                  | [`add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`](#2-1-3-adding-a-patient-add)      |
 | Removing a patient                | [`remove -IC <NRIC>`, `rm -IC <NRIC>`](#2-1-4-removing-a-patient-remove)                              |
@@ -479,10 +476,31 @@ respective section for more detailed information regarding the command.
 
 ## 7. Glossary
 
-| Term                  | Meaning                                                                                                                                                                                                               |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **GUI**               | The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands. |
-| **IC/ NRIC**          | They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands.                                           |
-| **Patient/ Person**   | In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information.                                               |
-| **(File) Directory**  | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info).                                                                                                        |
-| **Home Folder**       | The folder in which HubHealth (i.e. `HubHealth.jar`) resides.                                                                                                                                                         |
+| Term                 | Meaning                                                                                                                                                                                                               |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Alphanumeric**     | Consisting of or using both letters and numbers.                                                                                                                                                                      |
+| **(File) Directory** | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info).                                                                                                        |
+| **GUI**              | The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands. |
+| **Home Folder**      | The folder in which HubHealth (i.e. `HubHealth.jar`) resides.                                                                                                                                                         |
+| **IC/ NRIC**         | They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands.                                           |
+| **Patient/ Person**  | In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information.                                               |
+
+<!-- Created with ChatGPT -->
+<a href="#top" style="
+position: fixed;
+bottom: 20px;
+right: 20px;
+width: 40px;
+height: 40px;
+background-color: #007acc;
+color: white;
+border-radius: 50%;
+box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+text-align: center;
+line-height: 40px;
+font-size: 20px;
+text-decoration: none;
+z-index: 1000;
+font-family: sans-serif;
+">↑</a>
+<!-- Created with ChatGPT -->
