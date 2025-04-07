@@ -254,7 +254,7 @@ In the screenshot above, we can see that this patient has no past or upcoming ap
 
 Allows you to create an appointment at a specified starting time for a patient.
 
-Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`
+Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`, where `HH:mm` is in 24-hour format.
 
 Example:
 * `addappt -IC S9123456Z -D 25/06/2025 09:00` creates an appointment on 25 June 2025 at 9:00am for the patient with 
@@ -314,6 +314,8 @@ Format: `help`
 Example:
 * `help` will open a message window as shown in the above screenshot { icon="bi-play-fill" }
 
+<div style="page-break-after: always;"></div>
+
 #### 2.3.2 Clearing all entries : `clear`
 
 Clears all entries from HubHealth.
@@ -334,8 +336,6 @@ losing your data, you may refer to [2.7 Backing up the data file](#2-7-backing-u
 data. Use this command wisely.
 
 </box>
-
-<div style="page-break-after: always;"></div>
 
 #### 2.3.3 Exiting HubHealth : `exit`
 
@@ -383,6 +383,8 @@ HubHealth data are saved in the hard disk automatically after any command that c
 
 <br>
 <br>
+
+<div style="page-break-after: always;"></div>
 
 ### 2.6 Editing the data file
 
@@ -448,7 +450,7 @@ This section provides a summary of all parameters used in HubHealth commands, as
 | **P**     | Phone Number (of Patient)                                                                                                                                                  | Compulsory <br> `add`                                         | Phone number may start with a `+`, and must contain `only numbers` thereafter. <br><br> It must be between `3 to 30 numbers long`. <br/><br/>Patients sharing the same name and birthdate cannot share the same phone number.                                                                                                                                                                                                                                                                     |
 | **DOB**   | Date of Birth (of Patient)                                                                                                                                                 | Compulsory <br> `add`                                         | Date of Birth should be in the format: `dd/MM/yyyy`. The year should be after 1900, and cannot be after today's date. <br>Patients sharing the same name and phone number cannot share the same birthdate.                                                                                                                                                                                                                                                                                        |
 | **I**     | Index (of Appointment)                                                                                                                                                     | Compulsory <br> `rmappt`                                      | Index should only be `a number`, and should be within the range of the appointments a patient has. 0 is not allowed.                                                                                                                                                                                                                                                                                                                                                                              |
-| **D**     | Date and Time (of Appointment)                                                                                                                                             | Compulsory <br> `addappt`                                     | Appointment date should be in the format: `dd/MM/yyyy HH:mm` and cannot be before today.                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **D**     | Date and Time (of Appointment)                                                                                                                                             | Compulsory <br> `addappt`                                     | Appointment date should be in the format: `dd/MM/yyyy HH:mm` and cannot be before today. Note that `HH:mm` is in 24-hour format.                                                                                                                                                                                                                                                                                                                                                                  |
 | **T**     | Tag Name (a wildcard for clinic receptionist to add any useful tags necessary for work) <br><br> A suggested use case is adding CHAS/insurance information to the patient. | Optional <br> `add`                                           | Tag names must start with an `alphanumeric character`, may contain `-`, must not contain spaces. <br><br> It must be at most `30 characters long`.                                                                                                                                                                                                                                                                                                                                                |
 
 --------------------------------------------------------------------------------------------------------------------
