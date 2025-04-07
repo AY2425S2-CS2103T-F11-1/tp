@@ -109,7 +109,7 @@ public class Person {
     }
 
     /**
-     * Returns true if both persons have the same NRIC.
+     * Returns true if both persons have the same NRIC or same name, phone and dateOfBirth.
      * This defines a weaker notion of equality between two persons.
      * Though 'weaker', this is functionally strong enough.
      */
@@ -119,7 +119,8 @@ public class Person {
         }
 
         return otherPerson != null
-                && otherPerson.getNric().equals(getNric());
+                && (otherPerson.getNric().equals(getNric()) || (otherPerson.getName().equals(getName())
+                && otherPerson.getPhone().equals(getPhone()) && otherPerson.getDateOfBirth().equals(getDateOfBirth())));
     }
 
     /**
@@ -162,4 +163,7 @@ public class Person {
                 .toString();
     }
 
+    public boolean hasAppointment(String date) {
+        return this.appointmentList.hasAppointment(Appointment.createAppointment(date));
+    }
 }

@@ -33,7 +33,7 @@ public class PersonTest {
     @Test
     public void addAppointment_validAppointment_success() {
         Person person = new PersonBuilder().build();
-        String appointmentDateTime = "01/01/2025 15:00";
+        String appointmentDateTime = "01/01/2026 15:00";
         person.addAppointment(appointmentDateTime);
         assertTrue(person.getAppointmentList().stream()
                 .anyMatch(appointment -> appointment.toString().equals(appointmentDateTime)));
@@ -42,9 +42,25 @@ public class PersonTest {
     @Test
     public void addAppointment_validAppointmentObject_success() {
         Person person = new PersonBuilder().build();
-        Appointment appointment = Appointment.createAppointment("01/01/2025 15:00");
+        Appointment appointment = Appointment.createAppointment("01/01/2026 15:00");
         person.addAppointment(appointment);
         assertTrue(person.getAppointmentList().contains(appointment));
+    }
+
+    @Test
+    public void hasAppointment_validAppointment_success() {
+        Person person = new PersonBuilder().build();
+        Appointment appointment = Appointment.createAppointment("01/01/2026 15:00");
+        person.addAppointment(appointment);
+        assertTrue(person.hasAppointment("01/01/2026 15:00"));
+    }
+
+    @Test
+    public void hasAppointment_invalidAppointment_fail() {
+        Person person = new PersonBuilder().build();
+        Appointment appointment = Appointment.createAppointment("01/01/2026 15:00");
+        person.addAppointment(appointment);
+        assertFalse(person.hasAppointment("01/01/2026 15:01"));
     }
 
     @Test
@@ -61,9 +77,9 @@ public class PersonTest {
                         .withTags(VALID_TAG_HUSBAND).build();
         assertTrue(ALICE.isSamePerson(editedAlice));
 
-        // different nric, all other attributes same -> returns false
+        // different nric, all other attributes same -> returns true
         editedAlice = new PersonBuilder(ALICE).withNric(VALID_NRIC_BOB).build();
-        assertFalse(ALICE.isSamePerson(editedAlice));
+        assertTrue(ALICE.isSamePerson(editedAlice));
 
         // name has trailing spaces, all other attributes same -> returns true
         String nameWithTrailingSpaces = VALID_NAME_BOB + " ";

@@ -6,6 +6,8 @@ import java.time.format.DateTimeParseException;
 
 /** Represents an appointment */
 public class Appointment {
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/uuuu HH:mm")
+            .withResolverStyle(java.time.format.ResolverStyle.STRICT);
     private LocalDateTime apptDateTime;
 
     private Appointment(LocalDateTime parsedDateTime) {
@@ -17,7 +19,6 @@ public class Appointment {
      * Throws {@code DateTimeParseException} if the date and time is invalid.
      */
     public static Appointment createAppointment(String date) throws DateTimeParseException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         LocalDateTime parsedDateTime = LocalDateTime.parse(date, formatter);
         return new Appointment(parsedDateTime);
     }
@@ -30,5 +31,13 @@ public class Appointment {
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         return apptDateTime.format(formatter);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Appointment other) {
+            return this.apptDateTime.equals(other.apptDateTime);
+        }
+        return false;
     }
 }
