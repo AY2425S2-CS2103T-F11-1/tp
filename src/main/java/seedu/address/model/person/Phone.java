@@ -9,7 +9,8 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Phone {
     public static final String MESSAGE_CONSTRAINTS =
-            "Phone numbers should only contain numbers, may start with '+', and must be between 3 to 30 digits long";
+            "Phone number may start with a +, and must contain only numbers thereafter."
+            + " It must be between 3 to 30 numbers long";
     public static final String VALIDATION_REGEX = "^\\+?\\d{3,30}$";
     public final String value;
 
