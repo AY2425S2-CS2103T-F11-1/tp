@@ -13,8 +13,8 @@
 
 ## **Acknowledgements**
 
-The layout and design elements are adapted from the User Guide [here]
-(https://ay2223s1-cs2103t-w16-2.github.io/tp/UserGuide)
+The layout and design elements are adapted from the User Guide
+[here](https://ay2223s1-cs2103t-w16-2.github.io/tp/UserGuide).
 
 LLM was used to edit the [User stories](#user-stories) section for consistency and clarity.
 
@@ -95,8 +95,9 @@ The `UI` component,
 
 <box type="info" seamless class="info-custom">
 
-**Notes about NRIC when removing a person:**<br>
+**Notes about NRIC when using various commands**<br>
 
+* For example when removing a person:
 * Rationale for not supporting `remove INDEX_NUMBER`, where `INDEX_NUMBER` is the index of a patient in HubHealth.
 * While `remove INDEX_NUMBER` is an easier command, this is a deliberate design decision to ensure that
   you go through 1 more round of checking (**implicit verification built into HubHealth** as opposed to explicit
@@ -151,7 +152,7 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<box type="info" seamless>
+<box type="info" seamless class="info-custom">
 
 **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Person` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Person` needing their own `Tag` objects.<br>
 
@@ -159,12 +160,12 @@ The `Model` component,
 
 </box>
 
-<box type="info" seamless>
+<box type="info" seamless class="info-custom">
 
-**Note: To avoid overzealous input validation for appointment date and time, we allow: **
-    * Appointments with similar start times to be created,
-    * Multiple patients to have the same appointment start time, and
-    * Appointments to be created with a starting date that is in the past (relative to the local machine), for record keeping purposes.
+**Note: To avoid overzealous input validation for appointment date and time, we allow:**
+* Appointments with similar start times to be created,
+* Multiple patients to have the same appointment start time, and
+* Appointments to be created with a starting date that is in the past (relative to the local machine), for record keeping purposes.
 
 </box>
 
@@ -379,9 +380,8 @@ otherwise.
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **PDPA**: The Personal Data Protection Act (PDPA) 2012 sets out the law on data protection in Singapore.
-The PDPA regulates the processing of personal data in the private sector.
-* **Private contact detail**: A contact detail that is not meant to be shared with anyone
+* **PDPA**: The Personal Data Protection Act (PDPA) 2012 sets out the law on data protection in Singapore. The PDPA
+regulates the processing of personal data in the private sector.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -555,7 +555,7 @@ Team size: 5
 
 <br>
 
-4. Allow editing of apppointment information
+4. Allow editing of appointment information
     * For example, to be able to change the starting time of an appointment
 
 <br>
