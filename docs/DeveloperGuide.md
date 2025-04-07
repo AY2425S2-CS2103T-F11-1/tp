@@ -147,6 +147,15 @@ The `Model` component,
 
 </box>
 
+<box type="info" seamless>
+
+**Note: To avoid overzealous input validation for appointment date and time, we allow: **
+    * Appointments with similar start times to be created,
+    * Multiple patients to have the same appointment start time, and
+    * Appointments to be created with a starting date that is in the past (relative to the local machine), for record keeping purposes.
+
+</box>
+
 
 ### Storage component
 
@@ -360,7 +369,6 @@ otherwise.
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
 * **PDPA**: The Personal Data Protection Act (PDPA) 2012 sets out the law on data protection in Singapore.
 The PDPA regulates the processing of personal data in the private sector.
-* **Private contact detail**: A contact detail that is not meant to be shared with anyone
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -525,3 +533,10 @@ Team size: 5
     * For example, allow phone number and tags (tracking patient’s CHAS information, insurance information etc.) to be
       editable
     * However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created
+
+3. Allow editing of apppointment information
+    * For example, to be able to change the starting time of an appointment
+
+4. Support multiple doctors per clinic 
+   * HubHealth will not enforce appointment limits across patients with the same appointment time, as clinics may have multiple doctors handling separate appointments simultaneously. 
+   * Duplicate time slots will only be restricted per doctor, not globally
