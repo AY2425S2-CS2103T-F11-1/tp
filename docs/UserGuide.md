@@ -7,8 +7,8 @@
 # HubHealth User Guide
 
 ## About HubHealth
-Introducing HubHealth, a **Clinic Appointment Management System** designed to empower Singaporean clinic 
-receptionists to **manage patient information** and **schedule appointments** efficiently. As a clinic receptionist,
+Introducing HubHealth, a **Clinic Appointment Management System** designed to empower **Singaporean clinic 
+receptionists** to **manage patient information** and **schedule appointments** efficiently. As a clinic receptionist,
 you can easily manage patient records (including name, birth date, contact information, etc.) and track past and
 upcoming appointments with simple keyboard commands. Additionally, the **tagging system** allows you to tag
 government-related subsidies (such as CHAS) or insurance information to your patient, simplifying patient management.
