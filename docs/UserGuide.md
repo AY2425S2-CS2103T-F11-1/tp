@@ -366,14 +366,7 @@ corner). This command only exists in case closing HubHealth normally does not wo
 
 <br>
 
-3. Allow name searches to match only names that start with any of the keywords
-   * The `find` command currently returns patients whose name contain any of the keywords in any part of their name
-   * For example, `find Le` can return patients named "Levanne" and "Violet"
-   * This search may be refined to only return patients whose name starts with a keyword in a future release
-
-<br>
-
-4. Allows undoing of commands in the current session
+3. Allows undoing of commands in the current session
    * There is no current method of undoing any wrong commands, including potentially destructive commands such as removing a patient or an appointment
    * This allows for users to roll back the application in case any command has been mistakenly executed
 
