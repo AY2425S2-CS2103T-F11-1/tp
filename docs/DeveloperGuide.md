@@ -26,6 +26,8 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Design**
 
 ### Architecture
@@ -53,6 +55,8 @@ The bulk of the app's work is done by the following four components:
 
 [**`Commons`**](#common-classes) represents a collection of classes used by multiple other components.
 
+<div style="page-break-after: always;"></div>
+
 **How the architecture components interact with each other**
 
 The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user 
@@ -75,6 +79,8 @@ For example, the `Logic` component defines its API in the `Logic.java` interface
 <puml src="diagrams/ComponentManagers.puml" width="300" />
 
 The sections below give more details of each component.
+
+<div style="page-break-after: always;"></div>
 
 ### UI component
 
@@ -106,6 +112,8 @@ The `UI` component,
 
   </box>
 
+<div style="page-break-after: always;"></div>
+
 ### Logic component
 
 **API** : [`Logic.java`](https://github.com/AY2425S2-CS2103T-F11-1/tp/blob/master/src/main/java/seedu/address/logic/Logic.java)
@@ -118,7 +126,7 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 <puml src="diagrams/DeleteSequenceDiagram.puml" alt="Interactions Inside the Logic Component for the `delete 1` Command" />
 
-<box type="info" seamless>
+<box type="info" seamless class="info-custom">
 
 **Note:** The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
 </box>
@@ -138,6 +146,8 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 How the parsing works:
 * When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
+
+<div style="page-break-after: always;"></div>
 
 ### Model component
 **API** : [`Model.java`](https://github.com/AY2425S2-CS2103T-F11-1/tp/blob/master/src/main/java/seedu/address/model/Model.java)
@@ -169,6 +179,7 @@ The `Model` component,
 
 </box>
 
+<div style="page-break-after: always;"></div>
 
 ### Storage component
 
@@ -187,6 +198,8 @@ Classes used by multiple components are in the `seedu.address.commons` package.
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
@@ -201,7 +214,7 @@ As some clinics have locum doctors, the Person object will be extended in the fu
 subclasses. Common identity fields such as Name, Phone will be kept in the parent class, while data fields such as tags
 and appointmentList will be moved to the Patient subclass.
 
-<puml src="diagrams/PersonModelClassDiagram.puml" width="450" />
+<puml src="diagrams/PersonModelClassDiagram.puml" width="200" />
 
 <br>
 
@@ -216,6 +229,8 @@ and appointmentList will be moved to the Patient subclass.
 * [DevOps guide](DevOps.md)
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Appendix: Requirements**
 
@@ -256,6 +271,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `*`      | long-time user            | delete patients who have passed away                | comply with PDPA regulations                                          |
 | `*`      | long-time user            | sift through the data quickly                       | find patient information quickly                                      |
 | `*`      | user                      | track patients' CHAS colour                         | know if they qualify for subsidies                                    |
+
+<div style="page-break-after: always;"></div>
 
 ### Use cases
 
@@ -311,6 +328,8 @@ otherwise.
     - 1a1. HubHealth shows an error message.
 
         Use case ends.
+
+<div style="page-break-after: always;"></div>
 
 #### **Use case: UC04 View a patient's details**
 
@@ -370,6 +389,8 @@ otherwise.
 
         Use case ends.
 
+<div style="page-break-after: always;"></div>
+
 #### **Use case: UC07 Find a patient**
 
 **MSS**
@@ -410,6 +431,8 @@ otherwise.
 regulates the processing of personal data in the private sector.
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Appendix: Instructions for manual testing**
 
@@ -468,6 +491,8 @@ testers are expected to do more *exploratory* testing.
    1. Other incorrect remove commands to try: `remove`, `remove x`, `...` (where x is a NRIC that is not in the list)<br>
       Expected: Similar to previous.
 
+<div style="page-break-after: always;"></div>
+
 ### View a patient's details
 
 1. View a patient's details
@@ -512,6 +537,8 @@ testers are expected to do more *exploratory* testing.
 
    1. Other incorrect add commands to try: `rmappt -IC T0288759A -I x`, `rmappt`, `...` (where x is larger than the number of appointments the patient has)<br>
       Expected: Similar to previous.
+
+<div style="page-break-after: always;"></div>
 
 ### Saving data
 

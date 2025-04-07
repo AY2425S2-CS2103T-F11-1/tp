@@ -253,7 +253,7 @@ In the screenshot above, we can see that this patient has no past or upcoming ap
 
 Allows you to create an appointment at a specified starting time for a patient.
 
-Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`
+Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`, where `HH:mm` is in 24-hour format.
 
 Example:
 * `addappt -IC S9123456Z -D 25/06/2025 09:00` creates an appointment on 25 June 2025 at 9:00am for the patient with the NRIC S9123456Z
@@ -310,6 +310,8 @@ Format: `help`
 Example:
 * `help` will open a message window as shown in the above screenshot
 
+<div style="page-break-after: always;"></div>
+
 #### 2.3.2 Clearing all entries : `clear`
 
 Clears all entries from HubHealth.
@@ -330,8 +332,6 @@ losing your data, you may refer to [2.7 Backing up the data file](#2-7-backing-u
 data. Use this command wisely.
 
 </box>
-
-<div style="page-break-after: always;"></div>
 
 #### 2.3.3 Exiting HubHealth : `exit`
 
@@ -380,6 +380,8 @@ HubHealth data are saved in the hard disk automatically after any command that c
 <br>
 <br>
 
+<div style="page-break-after: always;"></div>
+
 ### 2.6 Editing the data file
 
 HubHealth data are saved automatically as a JSON file in `[Home folder]/data/HubHealth.json`. **Advanced users** are 
@@ -392,8 +394,6 @@ Furthermore, certain edits can cause the HubHealth to behave in unexpected ways 
 
 <br>
 <br>
-
-<div style="page-break-after: always;"></div>
 
 ### 2.7 Backing up the data file
 
@@ -444,7 +444,7 @@ This section provides a summary of all parameters used in HubHealth commands, as
 | **P**     | Phone Number (of Patient)                                                                                                                                                  | Compulsory <br> `add`                                         | Phone number may start with a `+`, and must contain `only numbers` thereafter. <br><br> It must be between `3 to 30 numbers long`. <br/><br/>Patients sharing the same name and birthdate cannot share the same phone number.                                                                                                                                                                                                                                                                     |
 | **DOB**   | Date of Birth (of Patient)                                                                                                                                                 | Compulsory <br> `add`                                         | Date of Birth should be in the format: `dd/MM/yyyy`. The year should be after 1900, and cannot be after today's date. <br>Patients sharing the same name and phone number cannot share the same birthdate.                                                                                                                                                                                                                                                                                        |
 | **I**     | Index (of Appointment)                                                                                                                                                     | Compulsory <br> `rmappt`                                      | Index should only be `a number`, and should be within the range of the appointments a patient has. 0 is not allowed.                                                                                                                                                                                                                                                                                                                                                                              |
-| **D**     | Date (of Appointment)                                                                                                                                                      | Compulsory <br> `addappt`                                     | Appointment date should be in the format: `dd/MM/yyyy HH:mm` and cannot be before today.                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **D**     | Date (of Appointment)                                                                                                                                                      | Compulsory <br> `addappt`                                     | Appointment date should be in the format: `dd/MM/yyyy HH:mm` and cannot be before today. Note that `HH:mm` is in 24-hour format.                                                                                                                                                                                                                                                                                                                                                                  |
 | **T**     | Tag Name (a wildcard for clinic receptionist to add any useful tags necessary for work) <br><br> A suggested use case is adding CHAS/insurance information to the patient. | Optional <br> `add`                                           | Tag names must start with an `alphanumeric character`, may contain `-`, must not contain spaces. <br><br> It must be at most `30 characters long`.                                                                                                                                                                                                                                                                                                                                                |
 
 --------------------------------------------------------------------------------------------------------------------
@@ -455,18 +455,18 @@ This section provides a summary of all parameters used in HubHealth commands, as
 This section provides a summary of all commands that HubHealth provides. You may click on the command to go to the 
 respective section for more detailed information regarding the command.
 
-| Action                            | Format(s)                                                                                             |
-|-----------------------------------|-------------------------------------------------------------------------------------------------------|
-| Listing all patients              | [`list`, `ls`](#2-1-1-listing-all-patients-list)                                                      |
-| Locating patients by name         | [`find <Name> [MORE_NAMES]`](#2-1-2-locating-patients-by-name-find)                                   |
-| Adding a patient                  | [`add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`](#2-1-3-adding-a-patient-add)      |
-| Removing a patient                | [`remove -IC <NRIC>`, `rm -IC <NRIC>`](#2-1-4-removing-a-patient-remove)                              |
-| Viewing patient details           | [`viewp -IC <NRIC>`](#2-2-1-viewing-patient-details-viewp)                                            |
-| Adding appointment to patient     | [`addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`](#2-2-2-adding-appointment-to-patient-addappt)    |
-| Removing appointment from patient | [`rmappt -IC <NRIC> -I <index in appointment list>`](#2-2-3-removing-appointment-from-patient-rmappt) |
-| Viewing help                      | [`help`](#2-3-1-viewing-help-help)                                                                    |
-| Clearing all entries              | [`clear`](#2-3-2-clearing-all-entries-clear)                                                          |
-| Exiting HubHealth                 | [`exit`](#2-3-3-exiting-hubhealth-exit)                                                               |
+| Action                            | Format(s)                                                                                                                    |
+|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Listing all patients              | [`list`, `ls`](#2-1-1-listing-all-patients-list)                                                                             |
+| Locating patients by name         | [`find <Name> [MORE_NAMES]`](#2-1-2-locating-patients-by-name-find)                                                          |
+| Adding a patient                  | [`add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth> [-T <Tag> [-T <MORE_TAGS>]]`](#2-1-3-adding-a-patient-add) |
+| Removing a patient                | [`remove -IC <NRIC>`, `rm -IC <NRIC>`](#2-1-4-removing-a-patient-remove)                                                     |
+| Viewing patient details           | [`viewp -IC <NRIC>`](#2-2-1-viewing-patient-details-viewp)                                                                   |
+| Adding appointment to patient     | [`addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`](#2-2-2-adding-appointment-to-patient-addappt)                           |
+| Removing appointment from patient | [`rmappt -IC <NRIC> -I <index in appointment list>`](#2-2-3-removing-appointment-from-patient-rmappt)                        |
+| Viewing help                      | [`help`](#2-3-1-viewing-help-help)                                                                                           |
+| Clearing all entries              | [`clear`](#2-3-2-clearing-all-entries-clear)                                                                                 |
+| Exiting HubHealth                 | [`exit`](#2-3-3-exiting-hubhealth-exit)                                                                                      |
 
 --------------------------------------------------------------------------------------------------------------------
 
