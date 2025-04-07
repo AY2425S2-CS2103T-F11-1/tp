@@ -30,14 +30,17 @@ public class NricTest {
         assertFalse(Nric.isValidNric("nric")); // non-numeric
         assertFalse(Nric.isValidNric("s9011p04a")); // alphabets within digits
         assertFalse(Nric.isValidNric("S5808 994Z")); // spaces within digits
+        assertFalse(Nric.isValidNric("B1234567B")); //invalid nric, starting with B
 
         // valid nric numbers
         assertTrue(Nric.isValidNric("S4003873F")); //NRICs should only contain alphabets or numbers
-        // and it should start with S,T,F,G followed by 7 digits, and ending with an alphabet
+        // and it should start with S,T,F,G,M (or lower-case) followed by 7 digits, and ending with an alphabet
         assertTrue(Nric.isValidNric("s8674080z")); //valid lowercase nric
-        assertTrue(Nric.isValidNric("T9292321A")); //valid lowercase nric, starting with T
-        assertTrue(Nric.isValidNric("F9693094K")); //valid lowercase nric, starting with F
-        assertTrue(Nric.isValidNric("G3338998T")); //valid lowercase nric, starting with G
+        assertTrue(Nric.isValidNric("t9292321a")); //valid lowercase nric, starting with t
+        assertTrue(Nric.isValidNric("f9693094k")); //valid lowercase nric, starting with f
+        assertTrue(Nric.isValidNric("g3338998t")); //valid lowercase nric, starting with g
+        assertTrue(Nric.isValidNric("m1234567b")); //valid lowercasenric, starting with m
+        assertTrue(Nric.isValidNric("M1234567B")); //valid lowercase nric, starting with M
     }
 
     @Test
