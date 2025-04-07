@@ -452,7 +452,7 @@ respective section for more detailed information regarding the command.
 
 | Action                            | Format(s)                                                                                             |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------|
-| Listing all patients              | [`list`](#2-1-1-listing-all-patients-list)                                                            |
+| Listing all patients              | [`list`, `ls`](#2-1-1-listing-all-patients-list)                                                      |
 | Locating patients by name         | [`find <Name> [MORE_NAMES]`](#2-1-2-locating-patients-by-name-find)                                   |
 | Adding a patient                  | [`add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`](#2-1-3-adding-a-patient-add)      |
 | Removing a patient                | [`remove -IC <NRIC>`, `rm -IC <NRIC>`](#2-1-4-removing-a-patient-remove)                              |
