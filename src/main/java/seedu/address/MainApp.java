@@ -87,7 +87,7 @@ public class MainApp extends Application {
         } catch (DataLoadingException e) {
             logger.warning("Data file at " + storage.getAddressBookFilePath() + " could not be loaded."
                     + " Will be starting with an empty HubHealth application.");
-            initialData = new AddressBook();
+            initialData = new AddressBook(SampleDataUtil.getSampleAddressBook());
         }
 
         return new ModelManager(initialData, userPrefs);

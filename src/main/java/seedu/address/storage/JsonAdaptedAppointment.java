@@ -3,7 +3,7 @@ package seedu.address.storage;
 import java.time.format.DateTimeParseException;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.appointment.Appointment;
@@ -19,7 +19,7 @@ class JsonAdaptedAppointment {
      * Constructs a {@code JsonAdaptedAppointment} with the given appointment details.
      */
     @JsonCreator
-    public JsonAdaptedAppointment(@JsonProperty("datetime") String appointmentDateTime) {
+    public JsonAdaptedAppointment(String appointmentDateTime) {
         this.appointmentDateTime = appointmentDateTime;
     }
 
@@ -31,11 +31,20 @@ class JsonAdaptedAppointment {
     }
 
     /**
+     * Gets the string representation of the appointment for Jackson serialization.
+     * This instructs Jackson to serialize the appointment as a simple string.
+     */
+    @JsonValue
+    public String getAppointmentDateTime() {
+        return appointmentDateTime;
+    }
+
+    /**
      * Converts this Jackson-friendly adapted appointment object into the model's {@code Appointment} object.
      *
      * @throws IllegalValueException if there were any data constraints violated in the adapted appointment.
      */
-    public Appointment toModelType() throws IllegalValueException, DateTimeParseException {
+    public Appointment toModelType() throws IllegalValueException {
         if (appointmentDateTime == null) {
             throw new IllegalValueException("Appointment date time is missing!");
         }
@@ -43,11 +52,8 @@ class JsonAdaptedAppointment {
         try {
             return Appointment.createAppointment(appointmentDateTime);
         } catch (DateTimeParseException e) {
-            throw new DateTimeParseException(
-                "Invalid date format. Please use dd/MM/yyyy HH:mm.",
-                appointmentDateTime,
-                0
-                );
+            // Return null appointment
+            return null;
         }
     }
 }

@@ -1,6 +1,7 @@
 package seedu.address.model.appointment;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -48,4 +49,13 @@ public class AppointmentListTest {
         assertEquals("01/01/2025 15:00", appointmentList.getAppointments().get(0).toString());
         assertEquals("02/01/2025 16:00", appointmentList.getAppointments().get(1).toString());
     }
+
+    @Test
+    public void containsAppointment_validAppointment_success() {
+        AppointmentList appointmentList = new AppointmentList();
+        appointmentList.addAppointment("01/01/2028 15:00");
+        assertTrue(appointmentList.hasAppointment(Appointment.createAppointment("01/01/2028 15:00")));
+        assertFalse(appointmentList.hasAppointment(Appointment.createAppointment("02/02/2028 15:00")));
+    }
+
 }

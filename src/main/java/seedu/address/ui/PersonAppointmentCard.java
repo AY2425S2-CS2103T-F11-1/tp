@@ -1,7 +1,6 @@
 package seedu.address.ui;
 
 import java.time.LocalDateTime;
-import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javafx.fxml.FXML;
@@ -34,6 +33,16 @@ public class PersonAppointmentCard extends UiPart<Region> {
     @FXML
     private HBox cardPane;
     @FXML
+    private Label name;
+    @FXML
+    private Label phone;
+    @FXML
+    private Label nric;
+    @FXML
+    private Label dateOfBirth;
+    @FXML
+    private FlowPane tags;
+    @FXML
     private Label pastAppointmentsLabel;
     @FXML
     private Label upcomingAppointmentsLabel;
@@ -50,18 +59,23 @@ public class PersonAppointmentCard extends UiPart<Region> {
         this.person = person;
         AtomicInteger index = new AtomicInteger(1);
 
+        name.setText(person.getName().fullName);
+        nric.setText(person.getNric().value);
+        phone.setText(person.getPhone().value);
+        dateOfBirth.setText(person.getDateOfBirth().toString());
+        person.getTags().stream()
+                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+
         pastAppointmentsLabel.setText(PAST_APPOINTMENTS_LABEL);
         upcomingAppointmentsLabel.setText(UPCOMING_APPOINTMENTS_LABEL);
         person.getAppointmentList().stream()
                 .filter(appointment -> !appointment.getApptDateTime().isAfter(LocalDateTime.now()))
-                .sorted(Comparator.comparing(appointment -> appointment.toString()))
                 .forEach(appointment -> {
                     int i = index.getAndIncrement();
                     pastAppointments.getChildren().add(new Label(i + ". " + appointment.toString()));
                 });
         person.getAppointmentList().stream()
                 .filter(appointment -> appointment.getApptDateTime().isAfter(LocalDateTime.now()))
-                .sorted(Comparator.comparing(appointment -> appointment.toString()))
                 .forEach(appointment -> {
                     int i = index.getAndIncrement();
                     upcomingAppointments.getChildren().add(new Label(i + ". " + appointment.toString()));

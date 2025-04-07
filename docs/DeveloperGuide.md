@@ -16,6 +16,8 @@
 The layout and design elements are adapted from the User Guide [here]
 (https://ay2223s1-cs2103t-w16-2.github.io/tp/UserGuide)
 
+LLM was used to edit the [User stories](#user-stories) section for consistency and clarity.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
@@ -213,30 +215,33 @@ Clinic receptionist that needs to track patients contact and appointments using 
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                   | I want to …​                                                      | So that I can…​                                                                            |
-|----------|---------------------------|-------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| `* * *`  | daily user                | be able to find contacts I should contact                         | I will not miss out on any patients to call                                                |
-| `* * *`  | daily user                | add new patients’ contacts                                        | I can track all patients contacts                                                          |
-| `* * *`  | temporary user            | pick up the commands fast                                         | I can perform my role soon after getting my job                                            |
-| `* * *`  | long-time user            | update any change in contact information quickly                  | I can respond to requests even during peak hours                                           |
-| `* *`    | potential user            | the app populated with sample data                                | I can see how the app looks like when it is in use                                         |
-| `* *`    | user ready to use the app | be able to clear the sample data                                  | I can start using the app                                                                  |
-| `* *`    | daily user                | tag groups of patients in the database                            | I can find them more easily in the future                                                  |
-| `* *`    | long-time user            | update patients appointments                                      | I will be able to contact patients to remind them when their next appointment is coming up |
-| `* *`    | new user                  | be able to find my way around the app                             | I can pick it up eventually for my use                                                     |
-| `* *`    | new user                  | be reminded of the correct command formats                        | I can use the correct commands without having to refer to the documentation                |
-| `* *`    | user                      | undo changes I made                                               | I can undo any mistakes I made when entering the data                                      |
-| `* *`    | user                      | know if I entered some invalid data                               | I can catch some typos I made relatively quickly                                           |
-| `* *`    | user                      | know patient’s past medication                                    | I can support the doctors needs                                                            |
-| `*`      | long-time user            | delete patients who no longer come to the clinic/have passed away | I can pay attention to the patients the clinic has/ PDPA                                   |
-| `*`      | long-time user            | sift through the data quickly                                     | I can continue to perform my role                                                          |
-| `*`      | user                      | track patient’s CHAS colour                                       | I can know if they qualify for subsidies                                                   |
+| Priority | As a/an …​                | I want to …​                                        | So that I can …​                                                      |
+|----------|---------------------------|-----------------------------------------------------|-----------------------------------------------------------------------|
+| `* * *`  | daily user                | add contact details of new patients                 | track all patients' contact details                                   |
+| `* * *`  | temporary user            | learn the commands quickly                          | perform my role soon after getting my job                             |
+| `* *`    | potential user            | see the app populated with sample data              | see what the app looks like when it is in use                         |
+| `* *`    | user ready to use the app | clear the sample data                               | start using the app                                                   |
+| `* *`    | daily user                | tag groups of patients                              | find these patients more easily in the future                         |
+| `* *`    | daily user                | identify which patients I need to contact           | ensure no one is missed                                               |
+| `* *`    | long-time user            | quickly update changes to contact information       | respond to requests even during peak hours                            |
+| `* *`    | long-time user            | view patients' appointments                         | contact the patients to remind them of their upcoming appointments    |
+| `* *`    | new user                  | find my way around the app                          | eventually learn to use the app effectively                           |
+| `* *`    | new user                  | receive reminders about the correct command formats | use the correct commands without having to refer to the documentation |
+| `* *`    | user                      | undo changes I made                                 | correct errors I made while entering the data                         |
+| `* *`    | user                      | know if I entered some invalid data                 | quickly catch typos I made                                            |
+| `* *`    | user                      | know patients' past medication                      | support the doctors' needs                                            |
+| `*`      | long-time user            | delete patients who no longer come to the clinic    | focus on patients the clinic has                                      |
+| `*`      | long-time user            | delete patients who have passed away                | comply with PDPA regulations                                          |
+| `*`      | long-time user            | sift through the data quickly                       | find patient information quickly                                      |
+| `*`      | user                      | track patients' CHAS colour                         | know if they qualify for subsidies                                    |
 
 ### Use cases
 
-<box type="info" seamless>
+<box type="info" seamless class="info-custom">
+
 For all use cases below, the **System** refers to `HubHealth` and the **Actor** is the `User`, unless specified 
 otherwise.
+
 </box>
 
 #### **Use case: UC01 List all patients**
@@ -353,6 +358,8 @@ otherwise.
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
+* **PDPA**: The Personal Data Protection Act (PDPA) 2012 sets out the law on data protection in Singapore.
+The PDPA regulates the processing of personal data in the private sector.
 * **Private contact detail**: A contact detail that is not meant to be shared with anyone
 
 --------------------------------------------------------------------------------------------------------------------

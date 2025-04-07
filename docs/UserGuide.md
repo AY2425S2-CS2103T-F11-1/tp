@@ -38,11 +38,13 @@ If you are unfamiliar with any terminology in the HubHealth User Guide, refer to
     * [2.4 Coming soon](#2-4-coming-soon)
     * [2.5 Saving the data](#2-5-saving-the-data)
     * [2.6 Editing the data file](#2-6-editing-the-data-file)
+    * [2.7 Backing up the data file](#2-7-backing-up-the-data-file)
   * [3. FAQ](#3-faq)
   * [4. Known issues](#4-known-issues)
   * [5. Parameter Constraint Table](#5-parameter-constraint-table)
   * [6. Command summary](#6-command-summary)
   * [7. Glossary](#7-glossary)
+
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
@@ -60,7 +62,8 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 1. Copy the app (`HubHealth.jar`) to the folder you want to use as the _home folder/base folder_ for HubHealth.<br>
 
 1. Double click the downloaded file `HubHealth.jar` to start HubHealth.<br>
-   - A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+   - HubHealth should appear in a few seconds as seen in the screenshot below. Note how HubHealth contains some sample 
+     data.<br>
    ![Ui](images/Ui.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
@@ -76,7 +79,9 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 
    * `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+1. Refer to the [Features](#2-features) section for details of each command.
+
+<div style="page-break-after: always;"></div>
 
 <box type="info" seamless class="info-custom">
 
@@ -84,16 +89,20 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 
 1. Ensure you have Java `17` or above installed in your Computer. This is required to run HubHealth. <br>
     - **Checking whether you have the right version of Java installed:**<br>
-      - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no results that lead to an application. You do not have Java installed. Otherwise, click on `About Java`, and it show you the version of Java currently downloaded on your computer.<br>
+      - **Windows users:** Press the Windows key, or use the Start menu to search for `Java`. If there are no 
+        results that lead to an application, you do not have Java installed. Otherwise, click on `About Java`, and 
+        it will show you the version of Java currently downloaded on your computer.<br>
       - **Mac users:** Open a new Terminal window, and enter `java -version`. Hit enter and you should see the Java version downloaded on your computer.<br>
     - **Installing Java:** If you do not have Java installed or do not have the right version, follow the instructions [here](https://www.java.com/en/download/help/download_options.html) to download Java `17`. <br>
       - **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
 1. Open a command terminal (e.g. `cmd.exe`, `PowerShell.exe`, etc.), and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in. <br>
-   - For instance, if the application is in the Downloads folder, the command you enter should look something like `cd C:\Users\user\Downloads`<br>
-   - (You can find the directory of the application by right-clicking on it, and selecting `Properties` or `Get info` for Windows and Mac users.)
+   - For instance, if HubHealth is in the Downloads folder, the command you enter should look something like `cd 
+   C:\Users\user\Downloads`<br>
+   - (You can find the directory of HubHealth by right-clicking on it, and selecting `Properties` or `Get info` for 
+     Windows and Mac users.)
 
-1. Next, enter the command `java -jar HubHealth.jar` and press Enter to start the application.<br>
+1. Next, enter the command `java -jar HubHealth.jar` and press Enter to start HubHealth.<br>
 
 </box>
 
@@ -119,7 +128,9 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `ls`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
-* If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as certain characters (i.e. whitespace) surrounding line-breaks may be omitted when copied over to the application, resulting in the copied command not working.
+* If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple 
+  lines as certain characters (i.e. whitespace) surrounding line-breaks may be omitted when copied over to HubHealth, 
+  resulting in the copied command not working.
 </box>
 
 ### 2.1 Patient management
@@ -150,15 +161,39 @@ Examples:
 * `find John` returns `john` and `John Doe`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
 
+<div style="page-break-after: always;"></div>
+
 #### 2.1.3 Adding a patient: `add`
 
 Allows you to add a new patient to HubHealth.
 
-Format: `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`
+Format: `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth> [-T <Tag> [MORE_TAGS]]`
 
-Example:
+Examples:
 * `add -IC S9123456Z -N John Doe -P 81234567 -DOB 02/02/1995` will add a patient with name `John Doe`, NRIC 
   `S9123456Z`, phone number `81234567` and date of birth `2nd Feb 1995` to HubHealth
+* `add -IC S9123456Z -N John Doe -P 81234567 -DOB 02/02/1995 -T CHAS-Blue Raffles-Medical` will add the same patient 
+  as the example above, with the additional tags of `CHAS-Blue` and `Raffles-Medical`, to HubHealth
+
+<box type="info" seamless class="info-custom">
+
+**Notes about NRIC when adding a patient:**<br>
+
+* NRIC is used to identify a unique patient. HubHealth does not validate duplicate name or phone number. In real life, 
+  possible scenarios include **two patients having the same name** or **a child and parent patient sharing the same phone 
+  number**. 
+
+* You should note that NRIC checksum verification is not implemented as the current level of validation is deemed 
+  sufficient. You may refer to [5. Parameter Constraint Table](#5-parameter-constraint-table) for more information.
+
+</box>
+
+<box type="tip" seamless class="tip-custom">
+
+Pro tip: Alphabets in NRIC are case-insensitive. The following (non-exhaustive) may be accepted `S9123456Z`, 
+`s9123456z`, `S9123456z`.
+
+</box>
 
 #### 2.1.4 Removing a patient : `remove`
 
@@ -171,10 +206,39 @@ Format: `remove -IC <NRIC>` or `rm -IC <NRIC>`
 Example:
 * `remove -IC S9123456Z` removes the patient with the NRIC S9123456Z
 
+<box type="info" seamless class="info-custom">
+
+**Notes about NRIC when removing a patient:**<br>
+
+* Rationale for not supporting `remove INDEX_NUMBER`, where `INDEX_NUMBER` is the index of a patient in HubHealth.
+* While `remove INDEX_NUMBER` is an easier command, this is a deliberate design decision to ensure that
+you go through 1 more round of checking (**implicit verification built into HubHealth** as opposed to explicit 
+verification, asking "Are you sure you want to delete patient John Doe, NRIC: S9123456Z").
+* This ensures patient records are not accidentally deleted, for example using `delete 3` vs `delete 4`.
+
+  </box>
+
 <br>
 <br>
 
+<div style="page-break-after: always;"></div>
+
 ### 2.2 Appointment management (for patient)
+<box type="info" seamless class="info-custom">
+
+**Managing patient appointments:**<br>
+
+* When managing a specific patient (i.e. using the following commands: `viewp`, `addappt`, `rmappt`), you will be 
+  brought to a different page displaying all the appointments of **only one patient**.
+
+  </box>
+<box type="tip" seamless class="tip-custom">
+
+Use `list` or `ls` to go back to the main window to **view all patients**.
+
+</box>
+
+
 #### 2.2.1 Viewing patient details : `viewp`
 
 Shows you the details of a patient.
@@ -198,6 +262,8 @@ Example:
 In the screenshot above, we can see that a new upcoming appointment has been added for this patient. You can also 
 see the date and time for this appointment.
 
+<div style="page-break-after: always;"></div>
+
 #### 2.2.3 Removing appointment from patient : `rmappt`
 
 Allows you to remove an appointment from a patient at the specified index.
@@ -212,7 +278,7 @@ been removed for this patient. This patient now has no more appointments.
 
 <box type="tip" seamless class="tip-custom">
 
-Use `viewp` first to view the appointment list of a specified patient
+Use `viewp` first to view the appointment list of a specified patient.
 
 </box>
 
@@ -247,8 +313,14 @@ A useful first step to creating your own patient record: Deleting the existing s
 </box>
 
 <box type="warning" seamless class="warning-custom">
-We do not support undoing commands yet. Clearing of patient records is thus permanent. Use this command wisely.
+
+We do not support undoing commands yet. Clearing of patient records is thus permanent. If you are worried about 
+losing your data, you may refer to [2.7 Backing up the data file](#2-7-backing-up-the-data-file) to back up your 
+data. Use this command wisely.
+
 </box>
+
+<div style="page-break-after: always;"></div>
 
 #### 2.3.3 Exiting HubHealth : `exit`
 
@@ -260,7 +332,8 @@ Example:
 * `exit` will close the HubHealth application
 
 <box type="tip" seamless class="tip-custom">
-You may close HubHealth as you normally would any other application (i.e. by clicking 'x' on the top left/right corner). This command only exists in case closing HubHealth normally does not work.
+You may close HubHealth as you would normally close any other application (i.e. by clicking 'x' on the top left/right 
+corner). This command only exists in case closing HubHealth normally does not work.
 </box>
 
 <br>
@@ -305,14 +378,24 @@ HubHealth data are saved in the hard disk automatically after any command that c
 
 ### 2.6 Editing the data file
 
-HubHealth data are saved automatically as a JSON file `[JAR file location]/data/HubHealth.json`. Advanced users are 
+HubHealth data are saved automatically as a JSON file in `[Home folder]/data/HubHealth.json`. **Advanced users** are 
 welcome to update data directly by editing that data file.
-
 
 <box type="warning" seamless class="warning-custom">
 If your changes to the data file makes its format invalid, HubHealth will discard all data and start with an empty data file at the next run.  Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the HubHealth to behave in unexpected ways (e.g., if a value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </box>
+
+<br>
+<br>
+
+<div style="page-break-after: always;"></div>
+
+### 2.7 Backing up the data file
+
+HubHealth data are saved automatically as a JSON file in `[Home folder]/data/HubHealth.json`. Users who wish to 
+perform periodic backup of the data, may make a copy of the file and store the file in another location, such as 
+another folder on the computer or on a thumbdrive.
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -337,11 +420,11 @@ the data of your previous HubHealth home folder.
 ## 4. Known issues
 
 1. **When using multiple screens**, if you move HubHealth to a secondary screen, and later switch to using only
-the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the
-application before running HubHealth again.
+the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by 
+   HubHealth before running HubHealth again.
 <br>
-**Windows users:**
-Alternatively, you may press the `Windows Key` + `Right-Arrow Key` to bring HubHealth back into the primary screen.
+**Windows users:** Alternatively, you may press the `Windows Key` + `Right-Arrow Key` to bring HubHealth back into 
+   the primary screen.
 
 2. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
 
@@ -349,44 +432,45 @@ Alternatively, you may press the `Windows Key` + `Right-Arrow Key` to bring HubH
 
 ## 5. Parameter Constraint Table
 
-| Parameter | Parameter Representation/Full Name | Requirement (Commands)                                        | Constraint                                                                                                             |
-|-----------|------------------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| **IC**    | Identity Card Number (NRIC)        | Compulsory <br> `add`, `remove`, `viewp`, `addappt`, `rmappt` | NRIC should only contain alphabets or numbers, starting with S,T,F,G followed by 7 digits, and ending with an alphabet |
-| **N**     | Patient's Name                     | Compulsory <br> `add`                                         | Names should only contain alphanumeric characters and spaces, and it should not be blank                               |
-| **P**     | Phone Number                       | Compulsory <br> `add`                                         | Phone numbers should only contain numbers, and it should be at least 3 digits long                                     |
-| **DOB**   | Date of Birth                      | Compulsory <br> `add`                                         | Date of Birth should be in the format: dd/MM/yyyy and year should be after 1900, and cannot be after today's date      |
-| **I**     | Index (of Appointment)             | Compulsory <br> `rmappt`                                      | Index should only be a number, and should be within the range of the appointments a patient has. 0 is not allowed      |
-| **D**     | Date (of Appointment)              | Compulsory <br> `addappt`                                     | Appointment date should be in the format: dd/MM/yyyy HH:mm and cannot be before today                                  |
-| **T**     | Find by Name(s)                    | Optional <br> `add`                                           | Tags names should be alphanumeric, may contain `-` and no spaces                                                       |
+| Parameter | Parameter Representation/Full Name                                                                                                                                         | Requirement (Commands)                                        | Constraint                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **IC**    | Identity Card Number (NRIC) (of Patient)                                                                                                                                   | Compulsory <br> `add`, `remove`, `viewp`, `addappt`, `rmappt` | NRIC should only contain alphabets or numbers, starting with S,T,F,G,M followed by 7 digits, and ending with an alphabet. <br/><br/> *A user may prefer to use lower case alphabets for the NRIC and it is accepted too (We support the feature but will not include it in the error message for brevity sake). <br/><br/> *Note that NRIC checksum verification is not implemented, as the current level of validation is deemed sufficient. |
+| **N**     | Name (of Patient)                                                                                                                                                          | Compulsory <br> `add`                                         | Names should only contain alphanumeric characters and spaces, and it should not be blank.                                                                                                                                                                                                                                                                                                                                                     |
+| **P**     | Phone Number (of Patient)                                                                                                                                                  | Compulsory <br> `add`                                         | Phone numbers should only contain numbers, and it should be at least 3 digits long.                                                                                                                                                                                                                                                                                                                                                           |
+| **DOB**   | Date of Birth (of Patient)                                                                                                                                                 | Compulsory <br> `add`                                         | Date of Birth should be in the format: dd/MM/yyyy and year should be after 1900, and cannot be after today's date.                                                                                                                                                                                                                                                                                                                            |
+| **I**     | Index (of Appointment)                                                                                                                                                     | Compulsory <br> `rmappt`                                      | Index should only be a number, and should be within the range of the appointments a patient has. 0 is not allowed.                                                                                                                                                                                                                                                                                                                            |
+| **D**     | Date (of Appointment)                                                                                                                                                      | Compulsory <br> `addappt`                                     | Appointment date should be in the format: dd/MM/yyyy HH:mm and cannot be before today.                                                                                                                                                                                                                                                                                                                                                        |
+| **T**     | Tag Name (a wildcard for clinic receptionist to add any useful tags necessary for work) <br><br> A suggested use case is adding CHAS/insurance information to the patient. | Optional <br> `add`                                           | Tag names should be alphanumeric, may contain `-` and must not contain spaces. <br>Tag names must start with an alphanumeric character, and be at most 30 characters long.                                                                                                                                                                                                                                                                    |
 
 --------------------------------------------------------------------------------------------------------------------
 
 <div style="page-break-after: always;"></div>
 
 ## 6. Command summary
+This section provides a summary of all commands that HubHealth provides. You may click on the command to go to the 
+respective section for more detailed information regarding the command.
 
-Action     | Format(s)
------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Listing all patients | [`list`](#2-1-1-listing-all-patients-list)
-Locating patients by name | [`find <Name> [MORE_NAMES]`](#2-1-2-locating-patients-by-name-find)
-Adding a patient| [`add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`](#2-1-3-adding-a-patient-add)
-Removing a patient | [`remove -IC <NRIC>`, `rm -IC <NRIC>`](#2-1-4-removing-a-patient-remove)
-Viewing patient details | [`viewp -IC <NRIC>`](#2-2-1-viewing-patient-details-viewp)
-Adding appointment to patient | [`addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`](#2-2-2-adding-appointment-to-patient-addappt)
-Removing appointment from patient | [`rmappt -IC <NRIC> -I <index in appointment list>`](#2-2-3-removing-appointment-from-patient-rmappt)
-Viewing help | [`help`](#2-3-1-viewing-help-help)
-Clearing all entries | [`clear`](#2-3-2-clearing-all-entries-clear)
-Exiting HubHealth | [`exit`](#2-3-3-exiting-hubhealth-exit)
-
+| Action                            | Format(s)                                                                                             |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------|
+| Listing all patients              | [`list`](#2-1-1-listing-all-patients-list)                                                            |
+| Locating patients by name         | [`find <Name> [MORE_NAMES]`](#2-1-2-locating-patients-by-name-find)                                   |
+| Adding a patient                  | [`add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth>`](#2-1-3-adding-a-patient-add)      |
+| Removing a patient                | [`remove -IC <NRIC>`, `rm -IC <NRIC>`](#2-1-4-removing-a-patient-remove)                              |
+| Viewing patient details           | [`viewp -IC <NRIC>`](#2-2-1-viewing-patient-details-viewp)                                            |
+| Adding appointment to patient     | [`addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`](#2-2-2-adding-appointment-to-patient-addappt)    |
+| Removing appointment from patient | [`rmappt -IC <NRIC> -I <index in appointment list>`](#2-2-3-removing-appointment-from-patient-rmappt) |
+| Viewing help                      | [`help`](#2-3-1-viewing-help-help)                                                                    |
+| Clearing all entries              | [`clear`](#2-3-2-clearing-all-entries-clear)                                                          |
+| Exiting HubHealth                 | [`exit`](#2-3-3-exiting-hubhealth-exit)                                                               |
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## 7. Glossary
 
-Term       |  Meaning
------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**GUI**    |  The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands.
-**IC/ NRIC** |  They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands. 
-**Patient/ Person** |  In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information. 
-**(File) Directory** | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info)
-**Home Folder** | The folder in which HubHealth (i.e. `HubHealth.jar`) resides
+| Term                  | Meaning                                                                                                                                                                                                               |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **GUI**               | The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands. |
+| **IC/ NRIC**          | They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands.                                           |
+| **Patient/ Person**   | In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information.                                               |
+| **(File) Directory**  | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info).                                                                                                        |
+| **Home Folder**       | The folder in which HubHealth (i.e. `HubHealth.jar`) resides.                                                                                                                                                         |

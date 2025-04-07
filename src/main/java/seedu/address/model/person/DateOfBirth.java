@@ -14,7 +14,8 @@ import java.time.format.DateTimeParseException;
 public class DateOfBirth {
     public static final String MESSAGE_CONSTRAINTS = "Date of Birth should be in the format: dd/MM/yyyy and year "
             + "should be after 1900, and date of birth cannot be after today's date.";
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/uuuu")
+            .withResolverStyle(java.time.format.ResolverStyle.STRICT);
     public final LocalDate value;
 
     /**
