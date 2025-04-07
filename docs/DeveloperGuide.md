@@ -150,8 +150,9 @@ The `Model` component,
 <box type="info" seamless>
 
 **Note: To avoid overzealous input validation for appointment date and time, we allow: **
-    * Appointments with similar start times to be created
-    * Multiple patients to have the same appointment start time
+    * Appointments with similar start times to be created,
+    * Multiple patients to have the same appointment start time, and
+    * Appointments to be created with a starting date that is in the past (relative to the local machine), for record keeping purposes.
 
 </box>
 
