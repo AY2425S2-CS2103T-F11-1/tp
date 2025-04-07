@@ -397,8 +397,6 @@ another folder on the computer or on a thumbdrive.
 
 --------------------------------------------------------------------------------------------------------------------
 
-<div style="page-break-after: always;"></div>
-
 ## 3. FAQ
 
 **Q**: Can I use HubHealth on multiple computers?<br>
@@ -426,6 +424,8 @@ the primary screen, the GUI will open off-screen. The remedy is to delete the `p
 2. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## 5. Parameter Constraint Table
 
