@@ -472,3 +472,23 @@ respective section for more detailed information regarding the command.
 | **Patient/ Person**  | In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information.                                               |
 | **(File) Directory** | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info).                                                                                                        |
 | **Home Folder**      | The folder in which HubHealth (i.e. `HubHealth.jar`) resides.                                                                                                                                                         |
+
+<!-- Created with ChatGPT -->
+<a href="#top" style="
+position: fixed;
+bottom: 20px;
+right: 20px;
+width: 40px;
+height: 40px;
+background-color: #007acc;
+color: white;
+border-radius: 50%;
+box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+text-align: center;
+line-height: 40px;
+font-size: 20px;
+text-decoration: none;
+z-index: 1000;
+font-family: sans-serif;
+">↑</a>
+<!-- Created with ChatGPT -->
