@@ -64,7 +64,6 @@ public class PersonAppointmentCard extends UiPart<Region> {
         phone.setText(person.getPhone().value);
         dateOfBirth.setText(person.getDateOfBirth().toString());
         person.getTags().stream()
-                 .sorted(Comparator.comparing(tag -> tag.tagName))
                  .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
 
         pastAppointmentsLabel.setText(PAST_APPOINTMENTS_LABEL);

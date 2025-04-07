@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static seedu.address.storage.JsonAdaptedPerson.MISSING_FIELD_MESSAGE_FORMAT;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalPersons.BENSON;
-import static seedu.address.testutil.TypicalPersons.ALICE;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,6 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.appointment.Appointment;
 import seedu.address.model.person.DateOfBirth;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Nric;
@@ -129,12 +127,12 @@ public class JsonAdaptedPersonTest {
         mixedAppointments.add(new JsonAdaptedAppointment("01/01/2025 15:00")); // valid
         mixedAppointments.add(new JsonAdaptedAppointment("invalid-date")); // invalid
         mixedAppointments.add(new JsonAdaptedAppointment("02/01/2025 16:30")); // valid
-        
-        JsonAdaptedPerson person = new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_NRIC, 
+
+        JsonAdaptedPerson person = new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_NRIC,
                 VALID_DOB, VALID_TAGS, mixedAppointments);
-                
+
         Person modelPerson = person.toModelType();
-        
+
         // Verify only the valid appointments were added
         assertEquals(2, modelPerson.getAppointmentList().size());
     }
