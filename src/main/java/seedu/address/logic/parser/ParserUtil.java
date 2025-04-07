@@ -138,9 +138,6 @@ public class ParserUtil {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/uuuu HH:mm")
                 .withResolverStyle(java.time.format.ResolverStyle.STRICT);
         try {
-            if (LocalDateTime.parse(trimmedDateTime, formatter).isBefore(LocalDateTime.now())) {
-                throw new ParseException("Appointment date must not be in the past");
-            }
             return LocalDateTime.parse(trimmedDateTime, formatter)
                     .format(DateTimeFormatter.ofPattern("dd/MM/uuuu HH:mm"));
         } catch (DateTimeParseException e) {
