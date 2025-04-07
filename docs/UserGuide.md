@@ -252,7 +252,7 @@ In the screenshot above, we can see that this patient has no past or upcoming ap
 
 #### 2.2.2 Adding appointment to patient : `addappt`
 
-Allows you to create an appointment for a patient.
+Allows you to create an appointment at a specified starting time for a patient.
 
 Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`
 
@@ -261,6 +261,12 @@ Example:
 ![addappt](images/Addappt.png)
 In the screenshot above, we can see that a new upcoming appointment has been added for this patient. You can also 
 see the date and time for this appointment.
+
+<box type="warning" seamless class="warning-custom">
+
+A patient cannot have more than one appointment starting at the same time.
+
+</box>
 
 <div style="page-break-after: always;"></div>
 
@@ -279,6 +285,12 @@ been removed for this patient. This patient now has no more appointments.
 <box type="tip" seamless class="tip-custom">
 
 Use `viewp` first to view the appointment list of a specified patient.
+
+</box>
+
+<box type="warning" seamless class="warning-custom">
+
+We currently do not support editing appointments yet. To make changes, please delete the existing appointment and create a new one with the updated start time.
 
 </box>
 
