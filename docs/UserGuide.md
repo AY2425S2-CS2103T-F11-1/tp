@@ -98,13 +98,13 @@ skip the Installation and jump to [Getting started](#1-2-getting-started).
       - **Mac users:** Follow the instructions [here](https://se-education.org/guides/tutorials/javaInstallationMac.html) to install Java 17.
       - **Windows users:** Follow the instructions [here](https://se-education.org/guides/tutorials/javaInstallationWindows.html) to install Java 17.
     - **Mac users:** Even if you have Java installed, ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
-
-1. Open a command terminal (e.g. `cmd.exe`, `PowerShell.exe`, etc.), and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in. <br>
+<br><br>
+1. Open a command terminal (e.g. `cmd.exe`, `PowerShell.exe`, etc.), and enter `cd <directory>`, where `<directory>` is the path to the folder you put the jar file in.
    - For instance, if HubHealth is in the Downloads folder, the command you enter should look something like `cd 
-   C:\Users\user\Downloads`<br>
+   C:\Users\user\Downloads`
    - (You can find the directory of HubHealth by right-clicking on it, and selecting `Properties` or `Get info` for 
      Windows and Mac users.)
-
+<br><br>
 1. Next, enter the command `java -jar HubHealth.jar` and press Enter to start HubHealth.<br>
 
 </box>
@@ -145,7 +145,7 @@ Shows you a list of all patients in HubHealth.
 Format: `list` or `ls`
 
 Example:
-- `list` will display a list of patients currently saved in HubHealth
+- `list` will display a list of patients currently saved in HubHealth { icon="bi-play-fill" }
 
 #### 2.1.2 Locating patients by name: `find`
 
@@ -153,16 +153,16 @@ Allows you to search for patients whose names contains a given name.
 
 Format: `find <Name> [MORE_NAMES]`
 
-* The search is case-insensitive. e.g `hans` will match `Hans`
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-* Only the name is searched
-* Partial words will be matched e.g. `Han` will match `Hans`
-* Patients whose name is matching with at least one keyword will be returned (i.e. `OR` search)
-  e.g. Finding `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+* The search is case-insensitive. e.g `hans` will match `Hans` { icon="bi-stop-fill" }
+* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans` { icon="bi-stop-fill" }
+* Only the name is searched { icon="bi-stop-fill" }
+* Partial words will be matched e.g. `Han` will match `Hans` { icon="bi-stop-fill" }
+* Patients whose name is matching with at least one keyword will be returned (i.e. `OR` search) { icon="bi-stop-fill" }
+  e.g. Finding `Hans Bo` will return `Hans Gruber`, `Bo Yang` { icon="bi-stop-fill" }
 
 Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
+* `find John` returns `john` and `John Doe` { icon="bi-play-fill" }
+* `find alex david` returns `Alex Yeoh`, `David Li`<br> { icon="bi-play-fill" }
 
 <div style="page-break-after: always;"></div>
 
@@ -174,9 +174,9 @@ Format: `add -IC <NRIC> -N <Name> -P <Phone_Number> -DOB <Date_Of_Birth> [-T <Ta
 
 Examples:
 * `add -IC S9123456Z -N John Doe -P 81234567 -DOB 02/02/1995` will add a patient with name `John Doe`, NRIC 
-  `S9123456Z`, phone number `81234567` and date of birth `2nd Feb 1995` to HubHealth
+  `S9123456Z`, phone number `81234567` and date of birth `2nd Feb 1995` to HubHealth { icon="bi-play-fill" }
 * `add -IC S9123456Z -N John Doe -P 81234567 -DOB 02/02/1995 -T CHAS-Blue -T Raffles-Medical` will add the same patient 
-  as the example above, with the additional tags of `CHAS-Blue` and `Raffles-Medical`, to HubHealth
+  as the example above, with the additional tags of `CHAS-Blue` and `Raffles-Medical`, to HubHealth { icon="bi-play-fill" }
 
 <box type="info" seamless class="info-custom">
 
@@ -201,12 +201,12 @@ Pro tip: Alphabets in NRIC are case-insensitive. The following (non-exhaustive) 
 
 Allows you to remove the specified patient from HubHealth.
 
-Format: `remove -IC <NRIC>` or `rm -IC <NRIC>`
+Format: `remove -IC <NRIC>` or `rm -IC <NRIC>` 
 
-* Deletes the patient with the specified `<NRIC>`
+* Deletes the patient with the specified `<NRIC>` { icon="bi-stop-fill" }
 
 Example:
-* `remove -IC S9123456Z` removes the patient with the NRIC S9123456Z
+* `remove -IC S9123456Z` removes the patient with the NRIC S9123456Z { icon="bi-play-fill" } 
 
 <box type="info" seamless class="info-custom">
 
@@ -245,8 +245,9 @@ Shows you the details of a patient.
 Format: `viewp -IC <NRIC>`
 
 Example:
-* `viewp -IC S9123456Z` shows details of the patient with the NRIC S9123456Z
-![viewp](images/Viewp.png)
+* `viewp -IC S9123456Z` shows details of the patient with the NRIC S9123456Z { icon="bi-play-fill" }
+
+![viewp](images/Viewp.png) 
 In the screenshot above, we can see that this patient has no past or upcoming appointments.
 
 #### 2.2.2 Adding appointment to patient : `addappt`
@@ -256,7 +257,9 @@ Allows you to create an appointment at a specified starting time for a patient.
 Format: `addappt -IC <NRIC> -D <date in dd/MM/yyyy HH:mm>`, where `HH:mm` is in 24-hour format.
 
 Example:
-* `addappt -IC S9123456Z -D 25/06/2025 09:00` creates an appointment on 25 June 2025 at 9:00am for the patient with the NRIC S9123456Z
+* `addappt -IC S9123456Z -D 25/06/2025 09:00` creates an appointment on 25 June 2025 at 9:00am for the patient with 
+  the NRIC S9123456Z { icon="bi-play-fill" }
+
 ![addappt](images/Addappt.png)
 In the screenshot above, we can see that a new upcoming appointment has been added for this patient. You can also 
 see the date and time for this appointment.
@@ -276,7 +279,8 @@ Allows you to remove an appointment from a patient at the specified index.
 Format: `rmappt -IC <NRIC> -I <index in appointment list>`
 
 Example:
-* `rmappt -IC S9123456Z -I 1` removes the appointment with index 1 from the patient with the NRIC S9123456Z
+* `rmappt -IC S9123456Z -I 1` removes the appointment with index 1 from the patient with the NRIC S9123456Z { icon="bi-play-fill" }
+
 ![rmappt](images/Rmappt.png)
 In the screenshot above, we can see that the first appointment (added using the example `addappt` command above) has 
 been removed for this patient. This patient now has no more appointments.
@@ -308,7 +312,7 @@ and pasted into a browser to access the help page.
 Format: `help`
 
 Example:
-* `help` will open a message window as shown in the above screenshot
+* `help` will open a message window as shown in the above screenshot { icon="bi-play-fill" }
 
 <div style="page-break-after: always;"></div>
 
@@ -319,7 +323,7 @@ Clears all entries from HubHealth.
 Format: `clear`
 
 Example:
-* `clear` will clear all patients, leaving HubHealth with an empty patient list
+* `clear` will clear all patients, leaving HubHealth with an empty patient list { icon="bi-play-fill" }
 
 <box type="tip" seamless class="tip-custom">
 A useful first step to creating your own patient record: Deleting the existing sample data.
@@ -340,7 +344,7 @@ Allows you to exit HubHealth.
 Format: `exit`
 
 Example:
-* `exit` will close the HubHealth application
+* `exit` will close the HubHealth application { icon="bi-play-fill" }
 
 <box type="tip" seamless class="tip-custom">
 You may close HubHealth as you would normally close any other application (i.e. by clicking 'x' on the top left/right 
@@ -395,6 +399,8 @@ Furthermore, certain edits can cause the HubHealth to behave in unexpected ways 
 <br>
 <br>
 
+<div style="page-break-after: always;"></div>
+
 ### 2.7 Backing up the data file
 
 HubHealth data are saved automatically as a JSON file in `[Home folder]/data/HubHealth.json`. Users who wish to 
@@ -444,7 +450,7 @@ This section provides a summary of all parameters used in HubHealth commands, as
 | **P**     | Phone Number (of Patient)                                                                                                                                                  | Compulsory <br> `add`                                         | Phone number may start with a `+`, and must contain `only numbers` thereafter. <br><br> It must be between `3 to 30 numbers long`. <br/><br/>Patients sharing the same name and birthdate cannot share the same phone number.                                                                                                                                                                                                                                                                     |
 | **DOB**   | Date of Birth (of Patient)                                                                                                                                                 | Compulsory <br> `add`                                         | Date of Birth should be in the format: `dd/MM/yyyy`. The year should be after 1900, and cannot be after today's date. <br>Patients sharing the same name and phone number cannot share the same birthdate.                                                                                                                                                                                                                                                                                        |
 | **I**     | Index (of Appointment)                                                                                                                                                     | Compulsory <br> `rmappt`                                      | Index should only be `a number`, and should be within the range of the appointments a patient has. 0 is not allowed.                                                                                                                                                                                                                                                                                                                                                                              |
-| **D**     | Date (of Appointment)                                                                                                                                                      | Compulsory <br> `addappt`                                     | Appointment date should be in the format: `dd/MM/yyyy HH:mm` and cannot be before today. Note that `HH:mm` is in 24-hour format.                                                                                                                                                                                                                                                                                                                                                                  |
+| **D**     | Date and Time (of Appointment)                                                                                                                                             | Compulsory <br> `addappt`                                     | Appointment date should be in the format: `dd/MM/yyyy HH:mm` and cannot be before today. Note that `HH:mm` is in 24-hour format.                                                                                                                                                                                                                                                                                                                                                                  |
 | **T**     | Tag Name (a wildcard for clinic receptionist to add any useful tags necessary for work) <br><br> A suggested use case is adding CHAS/insurance information to the patient. | Optional <br> `add`                                           | Tag names must start with an `alphanumeric character`, may contain `-`, must not contain spaces. <br><br> It must be at most `30 characters long`.                                                                                                                                                                                                                                                                                                                                                |
 
 --------------------------------------------------------------------------------------------------------------------
