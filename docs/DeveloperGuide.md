@@ -93,6 +93,18 @@ The `UI` component,
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
 * depends on some classes in the `Model` component, as it displays `Person` object residing in the `Model`.
 
+<box type="info" seamless class="info-custom">
+
+**Notes about NRIC when removing a person:**<br>
+
+* Rationale for not supporting `remove INDEX_NUMBER`, where `INDEX_NUMBER` is the index of a patient in HubHealth.
+* While `remove INDEX_NUMBER` is an easier command, this is a deliberate design decision to ensure that
+  you go through 1 more round of checking (**implicit verification built into HubHealth** as opposed to explicit
+  verification, asking "Are you sure you want to delete patient John Doe, NRIC: S9123456Z").
+* This ensures patient records are not accidentally deleted, for example using `delete 3` vs `delete 4`.
+
+  </box>
+
 ### Logic component
 
 **API** : [`Logic.java`](https://github.com/AY2425S2-CS2103T-F11-1/tp/blob/master/src/main/java/seedu/address/logic/Logic.java)

@@ -210,11 +210,8 @@ Example:
 
 **Notes about NRIC when removing a patient:**<br>
 
-* Rationale for not supporting `remove INDEX_NUMBER`, where `INDEX_NUMBER` is the index of a patient in HubHealth.
-* While `remove INDEX_NUMBER` is an easier command, this is a deliberate design decision to ensure that
-you go through 1 more round of checking (**implicit verification built into HubHealth** as opposed to explicit 
-verification, asking "Are you sure you want to delete patient John Doe, NRIC: S9123456Z").
-* This ensures patient records are not accidentally deleted, for example using `delete 3` vs `delete 4`.
+* You must use the `-IC` command format as this ensures you will not accidentally delete another patient's information.
+* This applies to other commands that use `-IC` as well.
 
   </box>
 
@@ -467,10 +464,11 @@ respective section for more detailed information regarding the command.
 
 ## 7. Glossary
 
-| Term                  | Meaning                                                                                                                                                                                                               |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **GUI**               | The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands. |
-| **IC/ NRIC**          | They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands.                                           |
-| **Patient/ Person**   | In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information.                                               |
-| **(File) Directory**  | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info).                                                                                                        |
-| **Home Folder**       | The folder in which HubHealth (i.e. `HubHealth.jar`) resides.                                                                                                                                                         |
+| Term                 | Meaning                                                                                                                                                                                                               |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Alphanumeric**     | Consisting of or using both letters and numbers.                                                                                                                                                                      |
+| **GUI**              | The Graphical User Interface. This is what you see on the screen when you run most software. It has some visual/ graphical elements you can interact with (such as by clicking) without the use of keyboard commands. |
+| **IC/ NRIC**         | They are used interchangeably to refer to the National Registration Identity Card number. In the current release of HubHealth, NRIC is referred to as `IC` in the commands.                                           |
+| **Patient/ Person**  | In the current release of HubHealth, any reference to a `Person` is interchangeable with a patient. A `Person` in HubHealth represents a patient and their information.                                               |
+| **(File) Directory** | The path to the folder in which the specified file resides (viewable with right click -> Properties/Get Info).                                                                                                        |
+| **Home Folder**      | The folder in which HubHealth (i.e. `HubHealth.jar`) resides.                                                                                                                                                         |
