@@ -527,13 +527,19 @@ Team size: 5
 
 1. Allow “/” and other special characters in name
     * Name currently only supports alphanumeric characters and spaces, and does not support characters such as “/”,
-      “@” (list is non-exhaustive)
-    * For example, the name “Ravi S/O Ramasamy” will not be allowed
-    * Support for “/”, “@” and other special characters used in the name will be added in a future release
+      “@” (list is non-exhaustive).
+    * For example, the name “Ravi S/O Ramasamy” will not be allowed.
+    * Support for “/”, “@” and other special characters used in the name will be added in a future release.
 
 <br>
 
 2. Allow editing of patient information
     * For example, allow phone number and tags (tracking patient’s CHAS information, insurance information etc.) to be
-      editable
-    * However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created
+      editable.
+    * However, a patient’s NRIC and Date of Birth will remain un-editable once a patient has been created.
+
+<br>
+
+3. Allow phone number to have verified/unverified option 
+    * With the addition of OTP (One-Time Password) verification for phone numbers in a future release, this removes 
+      the need for overzealous input validation on the phone number.
