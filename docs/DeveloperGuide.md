@@ -349,6 +349,11 @@ otherwise.
 
         Use case ends.
 
+- 1c. HubHealth detects that the appointment already exists.
+    - 1c1. HubHealth shows an error message.
+
+      Use case ends.
+
 #### **Use case: UC06 Delete an appointment from a patient**
 
 **MSS**
@@ -365,7 +370,30 @@ otherwise.
 
         Use case ends.
 
-*{More to be added}*
+#### **Use case: UC07 Find a patient**
+
+**MSS**
+
+1. User requests to find a patient by name.
+2. HubHealth search and shows the patient requested.
+
+   Use case ends.
+
+**Extensions**
+
+- 1a. HubHealth detects that no patient matches the name.
+    - 1a1. HubHealth shows empty window.
+
+      Use case ends.
+
+#### **Use case: UC08 Clear all patients**
+
+**MSS**
+
+1. User requests to clear all patients.
+2. HubHealth deletes all patient records and shows empty window.
+
+   Use case ends.
 
 ### Non-Functional Requirements
 
@@ -374,8 +402,6 @@ otherwise.
     usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 4.  HubHealth should work independent of internet connectivity.
-
-*{More to be added}*
 
 ### Glossary
 
@@ -387,9 +413,9 @@ regulates the processing of personal data in the private sector.
 
 ## **Appendix: Instructions for manual testing**
 
-Given below are instructions to test the app manually.
+Given below are instructions to test HubHealth manually.
 
-<box type="info" seamless>
+<box type="info" seamless class="info-custom">
 
 **Note:** These instructions only provide a starting point for testers to work on;
 testers are expected to do more *exploratory* testing.
@@ -412,8 +438,6 @@ testers are expected to do more *exploratory* testing.
    1. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-1. _{ more test cases …​ }_
-
 ### Adding a patient
 
 1. Adding a patient while all patients are being shown
@@ -428,8 +452,6 @@ testers are expected to do more *exploratory* testing.
 
    1. Other incorrect add commands to try: `add`, `add -IC a -N John Tan -P c -DOB d`, `...` (where a, b, c, d are invalid NRIC, phone number and date respectively)<br>
       Expected: Similar to previous.
-
-1. _{ more test cases …​ }_
 
 ### Remove a patient
 
@@ -446,8 +468,6 @@ testers are expected to do more *exploratory* testing.
    1. Other incorrect remove commands to try: `remove`, `remove x`, `...` (where x is a NRIC that is not in the list)<br>
       Expected: Similar to previous.
 
-1. _{ more test cases …​ }_
-
 ### View a patient's details
 
 1. View a patient's details
@@ -462,8 +482,6 @@ testers are expected to do more *exploratory* testing.
 
    1. Other incorrect add commands to try: `viewp`, `viewp -a`, `...` (where a is an invalid flag)<br>
       Expected: Similar to previous.
-
-1. _{ more test cases …​ }_
 
 ### Add an appointment to a patient
 
@@ -480,8 +498,6 @@ testers are expected to do more *exploratory* testing.
    1. Other incorrect add commands to try: `addappt -IC x -D y`, `addappt`, `...` (where x, y are invalid NRIC, datetime respectively)<br>
       Expected: Similar to previous.
 
-1. _{ more test cases …​ }_
-
 ### Remove an appointment from a patient
 
 1. Remove an appointment from a patient while the patient's details are being shown
@@ -497,19 +513,18 @@ testers are expected to do more *exploratory* testing.
    1. Other incorrect add commands to try: `rmappt -IC T0288759A -I x`, `rmappt`, `...` (where x is larger than the number of appointments the patient has)<br>
       Expected: Similar to previous.
 
-1. _{ more test cases …​ }_
-
 ### Saving data
 
 1. Dealing with missing/corrupted data files
 
-   1. _Prerequisites: At least one valid patient present in the list. Validity can be confirmed by the appearance of 
+   1. Prerequisites: At least one valid patient present in the list. Validity can be confirmed by the appearance of 
       the patient when listed with `list` or `ls`. The `data` folder should be present in the same location as the 
       jar file for the app. This can be guaranteed by starting the app once and closing it. 
 
-   1. Test case (Missing data file): Close HubHealth (if it is open). Navigate to the `data` folder. Delete the `addressbook.json` file if it exists. Launch the app once again by double-clicking it.
+   1. Test case (Missing data file): Close HubHealth (if it is open). Navigate to the `data` folder. Delete the 
+      `HubHealth.json` file if it exists. Launch the app once again by double-clicking it.
       Expected: Default list of patients shown. There should be a list of patients displayed, starting with a 
-      patient named "Alex Yeoh"
+      patient named "Alex Yeoh".
       
    1. Test case (Corrupted data files - invalid data): Close HubHealth (if it is open). Navigate to the `data` 
       folder. Change the birth year of any patient to 1899 and save the changes using any text editor. Launch the 
@@ -521,12 +536,10 @@ testers are expected to do more *exploratory* testing.
       using any text editor. Launch the app again by double-clicking it.
       Expected: No patients shown.
 
-   1. Other ways to corrupt file data to try: Delete closing parentheses from the `addressbook.json` file, or delete 
+   1. Other ways to corrupt file data to try: Delete closing parentheses from the `HubHealth.json` file, or delete 
       the NRIC completely from an entry in the file. Alternatively, change the NRIC values to illegal values like 
       "abc". Save the corrupting changes and launch the app again by double-clicking it. 
       Expected: Similar to previous.
-
-1. _{ more test cases …​ }_
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -549,7 +562,7 @@ Team size: 5
 
 <br>
 
-3. Allow phone number to have verified/unverified option 
+3. Allow phone number to have verified/unverified option
     * With the addition of OTP (One-Time Password) verification for phone numbers in a future release, this removes 
       the need for overzealous input validation on the phone number.
 
@@ -563,3 +576,9 @@ Team size: 5
 5. Support multiple doctors per clinic 
    * HubHealth will not enforce appointment limits across patients with the same appointment time, as clinics may have multiple doctors handling separate appointments simultaneously. 
    * Duplicate time slots will only be restricted per doctor, not globally
+
+<br>
+
+6. Migrate app and refactor of AddressBook to HubHealth
+    * Fundamentally, HubHealth is an AddressBook, so internal method references still uses AddressBook. With more 
+      time, the team will refactor the references in the future.
