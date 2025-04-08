@@ -362,6 +362,6 @@ with(this){return _c('ol',{attrs:{"start":"5"}},[_c('li',[_v("Support multiple d
 with(this){return _c('ol',{attrs:{"start":"6"}},[_c('li',[_v("Migrate app and refactor of AddressBook to HubHealth\n"),_c('ul',[_c('li',[_v("Fundamentally, HubHealth is an AddressBook, so internal method references still uses AddressBook. With more\ntime, the team will refactor the references in the future.")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Tue, 8 Apr 2025, 2:06:19 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Tue, 8 Apr 2025, 13:16:18 GMT+8]")])])])}
 }];
   
