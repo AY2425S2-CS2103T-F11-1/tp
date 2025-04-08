@@ -399,8 +399,6 @@ Furthermore, certain edits can cause the HubHealth to behave in unexpected ways 
 <br>
 <br>
 
-<div style="page-break-after: always;"></div>
-
 ### 2.7 Backing up the data file
 
 HubHealth data are saved automatically as a JSON file in `[Home folder]/data/HubHealth.json`. Users who wish to 
