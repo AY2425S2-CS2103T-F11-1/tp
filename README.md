@@ -1,14 +1,9 @@
----
-  layout: default.md
-  title: ""
----
-
 # HubHealth
 
 [![CI Status](https://github.com/AY2425S2-CS2103T-F11-1/tp/actions/workflows/gradle.yml/badge.svg)](https://github.com/AY2425S2-CS2103T-F11-1/tp/actions)
 [![codecov](https://codecov.io/gh/AY2425S2-CS2103T-F11-1/tp/graph/badge.svg?token=4Z0HOJL06Z)](https://codecov.io/gh/AY2425S2-CS2103T-F11-1/tp)
 
-![Ui](images/Ui.png)
+![Ui](docs/images/Ui.png)
 
 Introducing HubHealth, a **Clinic Appointment Management System** designed to empower **Singaporean clinic
 receptionists** to **manage patient information** and **schedule appointments** efficiently. As a clinic receptionist,
