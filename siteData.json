@@ -1,0 +1,192 @@
+{
+  "enableSearch": true,
+  "pages": [
+    {
+      "src": "AboutUs.md",
+      "title": "About Us",
+      "headings": {
+        "about-us": "About Us",
+        "project-team": "Project team",
+        "hugo-chia": "Hugo Chia",
+        "lucas-lim": "Lucas Lim",
+        "reanee-chua": "Reanee Chua",
+        "cheng-anqi-angel": "Cheng Anqi, Angel",
+        "cao-yitian": "Cao Yitian"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Configuration.md",
+      "title": "Configuration guide",
+      "headings": {
+        "configuration-guide": "Configuration guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "DevOps.md",
+      "title": "DevOps guide",
+      "headings": {
+        "devops-guide": "DevOps guide",
+        "build-automation": "Build automation",
+        "continuous-integration-ci": "Continuous integration (CI)",
+        "code-coverage": "Code coverage",
+        "repository-wide-checks": "Repository-wide checks",
+        "making-a-release": "Making a release"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "DeveloperGuide.md",
+      "title": "Developer Guide",
+      "headings": {
+        "hubhealth-developer-guide": "HubHealth Developer Guide",
+        "acknowledgements": "Acknowledgements",
+        "setting-up-getting-started": "Setting up, getting started",
+        "design": "Design",
+        "architecture": "Architecture",
+        "ui-component": "UI component",
+        "logic-component": "Logic component",
+        "model-component": "Model component",
+        "storage-component": "Storage component",
+        "common-classes": "Common classes",
+        "implementation": "Implementation",
+        "proposed-extend-person-class-to-support-child-subclasses": "[Proposed] Extend Person class to support child subclasses",
+        "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
+        "appendix-requirements": "Appendix: Requirements",
+        "product-scope": "Product scope",
+        "user-stories": "User stories",
+        "use-cases": "Use cases",
+        "non-functional-requirements": "Non-Functional Requirements",
+        "glossary": "Glossary",
+        "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
+        "launch-and-shutdown": "Launch and shutdown",
+        "adding-a-patient": "Adding a patient",
+        "remove-a-patient": "Remove a patient",
+        "view-a-patient-s-details": "View a patient's details",
+        "add-an-appointment-to-a-patient": "Add an appointment to a patient",
+        "remove-an-appointment-from-a-patient": "Remove an appointment from a patient",
+        "saving-data": "Saving data",
+        "appendix-planned-enhancements": "Appendix: Planned enhancements"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Documentation.md",
+      "title": "Documentation guide",
+      "headings": {
+        "documentation-guide": "Documentation Guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Logging.md",
+      "title": "Logging guide",
+      "headings": {
+        "logging-guide": "Logging guide"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "SettingUp.md",
+      "title": "Setting up and getting started",
+      "headings": {
+        "setting-up-and-getting-started": "Setting up and getting started",
+        "setting-up-the-project-in-your-computer": "Setting up the project in your computer",
+        "before-writing-code": "Before writing code"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "Testing.md",
+      "title": "Testing guide",
+      "headings": {
+        "testing-guide": "Testing guide",
+        "running-tests": "Running tests",
+        "types-of-tests": "Types of tests"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "UserGuide.md",
+      "title": "User Guide",
+      "headings": {
+        "hubhealth-user-guide": "HubHealth User Guide",
+        "about-hubhealth": "About HubHealth",
+        "table-of-contents": "Table of contents",
+        "1-quick-start": "1. Quick start",
+        "1-1-installation": "1.1 Installation",
+        "1-2-getting-started": "1.2 Getting started",
+        "2-features": "2. Features",
+        "2-1-patient-management": "2.1 Patient management",
+        "2-2-appointment-management-for-patient": "2.2 Appointment management (for patient)",
+        "2-3-hubhealth-general-features": "2.3 HubHealth general features",
+        "2-4-coming-soon": "2.4 Coming soon",
+        "2-5-saving-the-data": "2.5 Saving the data",
+        "2-6-editing-the-data-file": "2.6 Editing the data file",
+        "2-7-backing-up-the-data-file": "2.7 Backing up the data file",
+        "3-faq": "3. FAQ",
+        "4-known-issues": "4. Known issues",
+        "5-parameter-constraint-table": "5. Parameter Constraint Table",
+        "6-command-summary": "6. Command summary",
+        "7-glossary": "7. Glossary"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "index.md",
+      "title": "",
+      "headings": {
+        "hubhealth": "HubHealth"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/UltimateHG.md",
+      "title": "UltimateHG's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/aerollingoverdeepblueseas.md",
+      "headings": {
+        "it-s-me": "It's me"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/codekrodile.md",
+      "title": "Codekrodile's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/hugochia.md",
+      "title": "Hugo Chia's Project Portfolio Page",
+      "headings": {
+        "project-hubhealth": "Project: HubHealth"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/johndoe.md",
+      "title": "John Doe's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/reaneechua.md",
+      "title": "John Doe's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    }
+  ]
+}
